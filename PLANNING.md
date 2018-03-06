@@ -49,4 +49,6 @@ I think the degree of overlaps between Coursera's Deep Learning & CS 231N might 
 * [Deep Learning with Python](file:///Users/rchang/Downloads/deep_learning_with_python_chollet.pdf)
   * Chapter 1: Introduction to history of AI, ML, and DL
   * Chapter 2: Basics of tensors (multi-dimensional arrays), tensor operations
+  * Chapter 3: Anatomy of a neural network, Intro to Keras, 3 examples: binary classification, multi-class classification, and regression, all built using Neural Nets
+  * Chapter 4: Workflow of Machine Learning (meta chapter)
  
