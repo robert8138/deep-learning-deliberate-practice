@@ -51,4 +51,15 @@ I think the degree of overlaps between Coursera's Deep Learning & CS 231N might 
   * Chapter 2: Basics of tensors (multi-dimensional arrays), tensor operations
   * Chapter 3: Anatomy of a neural network, Intro to Keras, 3 examples: binary classification, multi-class classification, and regression, all built using Neural Nets
   * Chapter 4: Workflow of Machine Learning (meta chapter)
+  * Chapter 5: This chapter covers CNN, and talked about
+  	* Convolution, padding, strides, max-pooling
+  	* Training a covnet from scratch using small dataset
+  	* Data augmentation (enrich data) + Dropout (to avoid overfitting)
+  	* Using pre-trained CNN
+  		* Feature extraction (with or without data augmentation)
+  		* Fine Tuning: specific layers (pop back a few layers and retrain them)
+  	* Visualizaing CNN
+  		* Visualize activation
+  		* Visualize covnet filters
+  		* Visualize which of the input pixel contribute to the classification
  
