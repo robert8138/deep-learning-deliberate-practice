@@ -10,12 +10,10 @@
 * **Choosing a measure of success**
 	* To achieve success, you must define what you mean by success—accuracy? Precision and recall? Customer-retention rate? Your metric for success will guide the choice of a loss function.
 
-
 * **Deciding on an evaluation protocol**
-	* Maintaining a hold-out validation set: The way to go when you have plenty of data
+	* Maintaining a hold-out validation set: The way to go when you have plenty of data. The the modern-era of DL and big data, we typically do not do 70(train)/30(test) or 60(train)/20(validation)/20(test) anymore. It's more like 98/1/1 if you have a large dataset.
 	* Doing K-fold cross-validation: The right choice when you have too few samples for hold-out validation to be reliable
 	* Doing iterated K-fold validation: For performing highly accurate model evaluation when little data is available
-
 
 * **Data pre-processing**
 	* Vectorization (reshape them into tensors)
@@ -42,6 +40,44 @@
 	* Once you’ve developed a satisfactory model configuration, you can train your final production model on all the available data (training and validation) and evaluate it one last time on the test set.
 
 
+# [TODO] Formulation for Training Neural Network
+
+* Defining the loss function = error + regularization
+* Defining the neural net function, parameters to be trained, hyperparameters to be tuned
+* Defining the optimization problem w.r.t parameters to be trained
+
+# Optimization
+
+Andrew's DL specialization, especially [Course 2: Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization](https://www.coursera.org/learn/deep-neural-network/home/welcome), in my opinion, does the best job in explaining the topics of optimization and graident descient. 
+
+After learning the basics about Neural Network, the parameters involved, and the loss function formulation, the main concept is then to minimize the loss function, given the input parameters. This is fundamentally a optimization problem. Because the functional form of a Nueral Network can be unwieldy, numerical optimizations are the best way to approach this.
+
+Of all the numerical approaches, *gradient descent* is one of the most fundamental approaches, but many additional ideas have been developed, such as **momentum**, **RMSProp**, **ADAM**, all aim to speed up the process for the graident to reach the minimum. 
+
+* [**Understand Gradient Descent**](http://cs231n.github.io/optimization-1/): By now, I kind of take this for granted already. But Stanford's CS 231N did a good job in explaining how we can approach optimization (random search, random local search, or follow the graident). It can be shown, mathematically, that moving in the direction of the gradient, is the most efficient.
+
+* **How Far Should I move my gradient?** _The choice of how many training examples to process to update the gradient can be a very important choice_.
+
+	* **Batch Gradient Descent**: This is known as taking one complete pass of the training data TOGETHER, and calculating the gradient over the entire training data, and update gradient once. We can do this efficiently using vectorization, but sometimes we can overshoot because the gradient takes a large step.
+
+	* **Stochastic Gradient Descent**: The other extreme, where we take one example as ONE pass, so we are only calculating the gradient over one training example. The advantage of this is that we can move by a mini-step, but then we lose all the advantages of vectorization.
+
+	* **Mini-batch Gradient Descent**: This is the preferred choice, where we take mini-batches of the training data, so we do not take a complete pass of the entire training data. Instead, we take small batches of it, so it might take several rounds before we take one pass (i.e. one epoch). The advantage is that we can average out the gradient direction where it has high variance, while enjoying vectorization.
+
+* **More Sophisticated Tweaks on Top of Gradient Descent**: _DL researchers have been doing a lot of work to speed up the optimization routines, but it turns out that a lot of them do not generalized well, the ones that do generalized well involved calculating the **expoential weighted averages** of the first and second moment of the gradients._
+
+	* [**Exponential Weighted Average**](https://www.coursera.org/learn/deep-neural-network/lecture/Ud7t0/understanding-exponentially-weighted-averages): I love Andrew's explanation on this topic, it's the math behind these newer optimization routines. The idea is that we will take the exponential weighted average of the first & second moment of the gradient, to smooth up the updates.
+
+	* [**Gradient Descent Momentum**](https://www.coursera.org/learn/deep-neural-network/lecture/y0m1f/gradient-descent-with-momentum): The key idea is to smooth out the gradient using exponential weighted averages, to make the gradient less brittle. Instead of updating by learning_rate * gradient, we update `learning_rate * exponential_weighted_avg(gradient)`
+
+	* [**Gradient Descent with RMSprop**](https://www.coursera.org/learn/deep-neural-network/lecture/BhJlm/rmsprop): The key idea is to update less aggressively on gradient directions that are volatile, and update more aggressively on gradient directions that are stable. Instead of updating by learning_rate * gradient, we update `learning_rate * gradient / exponential_weighted_avg(gradient ** 2)`
+
+	* [**ADAM**](https://www.coursera.org/learn/deep-neural-network/lecture/w9VCZ/adam-optimization-algorithm): This combines Momentum & RMSprop, so not only do we average out the brittle gradient direction, we update more aggressively on gradient directions that are stable, and less aggressively on gradient directions that are volatile. Update by `learning rate * exponential_weighted_avg(gradient) / exponential_weighted_avg(gradient ** 2)`
+* **Other Important Topics for Optimization**
+	* **Initialization**: 
+		* Normalize the weights: this is to standardize the weights, so to standardize the output, so to standardize the gradient, so we don't run into vanishing/exploding gradient. **Vanishing graident** is bad because it means your learning algorithm is not updating, and **exploding gradient** is bad because it means you are taking too big of a step, and overshooting.
+	* **Gradient Checking**: this is more relevant if you are building your own optimization routine, where you check the gradient calculation from the analytical differentiation is roughly the same as the numerical derivative.
+
 # Backward Propogation
 
 Backward Propogation is one of the most important concept in Deep Learning. Specifically, it describes how we could calculate the gradient of the cost function with respect to the parameters of the neural network. 
@@ -64,9 +100,19 @@ The math for backprogation can often time be confusing, so a lot of people have 
  	* It explains why it's much faster than forward propogation
  	* It then talks about a bit of the history of how backprop was discovered
 
-
 * [Yes You Should Understand Backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b): A Medium post from Andre Karpathy explaining why every practitioners should learn about how backprop works. Essentially, his arguments is that even when doing DL in practice, if the activations are saturated, the gradient can become very close to 0 (vanishing gradient problem), causing the weight updates to be super slow, and in terms make the cost function to go down very slowly.
 
+# Regularization
+
+In traditional machine learning, **Bias and Variance trade-off** is a critical concept to understand, because depending on whether the model is suffering from a bias problem or a variance problem, the approach in improving the model performance would be quite different. In the era of DL, the trade-off still exist, but are not as big. Therefore, the workflow for DL typically becomes 1). overfit as much as you can, to reduce the bias, and to lower the training error, then 2). try adding more data (e.g. data augmentation), or applying regularization, to reduce variance, to bring down validation/test error.
+
+The theme of regularization is to reduce model complexity, and model complexity is roughly captured by the "magnitudes", "norm", "number" of the weights. There are different ways to regularize the model.
+
+* **L1/L2 regularization**: 
+	- Intuition 1: this approach limits the magnitudes or norm of the parameters being trained.  
+	- Intuition 2: by making the magnitudes of the parameters small, the activation function act more like an activation function (for tahn or sigmoid activation functions)
+* **Dropout**: this approach directly limit the number of hidden units in each hidden layer, reducing the complexity of the model
+* **Early Stopping**: this approach stops training before the model starts to overfit. It's sometimes used but Andrew doesn't recommend it, because it doesn't clearly separate the tasks of overfit as much as you can, then regularize. 
 
 # Convolution Neural Network
 

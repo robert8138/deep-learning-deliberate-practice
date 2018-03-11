@@ -39,6 +39,22 @@ I think the degree of overlaps between Coursera's Deep Learning & CS 231N might 
 			- Understand how to use a cache to pass information from forward propagation to back propagation.
 			- Understand the role of hyperparameters in deep learning
 
+	* [Course 2: ](https://www.coursera.org/learn/deep-neural-network/home/welcome)
+		* Week 1:
+			- Recall that different types of initializations lead to different results
+			- Recognize the importance of initialization in complex neural networks
+			- Recognize the difference between train/dev/test sets
+			- Diagnose the bias and variance issues in your model
+			- Learn when and how to use regularization methods such as dropout or L2 regularization
+			- Understand experimental issues in deep learning such as Vanishing or Exploding gradients and learn how to deal with them
+			- Use gradient checking to verify the correctness of your backpropagation implementation
+		* Week 2:
+			- Remember different optimization methods such as (Stochastic) Gradient Descent, Momentum, RMSProp and Adam
+			- Use random minibatches to accelerate the convergence and improve the optimization
+			- Know the benefits of learning rate decay and apply it to your optimization
+		* Week 3:
+			- Master the process of hyperparameter tuning
+
 * [Stanford CS 231N: Convolutional Neural Network](http://cs231n.stanford.edu/syllabus.html): This is highly recommended by Jiaying and Heerad. This is probably also the most rigorous course of the three mentioned here because it's an actual Stanford Course. I was told the Homeworks are superb and I should definitely do them.
 
   * [Lecture 1](https://www.youtube.com/watch?v=vT1JzLTH4G4&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=1): Course Introduction, nothing substantial
