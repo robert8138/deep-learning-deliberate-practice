@@ -4,7 +4,17 @@ I think Fast.ai's course is a good overview, and a few people have already told 
 
 I think the degree of overlaps between Coursera's Deep Learning & CS 231N might be higher, whereas the later being more rigorous. I am still debating which one to focus on now, so it might be useful to do a few trial runs.
 
-## Trial Runs
+## Organization
+
+I have surveyed different courses in the past two weeks, and here is how I would characterize the courses and materials:
+
+* **Concept Track**: If the goal is to quickly learn the concpets and jargons, I would start with fast.ai -> Coursera DL specialization. fast.ai talks about all the basic concepts and how they are used in a workflow (code flavor). Coursera DL specialization gives the intuition (more math, notation flavor explanation).
+
+* **Math Track**: I would exclude fast.ai (there's basically no math involved). I would recommend Coursera DL specialization -> Stanford CS courses -> Deep Learning book. This order is in increasingly level of difficulty. For me, I love the intuition in Andrew's coursera courses (basic intro with basic math), but I find Stanford's course notes a lot more detailed and more rigorous. I prefer to use Coursera to gain intuition and Stanford's actual classes to learn the details.
+
+* **Coding Track**: I would recommend fast.ai -> Francis Chollet's Keras Book. fast.ai is very practical, but it wraps a lot of Keras code in fast.ai's own library. I think Francis Chollet's treatment is more comprehensive. I would exclude Andrew's coursera exercises, and perhaps jump straight to Stanford's homework or on-the-job projects.
+
+## Progress
 
 * [Fast.ai](http://wiki.fast.ai/index.php/Main_Page): Top-down teaching approach by Jeremy Howard and Rachel Thomas. Specifically, I want to focus on the ones that use Keras (not Pytorch).
 
@@ -39,7 +49,7 @@ I think the degree of overlaps between Coursera's Deep Learning & CS 231N might 
 			- Understand how to use a cache to pass information from forward propagation to back propagation.
 			- Understand the role of hyperparameters in deep learning
 
-	* [Course 2: ](https://www.coursera.org/learn/deep-neural-network/home/welcome)
+	* [Course 2: Improving Deep NN: Hyperparameter Tuning, Regularization, and Optimization](https://www.coursera.org/learn/deep-neural-network/home/welcome)
 		* Week 1:
 			- Recall that different types of initializations lead to different results
 			- Recognize the importance of initialization in complex neural networks
