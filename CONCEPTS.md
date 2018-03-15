@@ -77,6 +77,7 @@ Of all the numerical approaches, *gradient descent* is one of the most fundament
 	* **Initialization**: 
 		* Normalize the weights: this is to standardize the weights, so to standardize the output, so to standardize the gradient, so we don't run into vanishing/exploding gradient. **Vanishing graident** is bad because it means your learning algorithm is not updating, and **exploding gradient** is bad because it means you are taking too big of a step, and overshooting.
 	* **Gradient Checking**: this is more relevant if you are building your own optimization routine, where you check the gradient calculation from the analytical differentiation is roughly the same as the numerical derivative.
+	* **Batch Normalization**: To make sure that inputs in each layer are somewhat gaussian. The idea is to normalize it, and give it the chance to stay gaussian, or go back to its original form. Usually they stay somewhat guassian, which improves stability in gradient descent. Andrew's explanation from Coursera DL course 2 is the best that I have seen.
 
 # Backward Propogation
 
