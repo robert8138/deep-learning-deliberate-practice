@@ -9,6 +9,7 @@
 
 * **Choosing a measure of success**
 	* To achieve success, you must define what you mean by success—accuracy? Precision and recall? Customer-retention rate? Your metric for success will guide the choice of a loss function.
+	* For common loss functions for different tasks, see [CS 231's Neural Network Notes II](http://cs231n.github.io/neural-networks-2/#losses).
 
 * **Deciding on an evaluation protocol**
 	* Maintaining a hold-out validation set: The way to go when you have plenty of data. The the modern-era of DL and big data, we typically do not do 70(train)/30(test) or 60(train)/20(validation)/20(test) anymore. It's more like 98/1/1 if you have a large dataset.
@@ -17,13 +18,13 @@
 
 * **Data pre-processing**
 	* Vectorization (reshape them into tensors)
-	* Value normalization (between 0 and 1)
+	* Value normalization (between 0 and 1), for normalizing later layers' activation, use batch normalization (technically learned, not data pre-processing).
 	* Handle Missing values
 
 * **Developing a model that does better than a baseline**
 	* Decide what is the last layer configuration
-	* Loss function
-	* Optimizatino routine
+	* Loss function, see [CS 231's Neural Network Notes II](http://cs231n.github.io/neural-networks-2/#losses)
+	* Optimizatino routine (Gradient Descent, Momentum, RMSprop, ADAM ... etc)
 
 * **Develop a model that overfits**
 	* Add layers
@@ -45,6 +46,27 @@
 * Defining the loss function = error + regularization
 * Defining the neural net function, parameters to be trained, hyperparameters to be tuned
 * Defining the optimization problem w.r.t parameters to be trained
+
+# [TODO] Data Augmentation / Transfer Learning
+
+* Data Augmentation: Enlarge your training data
+	* Particularly helpful for image classification problems, when one introduces perturbation to the data to make it richer
+
+* Transfer Learning: Don't start from scratch
+	* If you have very little data, take trained neural network as is, pop the very last softmax layer while freezing the weights on all prior layers, and impose your own softmax layer with your problem specific labels.
+		- Appropriate to use when the new training data is small
+		- Good if the trained labels are similar to the new task labels, otherwise might not work well
+		- Often useful to precompute the embeddings and save them to disk, then train on new labels
+
+	* Take trained neural network as is, pop the very last **FEW** layers, and retrain the last few layers with the new labels
+		- Appropriate to use when you have a larger label dataset
+		- By retraining, we can either retrain the last few layers with the same architecture
+		- or we can retrain them on with our own architecture for the last few layers
+
+	* Use the same architecture as the pre-trained model, but retrain the entire network
+		- Appropriate to use when you have a lot of data
+		- Use the pre-trained weights as your initialization weight (and replace the original random initialization), then retrain everything
+		- It takes time and computational power/budget
 
 # Optimization
 

@@ -25,7 +25,7 @@ I have surveyed different courses in the past two weeks, and here is how I would
   * [Lecture 4](https://www.youtube.com/watch?v=V2h3IOBDvrA&feature=youtu.be): Mainly about optimization techniques - momentum, RMSprop, ADAM. 
 
 * [Coursera's Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning): Bottom-up teaching approach
-	* [Course 1: Neural Networks and Deep Learning](https://www.coursera.org/learn/neural-networks-deep-learning/home/welcome)
+	* **DONE**: [Course 1: Neural Networks and Deep Learning](https://www.coursera.org/learn/neural-networks-deep-learning/home/welcome)
 		* Week 1: 
 			- Understand the major trends driving the rise of deep learning. 
 			- Be able to explain how deep learning is applied to supervised learning. 
@@ -50,7 +50,7 @@ I have surveyed different courses in the past two weeks, and here is how I would
 			- Understand how to use a cache to pass information from forward propagation to back propagation.
 			- Understand the role of hyperparameters in deep learning
 
-	* [Course 2: Improving Deep NN: Hyperparameter Tuning, Regularization, and Optimization](https://www.coursera.org/learn/deep-neural-network/home/welcome)
+	* **DONE**: [Course 2: Improving Deep NN: Hyperparameter Tuning, Regularization, and Optimization](https://www.coursera.org/learn/deep-neural-network/home/welcome)
 		* Week 1:
 			- Recall that different types of initializations lead to different results
 			- Recognize the importance of initialization in complex neural networks
@@ -66,6 +66,21 @@ I have surveyed different courses in the past two weeks, and here is how I would
 		* Week 3:
 			- Master the process of hyperparameter tuning
 
+	* [Course 4: Convolutional Neural Network](https://www.coursera.org/learn/convolutional-neural-networks/home/welcome)
+		* Week 1:
+			- Understand the convolution operation
+			- Understand the pooling operation
+			- Understand how fully connected layer works with CNN
+			- Remember the vocabulary used in convolutional neural network (padding, stride, filter, ...)
+			- Visualize how one layer of convolution/pooling/FC works
+			- Visualize how one forward pass of the entire CNN works
+		* Week 2:
+			- Understand multiple foundational papers of convolutional neural networks (LeNet, AlexNet, VGG 16, ResNet)
+			- Analyze the dimensionality reduction of a volume in a very deep network (using Networks in Networks as 1x1 Convolutions)
+			- Understand and Implement a Residual network
+			- Understand the concept of Inception Network (from the movie inception) and how it uses 1x1 convolutions to reduce multiplication operations
+			- Data Augmentation/Transfer learning
+
 * [Stanford CS 231N: Convolutional Neural Network](http://cs231n.stanford.edu/syllabus.html): This is highly recommended by Jiaying and Heerad. This is probably also the most rigorous course of the three mentioned here because it's an actual Stanford Course. I was told the Homeworks are superb and I should definitely do them.
 
   * [Lecture 1](https://www.youtube.com/watch?v=vT1JzLTH4G4&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=1): Course Introduction, nothing substantial
@@ -73,8 +88,8 @@ I have surveyed different courses in the past two weeks, and here is how I would
   * [Lecture 3](https://www.youtube.com/watch?v=h7iBpEHGVNc&index=3&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv): Loss Functions and Optimizations, nothing that I don't already know.
   * [Lecture 4](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=4): Basic intorduction to back propogation
   * [Lecture 5](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=5): Basic introduction to convolutional Neural Network. This is a subset of the [CovNet notes](http://cs231n.github.io/convolutional-networks/), which is a lot more comprehensive.
-  * [Lecture 6](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=6): It's kind of funny how this lecture came after the CNN lecture. Activation functions, initialization, dropout, batch normalization. I would refer to [Neural Net notes I](http://cs231n.github.io/neural-networks-1/) to learn the details. 
-  * [Lecture 7](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=7): Optimization update rules, ensembles, data augmentation, transfer learning
+  * [Lecture 6](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=6): It's kind of funny how this lecture came after the CNN lecture. Activation functions, initialization, dropout, batch normalization. I would refer to [Neural Net Notes I](http://cs231n.github.io/neural-networks-1/) to learn the details. 
+  * [Lecture 7](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=7): Optimization update rules, ensembles, data augmentation, transfer learning. [Neural Net Notes I](http://cs231n.github.io/neural-networks-1/). [Neural Net Notes II](http://cs231n.github.io/neural-networks-2/). [Neural Net Notes III](http://cs231n.github.io/neural-networks-3/).
 
 
 * [Deep Learning with Python](file:///Users/rchang/Downloads/deep_learning_with_python_chollet.pdf)
