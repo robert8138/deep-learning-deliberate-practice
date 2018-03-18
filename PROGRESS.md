@@ -66,7 +66,7 @@ I have surveyed different courses in the past two weeks, and here is how I would
 		* Week 3:
 			- Master the process of hyperparameter tuning
 
-	* [Course 4: Convolutional Neural Network](https://www.coursera.org/learn/convolutional-neural-networks/home/welcome)
+	* **DONE**: [Course 4: Convolutional Neural Network](https://www.coursera.org/learn/convolutional-neural-networks/home/welcome)
 		* Week 1:
 			- Understand the convolution operation
 			- Understand the pooling operation
@@ -80,6 +80,18 @@ I have surveyed different courses in the past two weeks, and here is how I would
 			- Understand and Implement a Residual network
 			- Understand the concept of Inception Network (from the movie inception) and how it uses 1x1 convolutions to reduce multiplication operations
 			- Data Augmentation/Transfer learning
+			- [Keras Intro](https://github.com/Kulbear/deep-learning-coursera/blob/master/Convolutional%20Neural%20Networks/Keras%20-%20Tutorial%20-%20Happy%20House%20v1.ipynb)
+		* Week 3:
+			- Understand the challenges of Object Localization, Object Detection and Landmark Finding. Remember the vocabulary of object detection (landmark, anchor, bounding box, grid, ...). Most importantly, Understand how we label a dataset for an object detection application.
+				- object localization -> `y = (pc, bounding box center coordinates, bounding box width and heights, one-hot encoding of categories)`
+				- landmark -> `y = (pc, [landmark x, landmark y]*m, one-hot encoding)`, m is defined by the number of landmarks we want to track -> this is how AR works
+				- object detection -> `y = ([(pc, [landmark x, landmark y]*, one-hot encoding)] * m)`, for m different bounding boxes
+			- Understand and implement intersection over union and non-max suppression to get more accurate bounding boxes (these are post processing after predictions are made)
+		* Week 4:
+			- Intuition Behind the formulation for face verification/recognition problems
+				- Siamese Network, Triplet Loss formulation, or Binary classification formulation
+			- Intuition Behind the formulation for neural style transfer
+				- Cost = Cost for Conent + Cost for Style
 
 * [Stanford CS 231N: Convolutional Neural Network](http://cs231n.stanford.edu/syllabus.html): This is highly recommended by Jiaying and Heerad. This is probably also the most rigorous course of the three mentioned here because it's an actual Stanford Course. I was told the Homeworks are superb and I should definitely do them.
 
