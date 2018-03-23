@@ -104,6 +104,8 @@ I have surveyed different courses in the past two weeks, and here is how I would
   * [Lecture 7](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=7): Optimization update rules, ensembles, data augmentation, transfer learning. [Neural Net Notes I](http://cs231n.github.io/neural-networks-1/). [Neural Net Notes II](http://cs231n.github.io/neural-networks-2/). [Neural Net Notes III](http://cs231n.github.io/neural-networks-3/).
   * [Lecture 8](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=8): Introduction to CPU v.s. GPU. Deep Learning software framework, Justin focused on Tensorflow and Pytorch. Last slide on which framework to use is useful.
   * [Lecture 9](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=8): Clearest lecture on all the ImageNet winner models from 2012 - 2016. Introduce AlexNet (2012), VGG (2014), GoogLenet (2015), ResNet (2016).
+  * [Lecture 10] **TODO**
+  * [Lecture 11](https://www.youtube.com/watch?v=nDPWywWRIRo&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=11): Image segmentation, Image localization, object detection, instances detection (all based on CNN as the foundation with different label sets)
 
 
 * [Deep Learning with Python](file:///Users/rchang/Downloads/deep_learning_with_python_chollet.pdf)
