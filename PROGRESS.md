@@ -66,6 +66,41 @@ I have surveyed different courses in the past two weeks, and here is how I would
 		* Week 3:
 			- Master the process of hyperparameter tuning
 
+	* **DONE**: [Course 3: Structuring Machine Learning Projects](https://www.coursera.org/learn/machine-learning-projects/home/week/1)
+		* Week 1:
+			- Understand the importance of ML strategy for project/product iteration
+			- The concept of orthogonalization (doing one thing at a time, early stopping is an anti-example)
+			- Single evaluation metric (for each of comparison across models)
+			- Satisficing and Optimizing metrics (one metric for optimization, and rest as constraints that need to be satisfied)
+			- Train/Dev/Test (99%/1%/1% is appropriate for DL)
+			- Make sure dev/test reflects the underlying true distribution
+			- For perception based task, very important to use human-level performance as a proxy for bayes error. 
+				- Delta between `human-level performance` and `training error` is called "avoidable bias"
+				- Delta between `training error` and `dev set error` is called "variance"
+		* Week 2:
+			- For ML project, always build something quick and dirty, then reiterate
+			- Doing manual error analysis to understand why ML model is not doing well
+			- In DL era, be aware of the situations where training distribution != dev/test distribution
+			- When diagnosing model performance: have the folllowing metrics
+				- Human-level performance
+				- Training set error (If training error >> human-level performance, it's "avoidable bias")
+				- Training-dev set error (If training error >> training-dev error, it's "variance problem")
+				- Dev set error (If training error ~ training-dev error >> dev set error, it's data distribution mismatch)
+				- Test set error (If test error >> dev error, you might have overfitted dev set)
+			- When there is data distribution mismatch, try to make training data as similar as dev/test as possible
+			- When to use Transfer Learning (from A -> B):
+				- Lower level concepts from A can be re-used for task B
+				- There's a lot more data in task A than in task B
+				- Task A and B have the same input
+			- When to use Multi-task Learning (common in object detection):
+				- Training on a set of tasks can all shared useful low level features
+				- Usually, the amount of data required is about the same (so can combine forces)
+				- Can train a big enough network to do well on the tasks at once
+			- End-to-End Deep Learning
+				- Pros: let the data speak, less hand-engineering features
+				- Cons: may need a large amount of data, exclude potentially useful hand-designed features
+				- The trade-off really depends on how much data there is. If a lot of data, less need for hand-designed features. If not a lot of data, hand-designed features are more helpful.
+
 	* **DONE**: [Course 4: Convolutional Neural Network](https://www.coursera.org/learn/convolutional-neural-networks/home/welcome)
 		* Week 1:
 			- Understand the convolution operation
@@ -95,15 +130,15 @@ I have surveyed different courses in the past two weeks, and here is how I would
 
 * [Stanford CS 231N: Convolutional Neural Network](http://cs231n.stanford.edu/syllabus.html): This is highly recommended by Jiaying and Heerad. This is probably also the most rigorous course of the three mentioned here because it's an actual Stanford Course. I was told the Homeworks are superb and I should definitely do them.
 
-  * [Lecture 1](https://www.youtube.com/watch?v=vT1JzLTH4G4&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=1): Course Introduction, nothing substantial
+  * [Lecture 1](https://www.youtube.com/watch?v=vT1JzLTH4G4&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv): Course Introduction, nothing substantial
   * [Lecture 2](https://www.youtube.com/watch?v=OoUX-nOEjG0&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=2): Introduction to K-nn, Linear Classifier, nothing that I don't already know.
-  * [Lecture 3](https://www.youtube.com/watch?v=h7iBpEHGVNc&index=3&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv): Loss Functions and Optimizations, nothing that I don't already know.
+  * [Lecture 3](https://www.youtube.com/watch?v=h7iBpEHGVNc&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=3): Loss Functions and Optimizations, nothing that I don't already know.
   * [Lecture 4](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=4): Basic intorduction to back propogation
-  * [Lecture 5](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=5): Basic introduction to convolutional Neural Network. This is a subset of the [CovNet notes](http://cs231n.github.io/convolutional-networks/), which is a lot more comprehensive.
-  * [Lecture 6](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=6): It's kind of funny how this lecture came after the CNN lecture. Activation functions, initialization, dropout, batch normalization. I would refer to [Neural Net Notes I](http://cs231n.github.io/neural-networks-1/) to learn the details. 
-  * [Lecture 7](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=7): Optimization update rules, ensembles, data augmentation, transfer learning. [Neural Net Notes I](http://cs231n.github.io/neural-networks-1/). [Neural Net Notes II](http://cs231n.github.io/neural-networks-2/). [Neural Net Notes III](http://cs231n.github.io/neural-networks-3/).
-  * [Lecture 8](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=8): Introduction to CPU v.s. GPU. Deep Learning software framework, Justin focused on Tensorflow and Pytorch. Last slide on which framework to use is useful.
-  * [Lecture 9](https://www.youtube.com/watch?v=d14TUNcbn1k&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=8): Clearest lecture on all the ImageNet winner models from 2012 - 2016. Introduce AlexNet (2012), VGG (2014), GoogLenet (2015), ResNet (2016).
+  * [Lecture 5](https://www.youtube.com/watch?v=bNb2fEVKeEo&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=5): Basic introduction to convolutional Neural Network. This is a subset of the [CovNet notes](http://cs231n.github.io/convolutional-networks/), which is a lot more comprehensive.
+  * [Lecture 6](https://www.youtube.com/watch?v=wEoyxE0GP2M&index=6&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv): It's kind of funny how this lecture came after the CNN lecture. Activation functions, initialization, dropout, batch normalization. I would refer to [Neural Net Notes I](http://cs231n.github.io/neural-networks-1/) to learn the details. 
+  * [Lecture 7](https://www.youtube.com/watch?v=_JB0AO7QxSA&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=7): Optimization update rules, ensembles, data augmentation, transfer learning. [Neural Net Notes I](http://cs231n.github.io/neural-networks-1/). [Neural Net Notes II](http://cs231n.github.io/neural-networks-2/). [Neural Net Notes III](http://cs231n.github.io/neural-networks-3/).
+  * [Lecture 8](https://www.youtube.com/watch?v=6SlgtELqOWc&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=8): Introduction to CPU v.s. GPU. Deep Learning software framework, Justin focused on Tensorflow and Pytorch. Last slide on which framework to use is useful.
+  * [Lecture 9](https://www.youtube.com/watch?v=DAOcjicFr1Y&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=9): Clearest lecture on all the ImageNet winner models from 2012 - 2016. Introduce AlexNet (2012), VGG (2014), GoogLenet (2015), ResNet (2016).
   * [Lecture 10] **TODO**
   * [Lecture 11](https://www.youtube.com/watch?v=nDPWywWRIRo&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=11): Image segmentation, Image localization, object detection, instances detection (all based on CNN as the foundation with different label sets)
 

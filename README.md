@@ -2,6 +2,14 @@
 
 In 2018, I will take on a new learning project - to deliberately **learn** and **practice** Deep Learning.
 
+## Some Inspirations
+
+From Andrew Ng and his [answer](https://www.quora.com/How-should-you-start-a-career-in-Machine-Learning) on Quora:
+
+> Every Saturday, you will have a choice between staying at home and reading research papers/implementing algorithms, vs. watching TV. If you spend all Saturday working, there probably won't be any short-term reward, and your current boss won't even know or say "nice work." Also, after that Saturday of hard work, you're not actually that much better at machine learning. But here's the secret: If you do this not just for one weekend, but instead study consistently for a year, then you will become very good.
+
+Anecdotal story: Aside from taking his CS 229 at Stanford when I was a student there, I've ran into him several times at different cafes around South Bay on Saturdays, and everytime I saw him, he was either working or learning something, very inspiring!
+
 ## Recap on Previous Learning Projects
 
 In early 2016, I made the [decision](https://medium.com/@rchang/advice-for-new-and-junior-data-scientists-2ab02396cf5b) to transition from Type A Data Scientist to Type B Data scientist. As I started taking on less inference work and more data engineering and machine learning projects. I took on a [leanring project](https://github.com/robert8138/python-deliberate-practice) in late 2016 to switch from R to Python. This was a "pre-requisite" for me to succeed at Airbnb because doing Data Engineering or building Machine Learning models at Airbnb are generally much easier with Python. This small learning project turned out to be one of the best investments that I made for my technical growth at Airbnb.

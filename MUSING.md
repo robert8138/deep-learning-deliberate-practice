@@ -49,3 +49,17 @@ needs of the layer below.
 * GPUs, originally developed for Gaming industry/application, became the hardware innovation for DL
 * Hinton and his group start making breakthrough for ImageNet competition in 2012s
 * Google dedicated to developed specialized chips, TPU, for DL training
+* George Hinton introduced RMSprop in his Coursera course, and everyone cites the Coursera reference in their papers
+* Inception Network was inspired by the Meme of Movie Inception
+
+# Thoughts from Andrew's DL specialization course 3 on structuring ML projects on Plus ML Projects
+
+* Lead Scoring Model
+	- We do not have the right loss function (It should have been cross-entropy loss instead of mean squared loss)
+	- We do not have clear performance tracking for training, dev, test error
+	- We should have misclassification error as evaluation metric, not just a lift chart
+	- Distribution of training data != Distribution of dev/test set
+		- We have a situation where there is feedback loop, so distribution of training data != dev/test data, so need to make training data as closely as possible to dev set
+		- Our dev/test set is not quite aligned with what the real world is going to be (because we are launching in new markets)
+	- If the model is not doing well, we should do error analysis to understand what's going on
+	- This is fundamentally a perception-based problem, so we should move away from structure problems. Furthermore, we should break it down into specific image classification problems using CNN, so to avoid this psuedo end-to-end approach - why do we think using revenue, price point, market, and availability will help us to pick Select like listings, we are simply banking on correlation between quality & performance, but it's not enough.
