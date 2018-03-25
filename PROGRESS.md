@@ -23,6 +23,9 @@ I have surveyed different courses in the past two weeks, and here is how I would
   * [Lecture 2](http://wiki.fast.ai/index.php/Lesson_2): The basic algorithms underlying deep learning
   * [Lecture 3](http://wiki.fast.ai/index.php/Lesson_3): New concepts I learned - data agumentation (to make the data richer), dropout (to avoid overfitting, where weights are randomly dropped), Batch normalization (where gradients are normalized every few batches).
   * [Lecture 4](https://www.youtube.com/watch?v=V2h3IOBDvrA&feature=youtu.be): Mainly about optimization techniques - momentum, RMSprop, ADAM. 
+  * [Lecture 5](http://wiki.fast.ai/index.php/Lesson_5): Adding batchnorm to VGG; visualizing latent factors; functional API (skipped RNN stuff for now)
+  * [Lecture 6]: TODO
+  * [Lecture 7](http://wiki.fast.ai/index.php/Lesson_7): CNN architectures: resnet, inception, fully convolutional net, multi input and multi output nets; localization with bounding box models and heatmaps; using larger inputs to CNNs (skip RNN stuff for now)
 
 * [Coursera's Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning): Bottom-up teaching approach
 	* **DONE**: [Course 1: Neural Networks and Deep Learning](https://www.coursera.org/learn/neural-networks-deep-learning/home/welcome)
@@ -160,3 +163,26 @@ I have surveyed different courses in the past two weeks, and here is how I would
   		* Visualize covnet filters
   		* Visualize which of the input pixel contribute to the classification
  
+ ## Side Notes
+
+ For this deliberate practice, I ended up doing something different - instead of learning **MULTIPLE concepts with a SINGLE source of book/material/MOOC**, I am trying out to **learn a SINGLE concept from MULTIPLE sources**. This is something that I have always wanted to do in graduate school (i.e. relearning the same concept multiple times, but in different ways), and I believe it's the right thing to do. It also happened that there are a lot of reputable DL materials at my disposal, and I have been reading and learning them all at once without too much trouble. So far, I enjoyed learning about the same concept from different angles, and I think it has the side benefit of [interleaving](https://www.scientificamerican.com/article/the-interleaving-effect-mixing-it-up-boosts-learning/).
+
+ Broadly speaking, I see the concepts in DL are aligned well with Andrew's course, and are grouped by:
+
+ * Basics of Neural Network, Mathematical set up and formulation
+ * Loss Function, Optimization routines, Hyperparameter tuning
+ * How Forward Pass and Backward Propogation works
+ * Practical Advice for building ML Projects
+ * Convolutional Neural Network, image-based models
+ * Visualizing CNNs
+ * Recurrent Neural Network, Sequence Model, text-based models (**Deliberately leave this out**)
+ * Unsupervised Learning Techniques or Generative Models
+
+ I am deliberately leaving out RNN related stuff in fast.ai, Stanford course, Keras book, and Coursera DL specialization, because I want to focus on CNN for now. I will definitely revisit when I have enough grasp of CNNs.
+
+ ## Tentative Future Timeline
+
+ * [Week of 3/25] Practical Tips for ML projects. Start Investigating image data at Airbnb. Survey current CNN models
+ * [Week of 4/1] Unsupervised Learning, Generative Models, Autoencoders ... etc
+ * [Week of 4/8] RNN, sequence model, text-data
+ * [Week of 4/15] ?

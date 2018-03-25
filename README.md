@@ -52,3 +52,14 @@ Like any learning project, it is generally wise to take a week or two to compile
 ### Text book
 
 * [Deep Learning](http://www.deeplearningbook.org/): Written by Ian Goodfellow, Yoshua Bengio, and Aaron Courville. This is the book which covers in detail the mathematical underpinnings of many DL topics.
+
+
+### Beyond Self-Learning
+
+* **Research Track**: 
+	- Try to implement basic neural network from scratch (e.g. CS 231N homeworks)
+	- Read a lot of papers from [arxiv](https://arxiv.org/), then try to replicate the results
+
+* **Application Track**:
+	- Do it the Jeremy Howard / hacker way, try to map techniques to problems, or problems to techniques
+	- A lot of opportunity to do this on my current team, since we have a lot of image-related tasks
