@@ -163,6 +163,10 @@ I have surveyed different courses in the past two weeks, and here is how I would
   		* Visualize covnet filters
   		* Visualize which of the input pixel contribute to the classification
  
+
+* [Deep Learning Book]
+	* [Chapter 11](http://www.deeplearningbook.org/contents/guidelines.html): Practical Methodology. Corresponding [video](https://www.youtube.com/watch?v=ccyClyHAIdI). 
+
  ## Side Notes
 
  For this deliberate practice, I ended up doing something different - instead of learning **MULTIPLE concepts with a SINGLE source of book/material/MOOC**, I am trying out to **learn a SINGLE concept from MULTIPLE sources**. This is something that I have always wanted to do in graduate school (i.e. relearning the same concept multiple times, but in different ways), and I believe it's the right thing to do. It also happened that there are a lot of reputable DL materials at my disposal, and I have been reading and learning them all at once without too much trouble. So far, I enjoyed learning about the same concept from different angles, and I think it has the side benefit of [interleaving](https://www.scientificamerican.com/article/the-interleaving-effect-mixing-it-up-boosts-learning/).
