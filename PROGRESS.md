@@ -147,11 +147,11 @@ I have surveyed different courses in the past two weeks, and here is how I would
 
 
 * [Deep Learning with Python](file:///Users/rchang/Downloads/deep_learning_with_python_chollet.pdf)
-  * Chapter 1: Introduction to history of AI, ML, and DL
-  * Chapter 2: Basics of tensors (multi-dimensional arrays), tensor operations
-  * Chapter 3: Anatomy of a neural network, Intro to Keras, 3 examples: binary classification, multi-class classification, and regression, all built using Neural Nets
-  * Chapter 4: Workflow of Machine Learning (meta chapter)
-  * Chapter 5: This chapter covers CNN, and talked about
+  * **Chapter** 1: Introduction to history of AI, ML, and DL
+  * **Chapter** 2: Basics of tensors (multi-dimensional arrays), tensor operations
+  * **Chapter** 3: Anatomy of a neural network, Intro to Keras, 3 examples: binary classification, multi-class classification, and regression, all built using Neural Nets
+  * **Chapter** 4: Workflow of Machine Learning (meta chapter)
+  * **Chapter** 5: This chapter covers CNN, and talked about
   	* Convolution, padding, strides, max-pooling
   	* Training a covnet from scratch using small dataset
   	* Data augmentation (enrich data) + Dropout (to avoid overfitting)
@@ -162,10 +162,16 @@ I have surveyed different courses in the past two weeks, and here is how I would
   		* Visualize activation
   		* Visualize covnet filters
   		* Visualize which of the input pixel contribute to the classification
+  * **Chapter** 6: TODO
+  * **Chapter** 7:
+  	*  How to use functional APIs to build models as arbitrary graphs of layers (single-/multi- intput -> single-/multi- output), reuse layers (layer weight sharing), and use models as Python functions (model templating)
+	* You can use Keras callbacks to monitor your models during training and take action based on model state
+	* TensorBoard allows you to visualize metrics, activation histograms, and even embedding spaces
+	* how to do batch normalization, depthwise separable convolution, and residual in Keras
+	* Why you should use hyperparameter optimization and model ensembling
  
-
-* [Deep Learning Book]
-	* [Chapter 11](http://www.deeplearningbook.org/contents/guidelines.html): Practical Methodology. Corresponding [video](https://www.youtube.com/watch?v=ccyClyHAIdI). 
+* [Deep Learning Book](http://www.deeplearningbook.org/)
+	* [**Chapter** 11](http://www.deeplearningbook.org/contents/guidelines.html): Practical Methodology. Corresponding [video](https://www.youtube.com/watch?v=ccyClyHAIdI). 
 
  ## Side Notes
 
