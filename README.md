@@ -32,26 +32,31 @@ Like any learning project, it is generally wise to take a week or two to compile
 
 * [Thoughts after taking the Deeplearning.ai courses](https://towardsdatascience.com/thoughts-after-taking-the-deeplearning-ai-courses-8568f132153): A good comparison of Fast.ai course and Coursera series.
 
-### MOOCs
+### University Courses
 
 * [Fast.ai](http://wiki.fast.ai/index.php/Main_Page): Top-down teaching approach by Jeremy Howard and Rachel Thomas
 * [Coursera's Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning): Bottom-up teaching approach
 * [Stanford CS 231N: Convolutional Neural Network](http://cs231n.stanford.edu/syllabus.html): This is highly recommended by Jiaying and Heerad. This is probably also the most rigorous course of the three mentioned here because it's an actual Stanford Course. I was told the Homeworks are superb and I should definitely do them.
-* [Stanford CS 224N: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/): Focus on NLP, word vector representations, window-based neural networks, recurrent neural networks, long-short-term-memory models, recursive neural networks, convolutional neural networks as well as some recent models involving a memory component. 
+* [Stanford CS 224N: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/): Focus on NLP, word vector representations, window-based neural networks, recurrent neural networks, long-short-term-memory models, recursive neural networks, convolutional neural networks as well as some recent models involving a memory component.
+* [Stanford CS 230: Deep Learning](http://cs230.stanford.edu/syllabus.html): This course is based on Andrew Ng's Coursera deep learning specialization courses, with additional materials taught during classroom settings. Great classroom notes and [Tutorials on Tensorflow](https://cs230-stanford.github.io/).
 
-### Blogs
-
-* [Colab](http://colah.github.io/): His intuitive explanation of DL topics are very well regarded, and something that I plan to revisit from time to time.
-
-### Python & Keras
+### Toolings: Python & Keras
 
 * [Deep Learning in Python](https://www.datacamp.com/courses/deep-learning-in-python?tap_a=5644-dce66f&tap_s=93618-a68c98): Deep learning is the machine learning technique behind the most exciting capabilities in diverse areas like robotics, natural language processing, image recognition and artificial intelligence (including the famous AlphaGo). In this course, you'll gain hands-on, practical knowledge of how to use deep learning with Keras 2.0, the latest version of a cutting edge library for deep learning in Python.
 
 * [Deep Learning with Python](https://www.manning.com/books/deep-learning-with-python): Deep Learning with Python introduces the field of deep learning using the Python language and the powerful Keras library. Written by Keras creator and Google AI researcher François Chollet, this book builds your understanding through intuitive explanations and practical examples. I heard a lot of great things about this book.
 
-### Text book
+### Textbook
 
 * [Deep Learning](http://www.deeplearningbook.org/): Written by Ian Goodfellow, Yoshua Bengio, and Aaron Courville. This is the book which covers in detail the mathematical underpinnings of many DL topics.
+
+### Blogs
+
+* [Colab](http://colah.github.io/): His intuitive explanation of DL topics are very well regarded, and something that I plan to revisit from time to time.
+* **Practical Machine Learning Advice**
+	* [Rules of ML: Best Practice for ML Engineering](https://developers.google.com/machine-learning/rules-of-ml/): This document is intended to help those with a basic knowledge of machine learning get the benefit of best practices in machine learning from around Google. [PDF]((http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf)) is also available.
+	* [Machine Learning: The High-Interest Credit Card of Technical Debt](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf): The goal of this paper is highlight several machine learning specific risk factors and design patterns to be avoided or refactored where possible. These include boundary erosion, entanglement, hidden feedback loops, undeclared consumers, data dependencies, changes in the external world, and a variety of system-level anti-patterns.
+	* [The Two Cultures of Machine Learning Systems](https://medium.com/opendoor-labs/the-two-cultures-of-machine-learning-systems-c648db0bb4d8): How ML Engineers and Data Scientists approach ML differently
 
 
 ### Beyond Self-Learning

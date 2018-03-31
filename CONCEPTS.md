@@ -195,6 +195,14 @@ The theme of regularization is to reduce model complexity, and model complexity 
 
 # Structuring Machine Learning Projects
 
+* [**How to think about problem formulation**](http://cs230.stanford.edu/files/Week2_slides.pdf)
+	- Input: What is the the input of the model, number of inputs, size of input
+	- Output: What is the output of the model, number of outputs
+	- Data: What data do you have?
+	- Architecture: Shallow network, Deep network (standard or customized)
+	- Loss: How would you optimize the loss of your learning problems
+	- Training: What is the training process learning? parameters / input images?
+
 * **Meta ML Project Strategy - Orthogonalization**: A good performing ML model usually assumes the following assumption (or need to satisfy the following conditions):
 	- It has a good **cost function** capturing reality
 		- Here, the art really is think about how to formulate the model and the associated cost

@@ -1,8 +1,19 @@
-# Planning
+# Progress
 
-I think Fast.ai's course is a good overview, and a few people have already told me that going through the lectures are generally easy. I might take this as a first pass to the major topics, so I know what are some of the applications. This would be a good way for me to transition into project planning on my new teams.
+For this deliberate practice, I ended up doing something different - instead of learning **MULTIPLE concepts with a SINGLE source of book/material/MOOC**, I am trying out to **learn a SINGLE concept from MULTIPLE sources**. This is something that I have always wanted to do in graduate school (i.e. relearning the same concept multiple times, but in different ways), and I believe it's the right thing to do. It also happened that there are a lot of reputable DL materials at my disposal, and I have been reading and learning them all at once without too much trouble. So far, I enjoyed learning about the same concept from different angles, and I think it has the side benefit of [interleaving](https://www.scientificamerican.com/article/the-interleaving-effect-mixing-it-up-boosts-learning/).
 
-I think the degree of overlaps between Coursera's Deep Learning & CS 231N might be higher, whereas the later being more rigorous. I am still debating which one to focus on now, so it might be useful to do a few trial runs.
+## Topics
+
+* Basics of Neural Network, Mathematical set up and formulation
+* Loss Function, Optimization routines, Hyperparameter tuning
+* How Forward Pass and Backward Propogation works
+* Practical Advice for building ML Projects
+* Convolutional Neural Network, image-based models
+* Visualizing CNNs
+* Recurrent Neural Network, Sequence Model, text-based models (**Deliberately leave this out**)
+* Unsupervised Learning Techniques or Generative Models
+
+I am deliberately leaving out RNN related stuff in fast.ai, Stanford course, Keras book, and Coursera DL specialization, because I want to focus on CNN for now. I will definitely revisit when I have enough grasp of CNNs.
 
 ## Organization
 
@@ -15,6 +26,8 @@ I have surveyed different courses in the past two weeks, and here is how I would
 * **Coding Track**: I would recommend fast.ai -> Francis Chollet's Keras Book. fast.ai is very practical, but it wraps a lot of Keras code in fast.ai's own library. I think Francis Chollet's treatment is more comprehensive. I would exclude Andrew's coursera exercises, and perhaps jump straight to Stanford's homework or on-the-job projects.
 
 ## Progress
+
+### University Courses
 
 * [Fast.ai](http://wiki.fast.ai/index.php/Main_Page): Top-down teaching approach by Jeremy Howard and Rachel Thomas. Specifically, I want to focus on the ones that use Keras (not Pytorch).
 
@@ -145,6 +158,7 @@ I have surveyed different courses in the past two weeks, and here is how I would
   * [Lecture 10] **TODO**
   * [Lecture 11](https://www.youtube.com/watch?v=nDPWywWRIRo&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=11): Image segmentation, Image localization, object detection, instances detection (all based on CNN as the foundation with different label sets)
 
+### Toolings: Python & Keras
 
 * [Deep Learning with Python](file:///Users/rchang/Downloads/deep_learning_with_python_chollet.pdf)
   * **Chapter** 1: Introduction to history of AI, ML, and DL
@@ -170,29 +184,7 @@ I have surveyed different courses in the past two weeks, and here is how I would
 	* how to do batch normalization, depthwise separable convolution, and residual in Keras
 	* Why you should use hyperparameter optimization and model ensembling
  
+### Textbook
+
 * [Deep Learning Book](http://www.deeplearningbook.org/)
-	* [**Chapter** 11](http://www.deeplearningbook.org/contents/guidelines.html): Practical Methodology. Corresponding [video](https://www.youtube.com/watch?v=ccyClyHAIdI). 
-
- ## Side Notes
-
- For this deliberate practice, I ended up doing something different - instead of learning **MULTIPLE concepts with a SINGLE source of book/material/MOOC**, I am trying out to **learn a SINGLE concept from MULTIPLE sources**. This is something that I have always wanted to do in graduate school (i.e. relearning the same concept multiple times, but in different ways), and I believe it's the right thing to do. It also happened that there are a lot of reputable DL materials at my disposal, and I have been reading and learning them all at once without too much trouble. So far, I enjoyed learning about the same concept from different angles, and I think it has the side benefit of [interleaving](https://www.scientificamerican.com/article/the-interleaving-effect-mixing-it-up-boosts-learning/).
-
- Broadly speaking, I see the concepts in DL are aligned well with Andrew's course, and are grouped by:
-
- * Basics of Neural Network, Mathematical set up and formulation
- * Loss Function, Optimization routines, Hyperparameter tuning
- * How Forward Pass and Backward Propogation works
- * Practical Advice for building ML Projects
- * Convolutional Neural Network, image-based models
- * Visualizing CNNs
- * Recurrent Neural Network, Sequence Model, text-based models (**Deliberately leave this out**)
- * Unsupervised Learning Techniques or Generative Models
-
- I am deliberately leaving out RNN related stuff in fast.ai, Stanford course, Keras book, and Coursera DL specialization, because I want to focus on CNN for now. I will definitely revisit when I have enough grasp of CNNs.
-
- ## Tentative Future Timeline
-
- * [Week of 3/25] Practical Tips for ML projects. Start Investigating image data at Airbnb. Survey current CNN models
- * [Week of 4/1] Unsupervised Learning, Generative Models, Autoencoders ... etc
- * [Week of 4/8] RNN, sequence model, text-data
- * [Week of 4/15] ?
+	* [**Chapter** 11](http://www.deeplearningbook.org/contents/guidelines.html): Practical Methodology. Corresponding [video](https://www.youtube.com/watch?v=ccyClyHAIdI).
