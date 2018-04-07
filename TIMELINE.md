@@ -30,8 +30,14 @@
 	* Discovered Stanford CS 230
 	* Finally read through [Rules of ML: Best Practice for ML Engineering](https://developers.google.com/machine-learning/rules-of-ml/)
 
+* **[Week of 4/1]: Theme - Recurrent Neural Network & NLP**: I am a little bit hesitant to dig too deep in NLP just yet. It's a completely different topic and I still feel I haven't fully grasp CNN, so I will treat this as a quick survey for now. I think the proper way to learn it is to take [CS 224N](http://web.stanford.edu/class/cs224n/index.html).
+	* Stanford CS 231N revisit Lecture 10 on RNN
+	* Keras Book Chapter 6 on Recurrent Neural Network & RNN using Keras
+	* Started Coursera DL course 5 - RNN
+	* [CS 244N Word2Vec lecture notes](http://web.stanford.edu/class/cs224n/lectures/lecture2.pdf)
+
+
 # Upcoming
 
-* [Week of 4/1]: Unsupervised Learning, Generative Models, Autoencoders ... etc
-* [Week of 4/8]: RNN, sequence model, text-data
+* [Week of 4/8]: Unsupervised Learning, Generative Models, Autoencoders ... etc
 * [Week of 4/15]: 

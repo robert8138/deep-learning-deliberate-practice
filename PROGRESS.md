@@ -37,7 +37,7 @@ I have surveyed different courses in the past two weeks, and here is how I would
   * [Lecture 3](http://wiki.fast.ai/index.php/Lesson_3): New concepts I learned - data agumentation (to make the data richer), dropout (to avoid overfitting, where weights are randomly dropped), Batch normalization (where gradients are normalized every few batches).
   * [Lecture 4](https://www.youtube.com/watch?v=V2h3IOBDvrA&feature=youtu.be): Mainly about optimization techniques - momentum, RMSprop, ADAM. 
   * [Lecture 5](http://wiki.fast.ai/index.php/Lesson_5): Adding batchnorm to VGG; visualizing latent factors; functional API (skipped RNN stuff for now)
-  * [Lecture 6]: TODO
+  * **TODO**: [Lecture 6](http://wiki.fast.ai/index.php/Lesson_6): Finished the first hour (psuedo-labeling, word embedding visualized again)
   * [Lecture 7](http://wiki.fast.ai/index.php/Lesson_7): CNN architectures: resnet, inception, fully convolutional net, multi input and multi output nets; localization with bounding box models and heatmaps; using larger inputs to CNNs (skip RNN stuff for now)
 
 * [Coursera's Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning): Bottom-up teaching approach
@@ -143,6 +143,23 @@ I have surveyed different courses in the past two weeks, and here is how I would
 				- Siamese Network, Triplet Loss formulation, or Binary classification formulation
 			- Intuition Behind the formulation for neural style transfer
 				- Cost = Cost for Conent + Cost for Style
+	* * [Course 5: Sequence Model](https://www.coursera.org/learn/nlp-sequence-models/home/welcome)
+		* Week 1:
+			- Learn about recurrent neural networks: one-to-one (traditional NN), one-to-many (music generation), many-to-one (sentiment analysis), many-to-many (machine translation)
+			- The basic set up of recurrent neural network, forwardprop in time, backprop through time
+			- The issue with vanishing gradient (solved by GRU, LSTM), exploding gradient (graident capping)
+			- Gated Recurrent Unit (GRU)
+			- Long, Short Term Memory (LSTM)
+			- Bidirectional RNN (train forward and train backward)
+			- Deep RNN (stacking layers of RNN)
+		* Week 2:
+			- Word representation using one-hot encoding (inefficient, sparse)
+			- Word representation using embeddings (efficient, dense)
+			- Getting more intuition about embeddings through understanding its property
+			- Embedding matrix (loopup table: word index -> word vector representation)
+			- Learning word embeddings: word2vec (skip-gram model, negative sampling)
+			- Learning word embeddings: GloVe (using co-occurrences matrix of context & target word)
+
 
 * [Stanford CS 231N: Convolutional Neural Network](http://cs231n.stanford.edu/syllabus.html): This is highly recommended by Jiaying and Heerad. This is probably also the most rigorous course of the three mentioned here because it's an actual Stanford Course. I was told the Homeworks are superb and I should definitely do them.
 
@@ -155,17 +172,17 @@ I have surveyed different courses in the past two weeks, and here is how I would
   * [Lecture 7](https://www.youtube.com/watch?v=_JB0AO7QxSA&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=7): Optimization update rules, ensembles, data augmentation, transfer learning. [Neural Net Notes I](http://cs231n.github.io/neural-networks-1/). [Neural Net Notes II](http://cs231n.github.io/neural-networks-2/). [Neural Net Notes III](http://cs231n.github.io/neural-networks-3/).
   * [Lecture 8](https://www.youtube.com/watch?v=6SlgtELqOWc&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=8): Introduction to CPU v.s. GPU. Deep Learning software framework, Justin focused on Tensorflow and Pytorch. Last slide on which framework to use is useful.
   * [Lecture 9](https://www.youtube.com/watch?v=DAOcjicFr1Y&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=9): Clearest lecture on all the ImageNet winner models from 2012 - 2016. Introduce AlexNet (2012), VGG (2014), GoogLenet (2015), ResNet (2016).
-  * [Lecture 10] **TODO**
+  * [Lecture 10](https://www.youtube.com/watch?v=6niqTuYFZLQ&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv): RNN, LSTM, GRU, word embeddings
   * [Lecture 11](https://www.youtube.com/watch?v=nDPWywWRIRo&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=11): Image segmentation, Image localization, object detection, instances detection (all based on CNN as the foundation with different label sets)
 
 ### Toolings: Python & Keras
 
 * [Deep Learning with Python](file:///Users/rchang/Downloads/deep_learning_with_python_chollet.pdf)
-  * **Chapter** 1: Introduction to history of AI, ML, and DL
-  * **Chapter** 2: Basics of tensors (multi-dimensional arrays), tensor operations
-  * **Chapter** 3: Anatomy of a neural network, Intro to Keras, 3 examples: binary classification, multi-class classification, and regression, all built using Neural Nets
-  * **Chapter** 4: Workflow of Machine Learning (meta chapter)
-  * **Chapter** 5: This chapter covers CNN, and talked about
+  * **Chapter 1**: Introduction to history of AI, ML, and DL
+  * **Chapter 2**: Basics of tensors (multi-dimensional arrays), tensor operations
+  * **Chapter 3**: Anatomy of a neural network, Intro to Keras, 3 examples: binary classification, multi-class classification, and regression, all built using Neural Nets
+  * **Chapter 4**: Workflow of Machine Learning (meta chapter)
+  * **Chapter 5**: This chapter covers CNN, and talked about
   	* Convolution, padding, strides, max-pooling
   	* Training a covnet from scratch using small dataset
   	* Data augmentation (enrich data) + Dropout (to avoid overfitting)
@@ -176,8 +193,20 @@ I have surveyed different courses in the past two weeks, and here is how I would
   		* Visualize activation
   		* Visualize covnet filters
   		* Visualize which of the input pixel contribute to the classification
-  * **Chapter** 6: TODO
-  * **Chapter** 7:
+  * **Chapter 6**:
+  	* Word Embeddings (word index -> word vector): going from one-hot-encoding vectors (sparse) to embedding vectors (dense). Essentially, learn a richer representation for relationship among words.
+		* [Word2Vec](http://web.stanford.edu/class/cs224n/lectures/lecture2.pdf): Skip-gram model & negative sampling to learn embeddings. This class notes has detailed formulation for the objective function, the loss function, and what we need to optimize.
+		* [GloVec](http://web.stanford.edu/class/cs224n/lectures/lecture3.pdf): Use (context, target) pair co-occurrences to learn embeddings
+		* Leverage pre-trained word embeddings for transfer learning
+	* Recurrent Neural Network
+		* Simple Recurrent Neural Network
+		* Gated Recurrent Unit (GRU)
+		* Long, Short Term Memory (LSTM)
+	* Additional Techniques to add complexity to RNN
+		* Bidrectional Nerual Network (train forward and train backward, prediction made by using both forward and backward activation. See Coursera example)
+		* Deep RNN (stacking additional layer for each time t)
+	* Sequence Processing using 1D CovNet
+  * **Chapter 7**:
   	*  How to use functional APIs to build models as arbitrary graphs of layers (single-/multi- intput -> single-/multi- output), reuse layers (layer weight sharing), and use models as Python functions (model templating)
 	* You can use Keras callbacks to monitor your models during training and take action based on model state
 	* TensorBoard allows you to visualize metrics, activation histograms, and even embedding spaces
