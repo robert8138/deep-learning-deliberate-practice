@@ -143,7 +143,7 @@ I have surveyed different courses in the past two weeks, and here is how I would
 				- Siamese Network, Triplet Loss formulation, or Binary classification formulation
 			- Intuition Behind the formulation for neural style transfer
 				- Cost = Cost for Conent + Cost for Style
-	* * [Course 5: Sequence Model](https://www.coursera.org/learn/nlp-sequence-models/home/welcome)
+	* **DONE**: [Course 5: Sequence Model](https://www.coursera.org/learn/nlp-sequence-models/home/welcome)
 		* Week 1:
 			- Learn about recurrent neural networks: one-to-one (traditional NN), one-to-many (music generation), many-to-one (sentiment analysis), many-to-many (machine translation)
 			- The basic set up of recurrent neural network, forwardprop in time, backprop through time
@@ -159,6 +159,12 @@ I have surveyed different courses in the past two weeks, and here is how I would
 			- Embedding matrix (loopup table: word index -> word vector representation)
 			- Learning word embeddings: word2vec (skip-gram model, negative sampling)
 			- Learning word embeddings: GloVe (using co-occurrences matrix of context & target word)
+		* Week 3:
+			- Basics of seq2seq model (encoder + decoder architecture)
+			- Beam search
+			- Error analysis of approximate optimization aglorithm on object function
+			- Bleu scores
+			- Attention model
 
 
 * [Stanford CS 231N: Convolutional Neural Network](http://cs231n.stanford.edu/syllabus.html): This is highly recommended by Jiaying and Heerad. This is probably also the most rigorous course of the three mentioned here because it's an actual Stanford Course. I was told the Homeworks are superb and I should definitely do them.
