@@ -39,5 +39,5 @@
 
 # Upcoming
 
-* [Week of 4/8]: Unsupervised Learning, Generative Models, Autoencoders ... etc
-* [Week of 4/15]: 
+* [Week of 4/8]: Another work on Recurrent Neural Network (RNNs)
+* [Week of 4/15]: Unsupervised Learning, Generative Models, Autoencoders ... etc 

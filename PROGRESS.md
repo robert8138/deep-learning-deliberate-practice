@@ -181,6 +181,9 @@ I have surveyed different courses in the past two weeks, and here is how I would
   * [Lecture 10](https://www.youtube.com/watch?v=6niqTuYFZLQ&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv): RNN, LSTM, GRU, word embeddings
   * [Lecture 11](https://www.youtube.com/watch?v=nDPWywWRIRo&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=11): Image segmentation, Image localization, object detection, instances detection (all based on CNN as the foundation with different label sets)
 
+* [Stanford CS 224N: NLP with Deep Learning](http://web.stanford.edu/class/cs224n/archive/WWW_1617/syllabus.html): This is one of the other pillar class for DL at Stanford, focusing on NLP. I originally didn't intend to study this, but I am using it to complement details didn't covered in the Coursera C5 on Sequence Models.
+  * [Lecture 2](https://www.youtube.com/watch?v=ERibwqs9p38&index=2&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6): Introduction to Word2Vec, Predicting outside/context word | center word, Cost function setup. Chris Manning deriving partial derivatives.
+
 ### Toolings: Python & Keras
 
 * [Deep Learning with Python](file:///Users/rchang/Downloads/deep_learning_with_python_chollet.pdf)
