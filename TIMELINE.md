@@ -36,8 +36,11 @@
 	* Started Coursera DL course 5 - RNN
 	* [CS 244N Word2Vec lecture notes](http://web.stanford.edu/class/cs224n/lectures/lecture2.pdf)
 
+* **[Week of 4/8]: Theme - Recurrent Neural Network & NLP (Interleaving)**: to reinforce all the basic things I learned about word embeddings, RNNs from Coursera DL in Stanford class setting again
+	* Stanford CS 224N Lecture 2: Word2Vec -> word embeddings
+	* Stanford CS 224N Lecture 3: Co-ocurrence, GloVec word embeddings, BLEU scores
+	* Stanford CS 224N Lecture 8: Vanilla RNN, Bidirectional RNN, Deep RNN
 
 # Upcoming
 
-* [Week of 4/8]: Another work on Recurrent Neural Network (RNNs)
 * [Week of 4/15]: Unsupervised Learning, Generative Models, Autoencoders ... etc 
