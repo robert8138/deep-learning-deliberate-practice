@@ -40,6 +40,9 @@
 	* Stanford CS 224N Lecture 2: Word2Vec -> word embeddings
 	* Stanford CS 224N Lecture 3: Co-ocurrence, GloVec word embeddings, BLEU scores
 	* Stanford CS 224N Lecture 8: Vanilla RNN, Bidirectional RNN, Deep RNN
+	* Stanford CS 224N Lecture 9: Gated Recurrent Units (GRU), Long-Short Term Memory (LSTM)
+	* [Edwin Chen's explanation on LSTM with visualization](http://blog.echen.me/2014/05/30/exploring-lstms/)
+	* [The Unreasonable Effectiveness of Recurrent Neural Network](http://karpathy.github.io/2015/05/21/rnn-effectiveness/): char RNN model -> {Paul Graham essays, Shakespeare, LaTex, C, Linux}
 
 # Upcoming
 
