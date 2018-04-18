@@ -181,11 +181,14 @@ I have surveyed different courses in the past two weeks, and here is how I would
   * [Lecture 10](https://www.youtube.com/watch?v=6niqTuYFZLQ&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv): RNN, LSTM, GRU, word embeddings
   * [Lecture 11](https://www.youtube.com/watch?v=nDPWywWRIRo&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=11): Image segmentation, Image localization, object detection, instances detection (all based on CNN as the foundation with different label sets)
 
-* [Stanford CS 224N: NLP with Deep Learning](http://web.stanford.edu/class/cs224n/archive/WWW_1617/syllabus.html): This is one of the other pillar class for DL at Stanford, focusing on NLP. I originally didn't intend to study this, but I am using it to complement details didn't covered in the Coursera C5 on Sequence Models.
-  * [Lecture 2](https://www.youtube.com/watch?v=ERibwqs9p38&index=2&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6): Introduction to Word2Vec, Predicting outside/context word | center word, Cost function setup. Chris Manning deriving partial derivatives.
-  * [Lecture 3](https://www.youtube.com/watch?v=ASn7ExxLZws&index=3&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6): Yet another word embedding algorithm - GloVec. External & Internal evaluation for word embeddings
+* [Stanford CS 224N: NLP with Deep Learning](http://web.stanford.edu/class/cs224n/archive/WWW_1617/syllabus.html): This is one of the other pillar class for DL at Stanford, focusing on NLP. I originally didn't intend to study this, but I am using it to complement details didn't covered in the Coursera C5 on Sequence Models. Lecture with asterisk are more important
+  * [*Lecture 2](https://www.youtube.com/watch?v=ERibwqs9p38&index=2&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6): Introduction to Word2Vec, Predicting outside/context word | center word, Cost function setup. Chris Manning deriving partial derivatives.
+  * [*Lecture 3](https://www.youtube.com/watch?v=ASn7ExxLZws&index=3&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6): Yet another word embedding algorithm - GloVec. External & Internal evaluation for word embeddings
   * [Lecture 4](https://www.youtube.com/watch?v=uc2_iwVqrRI&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&index=4): Backward Propogation
-  * [Lecture 8](https://www.youtube.com/watch?v=Keqep_PKrY8&index=8&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6): Vanilla RNN, Bidirectional RNN, Deep RNN
+  * [Lecture 5](https://www.youtube.com/watch?v=isPiE-DBagM&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&index=5): Backward Propogation II
+  * [Lecture 7](https://www.youtube.com/watch?v=PicxU81owCs&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&index=7): Introduction to Tensorflow - computational graph, placeholder, variable, optimizer, session, execution environment
+  * [*Lecture 8](https://www.youtube.com/watch?v=Keqep_PKrY8&index=8&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6): Vanilla RNN, Bidirectional RNN, Deep RNN
+  * [Lecture 13](https://www.youtube.com/watch?v=Lg6MZw_OOLI&index=14&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6): CNN on text data
 
 ### Toolings: Python & Keras
 
