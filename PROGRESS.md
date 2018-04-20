@@ -190,6 +190,11 @@ I have surveyed different courses in the past two weeks, and here is how I would
   * [*Lecture 8](https://www.youtube.com/watch?v=Keqep_PKrY8&index=8&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6): Vanilla RNN, Bidirectional RNN, Deep RNN
   * [Lecture 13](https://www.youtube.com/watch?v=Lg6MZw_OOLI&index=14&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6): CNN on text data
 
+* [Stanford CS 20 - Tensorflow for Deep Learning Research](http://web.stanford.edu/class/cs20si/syllabus.html)
+  * [Lecture 1](https://docs.google.com/document/d/1gWm3uBnbU6wxZAm0VAiSV_8odzfaE7yEG1lW-NO34fI/edit): Overview of Tensorflow
+  * [Lecture 2](https://docs.google.com/document/d/1FSPNZFQsnaUVeTo0OQ2RrEZ0f4el9bIGI5sQALbG_F0/edit): Tensorflow Ops
+  * [Lecture 3](https://docs.google.com/document/d/1kMGs68rIHWHifBiqlU3j_2ZkrNj9RquGTe8tJ7eR1sE/edit): Linear and Logistic Regression in TensorFlow
+
 ### Toolings: Python & Keras
 
 * [Deep Learning with Python](file:///Users/rchang/Downloads/deep_learning_with_python_chollet.pdf)
