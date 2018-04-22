@@ -62,11 +62,14 @@
 	* Once you’ve developed a satisfactory model configuration, you can train your final production model on all the available data (training and validation) and evaluate it one last time on the test set.
 
 
+
 # [TODO] Formulation for Training Neural Network
 
 * Defining the loss function = error + regularization
 * Defining the neural net function, parameters to be trained, hyperparameters to be tuned
 * Defining the optimization problem w.r.t parameters to be trained
+
+
 
 # [TODO] Data Augmentation / Transfer Learning
 
@@ -88,6 +91,9 @@
 		- Appropriate to use when you have a lot of data
 		- Use the pre-trained weights as your initialization weight (and replace the original random initialization), then retrain everything
 		- It takes time and computational power/budget
+
+
+
 
 # Optimization
 
@@ -122,6 +128,8 @@ Of all the numerical approaches, *gradient descent* is one of the most fundament
 	* **Gradient Checking**: this is more relevant if you are building your own optimization routine, where you check the gradient calculation from the analytical differentiation is roughly the same as the numerical derivative.
 	* **Batch Normalization**: To make sure that inputs in each layer are somewhat gaussian. The idea is to normalize it, and give it the chance to stay gaussian, or go back to its original form. Usually they stay somewhat guassian, which improves stability in gradient descent. Andrew's explanation from Coursera DL course 2 is the best that I have seen.
 
+
+
 # Backward Propogation
 
 Backward Propogation is one of the most important concept in Deep Learning. Specifically, it describes how we could calculate the gradient of the cost function with respect to the parameters of the neural network. 
@@ -146,6 +154,8 @@ The math for backprogation can often time be confusing, so a lot of people have 
 
 * [Yes You Should Understand Backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b): A Medium post from Andre Karpathy explaining why every practitioners should learn about how backprop works. Essentially, his arguments is that even when doing DL in practice, if the activations are saturated, the gradient can become very close to 0 (vanishing gradient problem), causing the weight updates to be super slow, and in terms make the cost function to go down very slowly.
 
+
+
 # Regularization
 
 In traditional machine learning, **Bias and Variance trade-off** is a critical concept to understand, because depending on whether the model is suffering from a bias problem or a variance problem, the approach in improving the model performance would be quite different. In the era of DL, the trade-off still exist, but are not as big. Therefore, the workflow for DL typically becomes 1). overfit as much as you can, to reduce the bias, and to lower the training error, then 2). try adding more data (e.g. data augmentation), or applying regularization, to reduce variance, to bring down validation/test error.
@@ -157,6 +167,8 @@ The theme of regularization is to reduce model complexity, and model complexity 
 	- Intuition 2: by making the magnitudes of the parameters small, the activation function act more like an activation function (for tahn or sigmoid activation functions)
 * **Dropout**: this approach directly limit the number of hidden units in each hidden layer, reducing the complexity of the model
 * **Early Stopping**: this approach stops training before the model starts to overfit. It's sometimes used but Andrew doesn't recommend it, because it doesn't clearly separate the tasks of overfit as much as you can, then regularize. 
+
+
 
 # Convolution Neural Network
 
@@ -192,6 +204,9 @@ The theme of regularization is to reduce model complexity, and model complexity 
 	* [Visualize CNN - from Colab](http://colah.github.io/posts/2014-07-Conv-Nets-Modular/): convolutional neural networks can be thought of as a kind of neural network that uses many identical copies of the same neuron.1 This allows the network to have lots of neurons and express computationally large models while keeping the number of actual parameters – the values describing how neurons behave – that need to be learned fairly small.
 
 	* [Understand Convolution - from colab](http://colah.github.io/posts/2014-07-Understanding-Convolutions/): Understand the mathematical nature of convolution
+
+
+
 
 # Structuring Machine Learning Projects
 
