@@ -45,7 +45,10 @@
 	* [The Unreasonable Effectiveness of Recurrent Neural Network](http://karpathy.github.io/2015/05/21/rnn-effectiveness/): char RNN model -> {Paul Graham essays, Shakespeare, LaTex, C, Linux}
 
 * **[Week of 4/15]: Theme - Tensorflow**
-	* Stanford CS 224N Lecture 4 (Backprop I), 5 (Backprop II),7 (Tensorflow), 13 (CNN)
+	* Stanford CS 224N: Lecture 4 (Backprop I), 5 (Backprop II), 13 (CNN) Review
+	* Stanford CS 224N: Lecture 7 on Tensorflow
+	* [Stanford CS 20](http://web.stanford.edu/class/cs20si/syllabus.html): Lecture 1-5, a more detailed introduction to Tensorflow
+	* Glanced through Tensorflow's [Getting Started Guide](https://www.tensorflow.org/get_started/)
 
 # Upcoming
 

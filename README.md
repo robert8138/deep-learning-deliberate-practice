@@ -40,7 +40,7 @@ Like any learning project, it is generally wise to take a week or two to compile
 * [Stanford CS 224N: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/): Focus on NLP, word vector representations, window-based neural networks, recurrent neural networks, long-short-term-memory models, recursive neural networks, convolutional neural networks as well as some recent models involving a memory component.
 * [Stanford CS 230: Deep Learning](http://cs230.stanford.edu/syllabus.html): This course is based on Andrew Ng's Coursera deep learning specialization courses, with additional materials taught during classroom settings. Great classroom notes and [Tutorials on Tensorflow](https://cs230-stanford.github.io/).
 
-### Toolings: Python & Keras
+### Toolings: Keras & Tensorflow
 
 * [Deep Learning in Python](https://www.datacamp.com/courses/deep-learning-in-python?tap_a=5644-dce66f&tap_s=93618-a68c98): Deep learning is the machine learning technique behind the most exciting capabilities in diverse areas like robotics, natural language processing, image recognition and artificial intelligence (including the famous AlphaGo). In this course, you'll gain hands-on, practical knowledge of how to use deep learning with Keras 2.0, the latest version of a cutting edge library for deep learning in Python.
 
