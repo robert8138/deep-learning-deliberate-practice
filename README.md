@@ -48,6 +48,8 @@ Like any learning project, it is generally wise to take a week or two to compile
 
 * [Stanford CS 20: Tensorflow for Deep Learning Research](http://web.stanford.edu/class/cs20si/): This course will cover the fundamentals and contemporary usage of the Tensorflow library for deep learning research. We aim to help students understand the graphical computational model of TensorFlow, explore the functions it has to offer, and learn how to build and structure models best suited for a deep learning project. Through the course, students will use TensorFlow to build models of different complexity, from simple linear/logistic regression to convolutional neural network and recurrent neural networks to solve tasks such as word embedding, translation, optical character recognition, reinforcement learning. Students will also learn best practices to structure a model and manage research experiments.
 
+* [Coursera/Google Cloud ML Specialization](https://www.coursera.org/learn/intro-tensorflow): Introduction to Tensorflow
+
 ### Textbook
 
 * [Deep Learning](http://www.deeplearningbook.org/): Written by Ian Goodfellow, Yoshua Bengio, and Aaron Courville. This is the book which covers in detail the mathematical underpinnings of many DL topics.

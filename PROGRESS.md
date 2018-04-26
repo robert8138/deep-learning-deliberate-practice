@@ -180,6 +180,8 @@ I have surveyed different courses in the past two weeks, and here is how I would
   * [Lecture 9](https://www.youtube.com/watch?v=DAOcjicFr1Y&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=9): Clearest lecture on all the ImageNet winner models from 2012 - 2016. Introduce AlexNet (2012), VGG (2014), GoogLenet (2015), ResNet (2016).
   * [Lecture 10](https://www.youtube.com/watch?v=6niqTuYFZLQ&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv): RNN, LSTM, GRU, word embeddings
   * [Lecture 11](https://www.youtube.com/watch?v=nDPWywWRIRo&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv&index=11): Image segmentation, Image localization, object detection, instances detection (all based on CNN as the foundation with different label sets)
+  * [Lecture 13](https://www.youtube.com/watch?v=5WoItGTWV54&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv): Generative Models - PixelRNN/CNN, Variational Autoencoders, Generative Adversarial Networks
+  * [Lecture 16](https://www.youtube.com/watch?v=CIfsB_EYsVI&list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv): Adversarial Examples and Adversarial Training (I'm a bit fuzzy on this topic)
 
 * [Stanford CS 224N: NLP with Deep Learning](http://web.stanford.edu/class/cs224n/archive/WWW_1617/syllabus.html): This is one of the other pillar class for DL at Stanford, focusing on NLP. I originally didn't intend to study this, but I am using it to complement details didn't covered in the Coursera C5 on Sequence Models. Lecture with asterisk are more important
   * [*Lecture 2](https://www.youtube.com/watch?v=ERibwqs9p38&index=2&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6): Introduction to Word2Vec, Predicting outside/context word | center word, Cost function setup. Chris Manning deriving partial derivatives.
