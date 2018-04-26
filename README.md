@@ -30,8 +30,6 @@ As a result, I foresee that the class of problems that I will be dealing with, f
 
 Like any learning project, it is generally wise to take a week or two to compile the list of study materials, trial study them, and then finalize on the final curriculum. Luckily, this topic is so hot that there are already many useful obvious candidates or even reviews of these candidate courses. Here are a few:
 
-* [Thoughts after taking the Deeplearning.ai courses](https://towardsdatascience.com/thoughts-after-taking-the-deeplearning-ai-courses-8568f132153): A good comparison of Fast.ai course and Coursera series.
-
 ### University Courses
 
 * [Fast.ai](http://wiki.fast.ai/index.php/Main_Page): Top-down teaching approach by Jeremy Howard and Rachel Thomas
@@ -41,8 +39,6 @@ Like any learning project, it is generally wise to take a week or two to compile
 * [Stanford CS 230: Deep Learning](http://cs230.stanford.edu/syllabus.html): This course is based on Andrew Ng's Coursera deep learning specialization courses, with additional materials taught during classroom settings. Great classroom notes and [Tutorials on Tensorflow](https://cs230-stanford.github.io/).
 
 ### Toolings: Keras & Tensorflow
-
-* [Deep Learning in Python](https://www.datacamp.com/courses/deep-learning-in-python?tap_a=5644-dce66f&tap_s=93618-a68c98): Deep learning is the machine learning technique behind the most exciting capabilities in diverse areas like robotics, natural language processing, image recognition and artificial intelligence (including the famous AlphaGo). In this course, you'll gain hands-on, practical knowledge of how to use deep learning with Keras 2.0, the latest version of a cutting edge library for deep learning in Python.
 
 * [Deep Learning with Python](https://www.manning.com/books/deep-learning-with-python): Deep Learning with Python introduces the field of deep learning using the Python language and the powerful Keras library. Written by Keras creator and Google AI researcher François Chollet, this book builds your understanding through intuitive explanations and practical examples. I heard a lot of great things about this book.
 
@@ -54,14 +50,17 @@ Like any learning project, it is generally wise to take a week or two to compile
 
 * [Deep Learning](http://www.deeplearningbook.org/): Written by Ian Goodfellow, Yoshua Bengio, and Aaron Courville. This is the book which covers in detail the mathematical underpinnings of many DL topics.
 
+* [Deep Learning with Python](https://www.manning.com/books/deep-learning-with-python): Deep Learning with Python introduces the field of deep learning using the Python language and the powerful Keras library. Written by Keras creator and Google AI researcher François Chollet, this book builds your understanding through intuitive explanations and practical examples. I heard a lot of great things about this book.
+
 ### Blogs 
 
 #### Deep Learning
 
-* [Colab](http://colah.github.io/): His intuitive explanation of DL topics are very well regarded, and something that I plan to revisit from time to time.
 * [Andrej Karpathy's blog](http://karpathy.github.io/)
 	* [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 	* [Yes, you should understand backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b)
+
+* [Colab](http://colah.github.io/): His intuitive explanation of DL topics are very well regarded, and something that I plan to revisit from time to time.
 
 #### Machine Learning in General
 
@@ -70,15 +69,24 @@ Like any learning project, it is generally wise to take a week or two to compile
 	* [Rules of ML: Best Practice for ML Engineering](https://developers.google.com/machine-learning/rules-of-ml/): This document is intended to help those with a basic knowledge of machine learning get the benefit of best practices in machine learning from around Google. [PDF]((http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf)) is also available.
 	* [Machine Learning: The High-Interest Credit Card of Technical Debt](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf): The goal of this paper is highlight several machine learning specific risk factors and design patterns to be avoided or refactored where possible. These include boundary erosion, entanglement, hidden feedback loops, undeclared consumers, data dependencies, changes in the external world, and a variety of system-level anti-patterns.
 	* [The Two Cultures of Machine Learning Systems](https://medium.com/opendoor-labs/the-two-cultures-of-machine-learning-systems-c648db0bb4d8): How ML Engineers and Data Scientists approach ML differently
+
 * [Dimensions of Machine Learning Models](https://www.slideshare.net/SharathRao6/lessons-from-integrating-machine-learning-models-into-data-products): Less relevant to Deep Learning specifically, but this is still by far the best piece that I can find in categorizing different ML models (contextual data dimension v.s. latency requirement dimension). [Video](https://www.youtube.com/watch?v=wG5EyHYrJGE&t=891s) from DataEngConf2017 is also available.
 
 
-### Beyond Self-Learning
+## To Keep Learning
 
-* **Research Track**: 
-	- Try to implement basic neural network from scratch (e.g. CS 231N homeworks)
-	- Read a lot of papers from [arxiv](https://arxiv.org/), then try to replicate the results
+### **Research Track**: 
 
-* **Application Track**:
-	- Do it the Jeremy Howard / hacker way, try to map techniques to problems, or problems to techniques
-	- A lot of opportunity to do this on my current team, since we have a lot of image-related tasks
+* Try to implement basic neural network from scratch (e.g. CS 231N homeworks)
+* Read a lot of papers from [arxiv](https://arxiv.org/), then try to replicate the results
+* [Bay Area Deep Learning School 2016](https://www.youtube.com/playlist?list=PLrAXtmErZgOfMuxkACrYnD2fTgbzk2THW): A good overview of everything at Stanford, from 2 years ago
+
+### **Application Track**:
+
+* Do it the Jeremy Howard / hacker way, try to map techniques to problems, or problems to techniques
+* A lot of opportunity to do this on my current team, since we have a lot of image-related tasks
+
+### **Math Track**:
+
+* [Computational Linear Algebra](http://www.fast.ai/2017/07/17/num-lin-alg/): A great course from fast.ai on computational linear algebra, heavily focused on applications of LA (e.g. SVD -> PCA, etc.)
+* [Matrix Calculus for Deep Learning](http://parrt.cs.usfca.edu/doc/matrix-calculus/index.html): Also written by Jeremy Howard, I haven't checked it out, but this just reminded me of my undergraduate Math 105: Real Analysis and Measure Theory.
