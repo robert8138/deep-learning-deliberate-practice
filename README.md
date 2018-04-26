@@ -54,13 +54,19 @@ Like any learning project, it is generally wise to take a week or two to compile
 
 * [Deep Learning](http://www.deeplearningbook.org/): Written by Ian Goodfellow, Yoshua Bengio, and Aaron Courville. This is the book which covers in detail the mathematical underpinnings of many DL topics.
 
-### Blogs
+### Blogs 
+
+#### Deep Learning
 
 * [Colab](http://colah.github.io/): His intuitive explanation of DL topics are very well regarded, and something that I plan to revisit from time to time.
 * [Andrej Karpathy's blog](http://karpathy.github.io/)
 	* [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 	* [Yes, you should understand backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b)
+
+#### Machine Learning in General
+
 * **Practical Machine Learning Advice**
+	* [Andrew Ng's ML Yearning - WIP](http://www.mlyearning.org/): This book is all about practical advice for how to tackle challenges in ML projects. He started off this project but got sidetracked by the Coursera DL specialization course. He is coming back to it now.
 	* [Rules of ML: Best Practice for ML Engineering](https://developers.google.com/machine-learning/rules-of-ml/): This document is intended to help those with a basic knowledge of machine learning get the benefit of best practices in machine learning from around Google. [PDF]((http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf)) is also available.
 	* [Machine Learning: The High-Interest Credit Card of Technical Debt](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf): The goal of this paper is highlight several machine learning specific risk factors and design patterns to be avoided or refactored where possible. These include boundary erosion, entanglement, hidden feedback loops, undeclared consumers, data dependencies, changes in the external world, and a variety of system-level anti-patterns.
 	* [The Two Cultures of Machine Learning Systems](https://medium.com/opendoor-labs/the-two-cultures-of-machine-learning-systems-c648db0bb4d8): How ML Engineers and Data Scientists approach ML differently
