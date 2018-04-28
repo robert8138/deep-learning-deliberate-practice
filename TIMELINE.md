@@ -54,6 +54,7 @@
 	* Stanford CS 231 Lecture 13: Generative Model
 	* Stanford CS 231 Lecture 16: Adversarial Examples and Adversarial Training
 	* Keras Book Chapter 8: Generative Deep Learning
+	* Keras Book Chapter 9: Conclusions (finished the book!)
 	* [Generate Model from OpenAI](https://blog.openai.com/generative-models/)
 
 # Upcoming

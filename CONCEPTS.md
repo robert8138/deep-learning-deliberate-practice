@@ -130,9 +130,12 @@ The theme of regularization is to reduce model complexity, and model complexity 
 
 	* It also surveys different kind of CNN, quite useful overview of state of the art CNNs.
 
+
 * [CNN Gently Explained on Medium](https://medium.com/@ageitgey/machine-learning-is-fun-part-3-deep-learning-and-convolutional-neural-networks-f40359318721): A lot of visual explanations, focus on intuition.
 
 * [Image kernels explained visually](http://setosa.io/ev/image-kernels/): Fantastic interactive visualizations of convolutions, and how we convolve image pixels with image kernels to get the output impages.
+
+* [Convolution Visualized](https://github.com/vdumoulin/conv_arithmetic): This github repo beautifully visualized convolution operations and transpose convolution operations in CNN.
 
 * Other materials from Colab, but less useful:
 

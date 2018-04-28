@@ -229,6 +229,17 @@ I have surveyed different courses in the past two weeks, and here is how I would
 	* TensorBoard allows you to visualize metrics, activation histograms, and even embedding spaces
 	* how to do batch normalization, depthwise separable convolution, and residual in Keras
 	* Why you should use hyperparameter optimization and model ensembling
+  * **Chapter 8**:
+  	* Text Generation with LSTM (character language model)
+  	* Implementing DeepDream
+  	* Performing Neural Style Transfer
+  	* Variational Autoencoders (VAE)
+  	* Understanding Generative Adversarial Networks (GAN)
+  * **Chapter 9**:
+  	* Book Summary (brief summary)
+  	* The limitations of deep learning
+  	* The future of deep learning, machine learning, and AI
+  	* Resources for learning further and working in the field (Kaggle, ArXiv, Keras)
 
 * [Stanford CS 20 - Tensorflow for Deep Learning Research](http://web.stanford.edu/class/cs20si/syllabus.html)
   * [Lecture 1](https://docs.google.com/document/d/1gWm3uBnbU6wxZAm0VAiSV_8odzfaE7yEG1lW-NO34fI/edit): Overview of Tensorflow
