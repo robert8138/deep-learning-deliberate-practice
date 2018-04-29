@@ -1,6 +1,6 @@
 # Convolution Neural Network
 
-_The notes below are largely adapted from Stanford's CS 231N notes._ 
+_The notes below are adapted from Stanford's CS 231N notes, all rights belong to the course creataor._ 
 
 ## Table of Contents (AKA Major Concept Map)
 
@@ -120,40 +120,3 @@ Neurons in a fully connected layer have full connections to all activations in t
 * [Visualize CNN - from Colab](http://colah.github.io/posts/2014-07-Conv-Nets-Modular/): convolutional neural networks can be thought of as a kind of neural network that uses many identical copies of the same neuron.1 This allows the network to have lots of neurons and express computationally large models while keeping the number of actual parameters – the values describing how neurons behave – that need to be learned fairly small.
 
 * [Understand Convolution - from colab](http://colah.github.io/posts/2014-07-Understanding-Convolutions/): Understand the mathematical nature of convolution
-
-
-
-
-
-
-
-
-
-
-
-
-
-## ConvNet Architectures
-
-* [CS231N CNN Intro](http://cs231n.github.io/convolutional-networks/): This post is, by far, the most comprehensive post that explains the architecture of CNN, the parameters involved, the input volume, the output volume, and more. It's a very meaty read, but gives a very detailed treatment of CNN. It focuses a lot on the architecture and different kind of layers in CNN, it doesn't talk much about how backpropogation works in the context of CNN. Some highlights:
-
-	* A ConvNet architecture is in the simplest case a list of Layers that transform the image volume into an output volume (e.g. holding the class scores). 
-		* There are a few distinct types of Layers (e.g. CONV/FC/RELU/POOL are by far the most popular). 
-		Each Layer accepts an input 3D volume and transforms it to an output 3D volume through a differentiable function. 
-		* Each Layer may or may not have parameters (e.g. CONV/FC do, RELU/POOL don’t)
-		* Each Layer may or may not have additional hyperparameters (e.g. CONV/FC/POOL do, RELU doesn’t)
-
-	* **Convolutional Layer (CONV)**: You need to have a good understanding of how input volume are transformed to output volume. 
-		* The "neuron picture" that takes element-wise dot product of "input patch" on "fitler" + bias is very helpful
-		* Know all the hyperparameters: depth, padding, stride, filter size. Know how to use these to calculate input & output volume dimensions
-		* The numpy example + visualization demo is a good way to understnad how the math works
-
-	* **Pooling Layer (P)**: 
-		* Know the hyperparameters in pooling layer, and how to calculate dimensions
-
-	* **Fully Connected Layers (FC)**
-		* One can convert between CONV layer and FC layers
-
-	* **ConvNet Architectures** is a great section: `INPUT -> [[CONV -> RELU]*N -> POOL?]*M -> [FC -> RELU]*K -> FC`
-
-	* It also surveys different kind of CNN, quite useful overview of state of the art CNNs.
