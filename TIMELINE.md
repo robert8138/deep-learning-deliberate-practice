@@ -49,6 +49,7 @@
 	* Stanford CS 224N: Lecture 7 on Tensorflow
 	* [Stanford CS 20](http://web.stanford.edu/class/cs20si/syllabus.html): Lecture 1-5, a more detailed introduction to Tensorflow
 	* Glanced through Tensorflow's [Getting Started Guide](https://www.tensorflow.org/get_started/)
+	* Scribed RNN notes in /concepts directory
 
 * **[Week of 4/23]: Unsupervised Learning, Generative Models, Autoencoders**
 	* Stanford CS 231 Lecture 13: Generative Model
@@ -56,10 +57,18 @@
 	* Keras Book Chapter 8: Generative Deep Learning
 	* Keras Book Chapter 9: Conclusions (finished the book!)
 	* [Generate Model from OpenAI](https://blog.openai.com/generative-models/)
+	* Scribed CNN & CNN Architecture notes in /concepts directory
 
 # Upcoming
 
-* [Week of 4/30]: Revisiting Convolutional Nueral Network (CS 20 materials + Work related projects)
+* [Week of 4/30]: Continue to scribe notes in /concepts directory
+	* Stanford CS 229 Notes on DL, backprop
+	* Scribe notes for regular NN - Revisit Gradient calculation for DL
+	* Scribe Structure ML projects notes in /concepts
+	* Scribe Optimization notes in /concepts
+
+
+* [Week of 5/7]: Revisiting Convolutional Nueral Network (CS 20 materials + Work related projects)
 	* [Intro to ConvNet](https://docs.google.com/presentation/d/15E7NlyMkG8dAMa70i2OluprBDoz3UPyAk5ZpOiCkEqw/edit#slide=id.g1c60f09bdb_0_0)
 	* ConvNet in Tensorflow: [Slides](https://docs.google.com/presentation/d/17VTArfQVtapBqfYecyvp3Kp9HKy8Pw2WI12acYME2nI/edit#slide=id.g1c60f09bdb_0_0), [Course Notes](https://docs.google.com/document/d/1ph43FB5fZ_iarPTjIXhdtDvHJOpk4ncI2vDyxnOWcqM/edit)
 	* CS 231N Assignments: [Assignment 1](http://cs231n.github.io/assignments2017/assignment1/), [Assignment 2](http://cs231n.github.io/assignments2017/assignment2/), [Assignment 3](http://cs231n.github.io/assignments2017/assignment3/)
