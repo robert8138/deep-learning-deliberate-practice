@@ -62,9 +62,8 @@
 # Upcoming
 
 * [Week of 4/30]: Continue to scribe notes in /concepts directory
-	* Stanford CS 229 Notes on DL, backprop
+	* Stanford CS 229 Notes on DL, backprop (not as useful)
 	* Scribe notes for regular NN - Revisit Gradient calculation for DL
-	* Scribe Structure ML projects notes in /concepts
 	* Scribe Optimization notes in /concepts
 
 

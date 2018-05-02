@@ -19,6 +19,7 @@ _This section is largely adapt from Ian Goodfellow's Deep Learning textbook and 
 	* [Momentum](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#sgd-with-momentum)
 	* [RMSprop](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#sgd-with-rmsprop)
 	* [Adam](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#adam)
+	* [Comparison of All SGD-style Optimization Above]()
 
 * [Initialization](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#initialization)
 
@@ -37,7 +38,11 @@ When we do not know `pdata(x, y)` but only have a training set of samples, howev
 
 ![Empirical Risk Minimization](pictures/empirical_risk_minimization.png)
 
-The training process based on minimizing this average training error is knownasempirical risk minimization. In this setting, machine learning is still verysimilar to straightforward optimization. Rather than optimizing the risk directly,we optimize the empirical risk and hope that the risk decreases signiﬁcantly aswell. A variety of theoretical results establish conditions under which the true riskcan be expected to decrease by various amounts.
+The training process based on minimizing this average training error is known as **empirical risk minimization**. In this setting, machine learning is still very similar to straightforward optimization. Rather than optimizing the risk directly, we optimize the empirical risk and hope that the risk decreases signiﬁcantly as well. A variety of theoretical results establish conditions under which the true risk can be expected to decrease by various amounts.
+
+The relationship between generalization error and training error is a deep topic, and I think Professor Yaser Abu-Mostafa's Caltech course: [Lecture 7](http://work.caltech.edu/slides/slides07.pdf) has a fantastic explanation for this (using VC dimensions, Vapnik-Chervonenkis Inequality, and Probability bounds).
+
+![VC Bound](pictures/vc_bound.png)
 
 
 ## Challenges in Neural Network Optimization
@@ -46,17 +51,18 @@ There are many potential issues with Neural Network Optimization, we list a few 
 
 ### Ill-conditioning
 
+The condition number of a matrix is defined as the ratio of the `largest eigenvalue` / `smallest eigenvalue`. A matrix is ill-conditioning when this ratio is really big. Geometrically, this means the contour of the function is very long and narrow. This makes gradient descent inefficient, because the gradient direction is usually orthogonal to the direction of the local minima (see pictures above). This concept is explained well in this [Quora answer](https://www.quora.com/What-does-it-mean-to-have-a-poorly-conditioned-Hessian-matrix).
+
+
 ![ill conditioning](pictures/ill_conditioning.png)
 
-The intuition behind ill-conditioning Hessian is that learning becomes very slow despite the presence of a strong gradient because the learning rate must be shrunk to compensate for even stronger curvature (i.e. the decrease in the loss function is over-compensated by the increase in the curvature). In cases where we suspect the Hessian matrix is ill-conditioned, one should monitor the squared gradient norm `gTg` and `gTHg` terms.
+Mathematically, learning becomes very slow despite the presence of a strong gradient because the learning rate must be shrunk to compensate for even stronger curvature (i.e. the decrease in the loss function is over-compensated by the increase in the curvature). In cases where we suspect the Hessian matrix is ill-conditioned, one should monitor the squared gradient norm `gTg` and `gTHg` terms.
 
 ### Local Minima
 
-One of the most prominent features of a convex optimization problem is that itcan be reduced to the problem of ﬁnding a local minimum. Any local minimum isguaranteed to be a global minimum. Some convex functions have a ﬂat region atthe bottom rather than a single global minimum point, but any point within sucha ﬂat region is an acceptable solution. When optimizing a convex function, weknow that we have reached a good solution if we ﬁnd a critical point of any kind.
+One of the most prominent features of a convex optimization problem is that it can be reduced to the problem of ﬁnding a local minimum. Any local minimum is guaranteed to be a global minimum. Some convex functions have a ﬂat region at the bottom rather than a single global minimum point, but any point within such a ﬂat region is an acceptable solution. When optimizing a convex function, we know that we have reached a good solution if we ﬁnd a critical point of any kind.
 
-With nonconvex functions, such as neural nets, it is possible to have manylocal minima. Indeed, nearly any deep model is essentially guaranteed to havean extremely large number of local minima. As we will see, however, this is notnecessarily a major problem.
-
-Today, that does not appear to be the case. The problem remains an active area of research, but experts now suspect that, for suﬃciently large neural networks, **most local minima have a low cost function value**, and that it is not important to ﬁnd a true global minimum rather than toﬁnd a point in parameter space that has low but not minimal cost
+With nonconvex functions, such as neural nets, it is possible to have many local minima. Indeed, nearly any deep model is essentially guaranteed to have an extremely large number of local minima. As we will see, however, this is not necessarily a major problem, because experts now suspect that, for suﬃciently large neural networks, **most local minima have a low cost function value**, and that it is not important to ﬁnd a true global minimum rather than to ﬁnd a point in parameter space that has low but not minimal cost.
 
 ### Saddle Points
 
@@ -64,21 +70,25 @@ Nowadays, it's generally believe that in a high dimensional model like Neural Ne
 
 Here is the intuition: At a saddle point, the Hessian matrix has both positive and negative eigenvalues, whereas the Hessian matrix at a local minimum has only positive eigenvalues. Imagine that the sign of each eigenvalue is generated by ﬂipping a coin, it's much easier to get a saddle point than to have all signs to be positive (local minima).
 
-What are the implications of the proliferation of saddle points for trainingalgorithms? For ﬁrst-order optimization, algorithms that use only gradient infor-mation, the situation is unclear. The gradient can often become very small near asaddle point. On the other hand, gradient descent empirically seems able to escapesaddle points in many cases.
+What are the implications of the proliferation of saddle points for training algorithms? For ﬁrst-order optimization, algorithms that use only gradient information, the situation is unclear. The gradient can often become very small near a saddle point. On the other hand, gradient descent empirically seems able to escapesaddle points in many cases.
 
 ### Gradient Cliffs
 
-Neural networks with many layers often have extremely steep regions resembling cliﬀs. These result from the multiplication of several large weights together. On the face of an extremely steep cliﬀ structure, the gradient update step can move the parameters extremely far, usually jumping oﬀthe cliﬀ structure altogether.
+![Gradient Cliff](pictures/gradient_cliff.png)
+
+Neural networks with many layers often have extremely steep regions resembling cliﬀs. These result from the multiplication of several large weights together. On the face of an extremely steep cliﬀ structure, the gradient update step can move the parameters extremely far, usually jumping oﬀ the cliﬀ structure altogether.
 
 The typical solution to avoid updating by a large gradient direction is to use **gradient clipping**. The gradient clipping heuristic intervenes to reduce the step size, making it less likely to go outside the region where the gradient indicatesthe direction of approximately steepest descent.
 
 ### Vanishing and Exploding Gradients
 
-Another diﬃculty that neural network optimization algorithms must overcomearises when the computational graph becomes extremely deep. This is especially relevant for Recurrent Neural Network, where the same weight matrix `W` is being applied in each time step. Andrej Karpathy explained this problem in his blog post ["Yes, you should understand backprop"](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b) really well.
+Another diﬃculty that neural network optimization algorithms must overcomearises when the computational graph becomes extremely deep is the vanishing/exploding gradient problems. This is especially relevant for Recurrent Neural Network (RNN), where the same weight matrix `W` is being applied in each time step. Andrej Karpathy explained this problem in his blog post ["Yes, you should understand backprop"](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b) really well.
 
 ![Power Matrix](pictures/power_matrix.png)
 
-The vanishing and exploding gradient problem refers to the fact that gradients through such a graph are also scaled according to `diag(\lambda)^t`. Vanishing gradientsmake it diﬃcult to know which direction the parameters should move to improvethe cost function, while exploding gradients can make learning unstable.
+Intuitively, the vanishing and exploding gradient problem refers to the fact that gradients through such a graph are also scaled according to `Diag(\lambda)^t`. Vanishing gradients make it diﬃcult to know which direction the parameters should move to improve the cost function, while exploding gradients can make learning unstable. 
+
+There are different solutions for this problem. In the case of exploding gradient, as we mentioned earlier, gradient clipping (a hack) is the most effective strategy now. For vanishing gradient, many new NN architecture has been proposed (think GRU, LSTM, ResNet) to add a gradient highway for identity gradient to flow through.
 
 
 ## Gradient Descient
@@ -109,17 +119,23 @@ Deep Learning researchers have been doing a lot of work to speed up the optimiza
 
 [**Exponential Weighted Average**](https://www.coursera.org/learn/deep-neural-network/lecture/Ud7t0/understanding-exponentially-weighted-averages): I love Andrew's explanation on this topic, it's the math behind these newer optimization routines. The idea is that we will take the exponential weighted average of the first & second moment of the gradient, to smooth up the updates.
 
+![Exponential Weighted Average](pictures/exponential_weighted_average.png)
+
 ### SGD with Momentum
 
-[**Gradient Descent Momentum**](https://www.coursera.org/learn/deep-neural-network/lecture/y0m1f/gradient-descent-with-momentum): The key idea is to imagine that you have a optimization problem with poor conditioning of the Hessian Matrix (geometrically, this corresponds to a very narrow, long countour surface area with steep walls). 
+[**Gradient Descent Momentum**](https://www.coursera.org/learn/deep-neural-network/lecture/y0m1f/gradient-descent-with-momentum): The key idea is to imagine that you have a optimization problem with ill conditioning of the Hessian Matrix (geometrically, this corresponds to a very narrow, long countour surface area with steep walls). 
 
-Without momentum, typical gradient descent would just traverse and oscillate between the sides of the walls, but with momentum ,it will average out / smooth out the gradients using exponential weighted average, to make the gradient more centered / less brittle. Essentially, instead of updating by learning_rate * gradient, we update `learning_rate * exponential_weighted_avg(gradient)`
+![Momentum Geometry](pictures/momentum_geometry.png)
+
+Without momentum, typical gradient descent would just traverse and oscillate between the sides of the walls, but with momentum , it will average out / smooth out the gradients using exponential weighted average, to make the gradient more centered / less brittle. Essentially, instead of updating by `learning_rate * gradient`, we update `learning_rate * exponential_weighted_avg(gradient)`
 
 ![Momentum](pictures/momentum.png)
 
 ### SGD with RMSprop
 
-[**Gradient Descent with RMSprop**](https://www.coursera.org/learn/deep-neural-network/lecture/BhJlm/rmsprop): The key idea is to update less aggressively on gradient directions that are volatile, and update more aggressively on gradient directions that are stable. Instead of updating by learning_rate * gradient, we update `learning_rate * gradient / exponential_weighted_avg(gradient ** 2)`
+![RMSprop Geometry](pictures/rms_prop_geometry.png)
+
+[**Gradient Descent with RMSprop**](https://www.coursera.org/learn/deep-neural-network/lecture/BhJlm/rmsprop): The key idea is to update less aggressively on gradient directions that are volatile, and update more aggressively on gradient directions that are stable. Instead of updating by `learning_rate * gradient`, we update `learning_rate * gradient / exponential_weighted_avg(gradient ** 2)`
 
 ![RMSprop](pictures/rmsprop.png)
 
@@ -128,6 +144,11 @@ Without momentum, typical gradient descent would just traverse and oscillate bet
 [**ADAM**](https://www.coursera.org/learn/deep-neural-network/lecture/w9VCZ/adam-optimization-algorithm): This combines Momentum & RMSprop, so not only do we average out the brittle gradient direction, we update more aggressively on gradient directions that are stable, and less aggressively on gradient directions that are volatile. Update by `learning rate * exponential_weighted_avg(gradient) / exponential_weighted_avg(gradient ** 2)`
 
 ![ADAM](pictures/adam.png)
+
+### Comparison of All SGD-style Optimization Above
+
+The [notes from CS 231N](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture7.pdf) are fantastic, so I would suggest to look over the slides to reinforce the idea beyond these fancy optimization algorithms.
+
 
 ## Initialization
 
