@@ -1,6 +1,6 @@
 # Recurrent Neural Network
 
-## Table of Contents (AKA Major Concept Map)
+## Table of Contents
 
 * [Different Formulations](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/CONCEPTS.md#different-formulations)
 * [Vanilla RNN](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/CONCEPTS.md#vanilla-rnn)

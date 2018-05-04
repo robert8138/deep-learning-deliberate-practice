@@ -1,8 +1,8 @@
-# Optimization
+# Optimization Algorithms
 
 _This section is largely adapt from Ian Goodfellow's Deep Learning textbook and Andrew Ng's Deep Learning Specialization Coursera series._
 
-## Table of Contents (AKA Major Concept Map)
+## Table of Contents
 
 * [How Learning Differs From Traditional Optimization Problem](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#how-learning-differs-from-traditional-optimization-problem)
 
@@ -20,11 +20,6 @@ _This section is largely adapt from Ian Goodfellow's Deep Learning textbook and 
 	* [RMSprop](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#sgd-with-rmsprop)
 	* [Adam](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#adam)
 	* [Comparison of All SGD-style Optimization Above]()
-
-* [Initialization](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#initialization)
-
-* [Batch Normalization](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#batch-normalization)
-
 
 ## How Learning Differs From Traditional Optimization Problem
 
@@ -148,18 +143,3 @@ Without momentum, typical gradient descent would just traverse and oscillate bet
 ### Comparison of All SGD-style Optimization Above
 
 The [notes from CS 231N](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture7.pdf) are fantastic, so I would suggest to look over the slides to reinforce the idea beyond these fancy optimization algorithms.
-
-
-## Initialization
-
-Some optimization algorithms are not iterative by nature and simply solve for a solution point. Other optimization algorithms are iterative by nature but, when applied to the right class of optimization problems, converge to acceptable solutions in an acceptable amount of time regardless of initialization. Deep learning training algorithms usually do not have either of these luxuries. Training algorithms for deep learning models are usually iterative and thus require the user to specify someinitial point from which to begin the iterations.
-
-Perhaps the only property known with complete certainty is that the initial parameters need to “break symmetry” between diﬀerent units. If two hidden units with the same activation function are connected to the same inputs, then these units must have diﬀerent initial parameters. If they have the same initial parameters, then a deterministic learning algorithm applied to a deterministic costand model will constantly update both of these units in the same way.
-
-A common technique in initialization is normalization of weights. The intuition is by standardizing the weights, we will standardize the output, which in terms standardize the gradient, so we don't run into vanishing/exploding gradient.
-
-## Batch Normalization
-
-**Intuition**: To make sure that inputs in each layer are somewhat gaussian. The idea is to normalize it, and give it the chance to stay gaussian, or go back to its original form. Usually they stay somewhat guassian, which improves stability in gradient descent. Andrew's explanation from Coursera DL course 2 is the best that I have seen.
-
-![Batch Normalization](pictures/batch_norm.png)

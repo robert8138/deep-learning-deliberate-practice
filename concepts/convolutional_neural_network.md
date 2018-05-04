@@ -2,7 +2,7 @@
 
 _The notes below are adapted from Stanford's CS 231N notes, all rights belong to the course creataor._ 
 
-## Table of Contents (AKA Major Concept Map)
+## Table of Contents
 
 * [Motivation for CNN](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/convolutional_neural_network.md#motivation-for-cnn)
 * [High Level Mental Model of CNN](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/convolutional_neural_network.md#high-level-mental-model-of-cnn)

@@ -1,6 +1,6 @@
 # ConvNet Architectures
 
-## Table of Contents (AKA Major Concept Map)
+## Table of Contents
 
 * [ConvNet Layer Pattern](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/convolutional_neural_network_architecture.md#convnet-layer-patterns)
 * [Layer Sizing Pattern](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/convolutional_neural_network_architecture.md#layer-sizing-patterns)
