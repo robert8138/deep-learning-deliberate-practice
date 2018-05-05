@@ -1,25 +1,30 @@
 # Optimization Algorithms
 
-_This section is largely adapt from Ian Goodfellow's Deep Learning textbook and Andrew Ng's Deep Learning Specialization Coursera series._
+_This section is largely adapt from Ian Goodfellow's Deep Learning textbook and Andrew Ng's Deep Learning Specialization Coursera series, all credits belong to them._
 
 ## Table of Contents
 
-* [How Learning Differs From Traditional Optimization Problem](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#how-learning-differs-from-traditional-optimization-problem)
+* [How Learning Differs From Traditional Optimization Problem](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#how-learning-differs-from-traditional-optimization-problem)
 
-* [Challenges in Neural Network Optimization](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#challenges-in-neural-network-optimization)
-	* [Ill-conditioning Hessian Matrix](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#ill-conditioning)
-	* [Local Minima](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#local-minima)
-	* [Saddle Points](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#saddle-points)
-	* [Gradient Cliffs](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#gradient-cliffs)
-	* [Vanishing and Exploding Gradients](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#vanishing-and-exploding-gradients)
+* [Challenges in Neural Network Optimization](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#challenges-in-neural-network-optimization)
+	* [Ill-conditioning Hessian Matrix](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#ill-conditioning)
+	* [Local Minima](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#local-minima)
+	* [Saddle Points](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#saddle-points)
+	* [Gradient Cliffs](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#gradient-cliffs)
+	* [Vanishing and Exploding Gradients](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#vanishing-and-exploding-gradients)
 
-* [Gradient Descent](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#gradient-descient): Batch, Stochastic, Mini-batch
+* [Gradient Descent](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#gradient-descient): Batch, Stochastic, Mini-batch
 
-* [More Advanced Gradient-based Methods](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#more-advanced-gradient-based-methods)
-	* [Momentum](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#sgd-with-momentum)
-	* [RMSprop](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#sgd-with-rmsprop)
-	* [Adam](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization.md#adam)
-	* [Comparison of All SGD-style Optimization Above]()
+* [More Advanced Gradient-based Methods](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#more-advanced-gradient-based-methods)
+	* [Momentum](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#sgd-with-momentum)
+	* [RMSprop](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#sgd-with-rmsprop)
+	* [Adam](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#adam)
+	* [Comparison of All SGD-style Optimization Above](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization_algorithms.md#comparison-of-all-sgd-style-optimization-above)
+
+* [Babysitting the Learning Process](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization_algorithms.md#babysitting-the-learning-process)
+	* [Loss Function](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization_algorithms.md#loss-function)
+	* [Training error v.s. Validation error](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization_algorithms.md#train-vs-validation-error)
+	* [Decrease Learning Rate](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization_algorithms.md#learning-rate)
 
 ## How Learning Differs From Traditional Optimization Problem
 
@@ -143,3 +148,31 @@ Without momentum, typical gradient descent would just traverse and oscillate bet
 ### Comparison of All SGD-style Optimization Above
 
 The [notes from CS 231N](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture7.pdf) are fantastic, so I would suggest to look over the slides to reinforce the idea beyond these fancy optimization algorithms.
+
+## Babysitting the Learning Process
+
+There are multiple useful quantities you should monitor during training of a neural network. These plots are the window into the training process and should be utilized to get intuitions about different hyperparameter settings and how they should be changed for more efficient learning.
+
+The x-axis of the plots below are always in units of epochs, which measure how many times every example has been seen during training in expectation (e.g. one epoch means that every example has been seen once). It is preferable to track epochs rather than iterations since the number of iterations depends on the arbitrary setting of batch size.
+
+### Loss function
+
+The first quantity that is useful to track during training is the loss, as it is evaluated on the individual batches during the forward pass. Below is a cartoon diagram showing the loss over time, and especially what the shape might tell you about the learning rate:
+
+![Loss](pictures/loss_over_epoch.png)
+
+### Train v.s. Validation Error
+
+This is the most classic diagnostic, where we compare the gap between training and error:
+
+* If validation accuracy is much lower than training accuracy, it suggests that there is strong overfitting, in such case we should apply regularization.
+
+* If validation accuracy is about the same as training accuracy and they are both low, this might suggest that the model is underfitting and we should increase the model capacity.
+
+![Accuracy over time](pictures/acc_over_epoch.png)
+
+### Learning Rate
+
+Another important thing to keep in mind is to decrease the learning rate as we are in the later of the epoch trainings. This ensures that as we get closer to the local minima, we are more gentle and less brittle in doing big updates. This typically helps training for SGD + Momentum, ADAM usually do not need to worry about this.
+
+![Decrease Learning Rate](pictures/decrease_learning_rate.png)

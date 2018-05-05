@@ -59,15 +59,16 @@
 	* [Generate Model from OpenAI](https://blog.openai.com/generative-models/)
 	* Scribed CNN & CNN Architecture notes in /concepts directory
 
+* **[Week of 4/30]: Continue to scribe notes in [/concepts directory](https://github.com/robert8138/deep-learning-deliberate-practice/tree/master/concepts)**
+	* Stanford CS 229 Notes on DL, backprop (not as useful)
+	* Scribe `learning_algorithms.md`, `learning_tricks.md`, and `learning_enhancement.md` 
+
 # Upcoming
 
-* [Week of 4/30]: Continue to scribe notes in /concepts directory
-	* Stanford CS 229 Notes on DL, backprop (not as useful)
+* **[Week of 5/7]: Revisit Basic Backprop derivation and scribe notes in /concepts directory**
 	* Scribe notes for regular NN - Revisit Gradient calculation for DL
-	* Scribe Optimization notes in /concepts
 
-
-* [Week of 5/7]: Revisiting Convolutional Nueral Network (CS 20 materials + Work related projects)
+* **[Week of 5/14]: Revisiting Convolutional Nueral Network (CS 20 materials + Work related projects)**
 	* [Intro to ConvNet](https://docs.google.com/presentation/d/15E7NlyMkG8dAMa70i2OluprBDoz3UPyAk5ZpOiCkEqw/edit#slide=id.g1c60f09bdb_0_0)
 	* ConvNet in Tensorflow: [Slides](https://docs.google.com/presentation/d/17VTArfQVtapBqfYecyvp3Kp9HKy8Pw2WI12acYME2nI/edit#slide=id.g1c60f09bdb_0_0), [Course Notes](https://docs.google.com/document/d/1ph43FB5fZ_iarPTjIXhdtDvHJOpk4ncI2vDyxnOWcqM/edit)
 	* CS 231N Assignments: [Assignment 1](http://cs231n.github.io/assignments2017/assignment1/), [Assignment 2](http://cs231n.github.io/assignments2017/assignment2/), [Assignment 3](http://cs231n.github.io/assignments2017/assignment3/)
