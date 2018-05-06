@@ -40,6 +40,8 @@ Like any learning project, it is generally wise to take a week or two to compile
 
 ### Toolings: Keras & Tensorflow
 
+A few words on why I choose to focus on Keras (for now): Rachel Thomas summarized her [reasons](http://www.fast.ai/2017/01/03/keras/) quite well (although fast.ai have moved to Pytorch since). It boils down to Keras has the most thoughtfully designed, expressive API. After just using tensorflow very briefly, I felt the same. Francis Chollet even wrote a blog post on his philosophy on [designing APIs](https://blog.keras.io/author/francois-chollet.html), which I thought was quite a good read. Finally, Keras is officially [integrated](http://www.fast.ai/2017/01/03/keras/) into tensorflow as a high level library.
+
 * [Deep Learning with Python](https://www.manning.com/books/deep-learning-with-python): Deep Learning with Python introduces the field of deep learning using the Python language and the powerful Keras library. Written by Keras creator and Google AI researcher François Chollet, this book builds your understanding through intuitive explanations and practical examples. I heard a lot of great things about this book.
 
 * [Stanford CS 20: Tensorflow for Deep Learning Research](http://web.stanford.edu/class/cs20si/): This course will cover the fundamentals and contemporary usage of the Tensorflow library for deep learning research. We aim to help students understand the graphical computational model of TensorFlow, explore the functions it has to offer, and learn how to build and structure models best suited for a deep learning project. Through the course, students will use TensorFlow to build models of different complexity, from simple linear/logistic regression to convolutional neural network and recurrent neural networks to solve tasks such as word embedding, translation, optical character recognition, reinforcement learning. Students will also learn best practices to structure a model and manage research experiments.
@@ -55,6 +57,10 @@ Like any learning project, it is generally wise to take a week or two to compile
 ### Blogs 
 
 #### Deep Learning
+
+* [Fast.ai](http://www.fast.ai/)
+	* [What you need (Hardware, Software) for Deep Learning](http://www.fast.ai/2017/11/16/what-you-need/): This is a great introduction on the kind of hardware and software you need to do DL. In my opinion, it's probably a lot easier to just use a docker environment and launch a GPU on AWS (for hardware) and use a framework that has user friendly APIs so you can learn the major concepts (for software).
+	* [Fast.ai: An Introduction to Deep Learning for Tabular Data](http://www.fast.ai/2018/04/29/categorical-embeddings/)
 
 * [Andrej Karpathy's blog](http://karpathy.github.io/)
 	* [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)

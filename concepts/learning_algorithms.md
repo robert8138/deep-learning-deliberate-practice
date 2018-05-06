@@ -19,12 +19,12 @@ _This section is largely adapt from Ian Goodfellow's Deep Learning textbook and 
 	* [Momentum](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#sgd-with-momentum)
 	* [RMSprop](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#sgd-with-rmsprop)
 	* [Adam](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#adam)
-	* [Comparison of All SGD-style Optimization Above](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization_algorithms.md#comparison-of-all-sgd-style-optimization-above)
+	* [Comparison of All SGD-style Optimization Above](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#comparison-of-all-sgd-style-optimization-above)
 
-* [Babysitting the Learning Process](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization_algorithms.md#babysitting-the-learning-process)
-	* [Loss Function](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization_algorithms.md#loss-function)
-	* [Training error v.s. Validation error](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization_algorithms.md#train-vs-validation-error)
-	* [Decrease Learning Rate](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/optimization_algorithms.md#learning-rate)
+* [Babysitting the Learning Process](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#babysitting-the-learning-process)
+	* [Loss Function](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#loss-function)
+	* [Training error v.s. Validation error](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#train-vs-validation-error)
+	* [Decrease Learning Rate](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/learning_algorithms.md#learning-rate)
 
 ## How Learning Differs From Traditional Optimization Problem
 
@@ -173,6 +173,16 @@ This is the most classic diagnostic, where we compare the gap between training a
 
 ### Learning Rate
 
-Another important thing to keep in mind is to decrease the learning rate as we are in the later of the epoch trainings. This ensures that as we get closer to the local minima, we are more gentle and less brittle in doing big updates. This typically helps training for SGD + Momentum, ADAM usually do not need to worry about this.
+In training deep networks, it is usually helpful to anneal the learning rate over time. Good intuition to have in mind is that with a high learning rate, the system contains too much kinetic energy and the parameter vector bounces around chaotically, unable to settle down into deeper, but narrower parts of the loss function. Knowing when to decay the learning rate can be tricky: Decay it slowly and you’ll be wasting computation bouncing around chaotically with little improvement for a long time. But decay it too aggressively and the system will cool too quickly, unable to reach the best position it can. There are three common types of implementing the learning rate decay: 
+
+* **Step Decay**: Reduce the learning rate by some factor every few epochs. Typical values might be reducing the learning rate by a half every 5 epochs, or by 0.1 every 20 epochs. These numbers depend heavily on the type of problem and the model. One heuristic you may see in practice is to watch the validation error while training with a fixed learning rate, and reduce the learning rate by a constant (e.g. 0.5) whenever the validation error stops improving.
+
+* **Exponential decay**: has the mathematical form `α=α0e−kt`, where `α0`, `k` are hyperparameters and `t` is the iteration number (but you can also use units of epochs).
+
+* **1/t decay**: has the mathematical form `α=α0/(1+kt)` where `a0`, `k` are hyperparameters and `t` is the iteration number.
+
+In practice, we find that the step decay is slightly preferable because the hyperparameters it involves (the fraction of decay and the step timings in units of epochs) are more interpretable than the hyperparameter k. Lastly, if you can afford the computational budget, err on the side of slower decay and train for a longer time.
+
+One last quantity you might want to track is the ratio of the `update magnitudes` to the `value magnitudes`. Note: updates, not the raw gradients (e.g. in vanilla sgd this would be the gradient multiplied by the learning rate). You might want to evaluate and track this ratio for every set of parameters independently. A rough heuristic is that this ratio should be somewhere around `1e-3`. If it is lower than this then the learning rate might be too low. If it is higher then the learning rate is likely too high. 
 
 ![Decrease Learning Rate](pictures/decrease_learning_rate.png)
