@@ -59,14 +59,15 @@
 	* [Generate Model from OpenAI](https://blog.openai.com/generative-models/)
 	* Scribed CNN & CNN Architecture notes in /concepts directory
 
-* **[Week of 4/30]: Continue to scribe notes in [/concepts directory](https://github.com/robert8138/deep-learning-deliberate-practice/tree/master/concepts)**
+* **[Week of 4/30]: Review Week 1, summarize ideas in [/concepts directory](https://github.com/robert8138/deep-learning-deliberate-practice/tree/master/concepts)**
 	* Stanford CS 229 Notes on DL, backprop (not as useful)
 	* Scribe `learning_algorithms.md`, `learning_tricks.md`, and `learning_enhancement.md` 
 
 # Upcoming
 
-* **[Week of 5/7]: Revisit Basic Backprop derivation and scribe notes in /concepts directory**
-	* Scribe notes for regular NN - Revisit Gradient calculation for DL
+* **[Week of 5/7]: Review Week 2, summarize ideas in [/concepts directory](https://github.com/robert8138/deep-learning-deliberate-practice/tree/master/concepts)**
+	* Scribe notes for Neural Network Formulation - basic structure, terminology, loss function
+	* Scribe notes for Backprop - Revisit Gradient calculation for DL
 
 * **[Week of 5/14]: Revisiting Convolutional Nueral Network (CS 20 materials + Work related projects)**
 	* [Intro to ConvNet](https://docs.google.com/presentation/d/15E7NlyMkG8dAMa70i2OluprBDoz3UPyAk5ZpOiCkEqw/edit#slide=id.g1c60f09bdb_0_0)
