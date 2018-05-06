@@ -69,5 +69,20 @@ One disadvantage of model ensembles is that they take longer to evaluate on test
 There is a common myth that "“You need a lot of a data if you want to train/use CNNs”". If you are training a model from scratch on a task that has never been done before, then YES. However, in most of real life applications, the tasks that we are trying to solve are similar to many of the previously solved tasks. In such cases, leveraging the work that has been done by others can be extremely powerful, this is the concept beyond "Transfer Learning".
 
 
+* Transfer Learning: Don't start from scratch
+	* If you have very little data, take trained neural network as is, pop the very last softmax layer while freezing the weights on all prior layers, and impose your own softmax layer with your problem specific labels.
+		- Appropriate to use when the new training data is small
+		- Good if the trained labels are similar to the new task labels, otherwise might not work well
+		- Often useful to precompute the embeddings and save them to disk, then train on new labels
+
+	* Take trained neural network as is, pop the very last **FEW** layers, and retrain the last few layers with the new labels
+		- Appropriate to use when you have a larger label dataset
+		- By retraining, we can either retrain the last few layers with the same architecture
+		- or we can retrain them on with our own architecture for the last few layers
+
+	* Use the same architecture as the pre-trained model, but retrain the entire network
+		- Appropriate to use when you have a lot of data
+		- Use the pre-trained weights as your initialization weight (and replace the original random initialization), then retrain everything
+		- It takes time and computational power/budget
 
 
