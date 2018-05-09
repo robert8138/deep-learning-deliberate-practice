@@ -1,10 +1,3 @@
-# [TODO] Formulation for Training Neural Network
-
-* Defining the loss function = error + regularization
-* Defining the neural net function, parameters to be trained, hyperparameters to be tuned
-* Defining the optimization problem w.r.t parameters to be trained
-
-
 # [TODO] Backward Propogation
 
 Backward Propogation is one of the most important concept in Deep Learning. Specifically, it describes how we could calculate the gradient of the cost function with respect to the parameters of the neural network. 

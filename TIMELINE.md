@@ -64,6 +64,9 @@
 	* Scribe `learning_algorithms.md`, `learning_tricks.md`, and `learning_enhancement.md` 
 
 * **[Week of 5/7]: Review Week 2, summarize ideas in [/concepts directory](https://github.com/robert8138/deep-learning-deliberate-practice/tree/master/concepts)**
+	* Start reading [Matrix Calculus for Deep Learning](http://parrt.cs.usfca.edu/doc/matrix-calculus/index.html)
+	* Michael Nielsen's [detailed treatment on backprop](http://neuralnetworksanddeeplearning.com/chap2.html)
+	* [Yes, you should understand backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b)
 	* Scribe notes for Neural Network Formulation - basic structure, terminology, loss function
 	* Scribe notes for Backprop - Revisit Gradient calculation for DL
 
