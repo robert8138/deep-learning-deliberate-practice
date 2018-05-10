@@ -64,11 +64,11 @@
 	* Scribe `learning_algorithms.md`, `learning_tricks.md`, and `learning_enhancement.md` 
 
 * **[Week of 5/7]: Review Week 2, summarize ideas in [/concepts directory](https://github.com/robert8138/deep-learning-deliberate-practice/tree/master/concepts)**
-	* Finished reading [Matrix Calculus for Deep Learning](http://parrt.cs.usfca.edu/doc/matrix-calculus/index.html)
-	* Went through Michael Nielsen's [detailed treatment on backprop](http://neuralnetworksanddeeplearning.com/chap2.html) again
-	* Went through [Yes, you should understand backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b) again
-	* Derived backprop by hand, see derivation [here](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/pictures/backprop_math_by_hand.png)
-	* Scribe notes for Neural Network Formulation - basic structure, terminology, loss function
+	* Finished reading [Matrix Calculus for Deep Learning](http://parrt.cs.usfca.edu/doc/matrix-calculus/index.html), reminds me a lot of Math 105 - Multivariate Calculus & Measure Theory
+	* Went through Michael Nielsen's [detailed treatment on backprop](http://neuralnetworksanddeeplearning.com/chap2.html) again, derived 4 fundamental equations of backprop along the way
+	* My ugly derivation is written down [here](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/pictures/backprop_math_by_hand.png). This refreshes my Matrix Calculus quite a bit
+	* Went through [Why are deep neural networks hard to train?](http://neuralnetworksanddeeplearning.com/chap5.html) and [Yes, you should understand backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b) again, with the backprop derivatives in context
+	* Scribed notes for Neural Network Formulation - basic structure, terminology, loss function
 	* Scribe notes for Backprop - Revisit Gradient calculation for DL
 
 # Upcoming
