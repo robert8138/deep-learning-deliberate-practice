@@ -10,6 +10,7 @@ The math for backprop can seem confusing, and that's because it involves a lot o
 
 * [Matrix Calculus for Deep Learning](http://parrt.cs.usfca.edu/doc/matrix-calculus/index.html)
 * [Michael Nielsen's Detailed Explanation on Backprop](http://neuralnetworksanddeeplearning.com/chap2.html)
+* [Justin Johnson's notes on Derivatives, Backpropagation, and Vectorization](http://cs231n.stanford.edu/2017/handouts/derivatives.pdf)
 * My own derivation of 4 fundamental equations for backprop is written [here](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/pictures/backprop_math_by_hand.png)
 
 ### Intuition on Backprop & Why Backprop Makes Training Hard
@@ -27,6 +28,13 @@ This document was written by Jeremey Howard, and it's a very detailed (but nice)
 * Second, with the basic mechanics of Matrix Calculus mastered, he then discussed how chain rule works. The concept of total derivative comes up, which manifest itself a lot in matrix multiplication of Jacobian matrices based on the chain rule. This is important concept to master in order to correctly derive backprop in neural network
 
 * Finally, he went through a simplified (one layer example) of deriving the `w` and `b` update in backprop
+
+## Justin Johnson's Notes on Tensor Derivative
+
+There are two things great about Justin's notes:
+
+* He introduced Calculus as rate of change, and show how `x -> x + dx` would lead to `y -> y + dy/dx * dx`, which explains how to reason about the dimension of `dy/dx`, very helpful!
+* He introduced generalized version of the Tensor Calculus, where the input and output can both be tensors. Derivatives and Chain rules still apply, but are more complex.
 
 ## Michael Nielsen's Detailed Explanation on Backprop
 
