@@ -73,7 +73,11 @@
 
 # Upcoming
 
-* **[Week of 5/14]: Revisiting Convolutional Nueral Network (CS 20 materials + Work related projects)**
+* **[Week of 5/14]: Google CapitalG's Machine Learning Training**
+	* Machine Learning Training - advanced track in Google Cloud Campus
+	* [Facebook's Field Guide to Machine Learning](https://research.fb.com/the-facebook-field-guide-to-machine-learning-video-series/)
+
+* **[Week of 5/21]: Revisiting Convolutional Nueral Network (CS 20 materials + Work related projects)**
 	* [Intro to ConvNet](https://docs.google.com/presentation/d/15E7NlyMkG8dAMa70i2OluprBDoz3UPyAk5ZpOiCkEqw/edit#slide=id.g1c60f09bdb_0_0)
 	* ConvNet in Tensorflow: [Slides](https://docs.google.com/presentation/d/17VTArfQVtapBqfYecyvp3Kp9HKy8Pw2WI12acYME2nI/edit#slide=id.g1c60f09bdb_0_0), [Course Notes](https://docs.google.com/document/d/1ph43FB5fZ_iarPTjIXhdtDvHJOpk4ncI2vDyxnOWcqM/edit)
 	* CS 231N Assignments: [Assignment 1](http://cs231n.github.io/assignments2017/assignment1/), [Assignment 2](http://cs231n.github.io/assignments2017/assignment2/), [Assignment 3](http://cs231n.github.io/assignments2017/assignment3/)
