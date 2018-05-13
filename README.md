@@ -90,6 +90,7 @@ A few words on why I choose to focus on Keras (for now): Rachel Thomas summarize
 ### **Application Track**:
 
 * Do it the Jeremy Howard / hacker way, try to map techniques to problems, or problems to techniques
+* Check out [Cutting Edge Deep Learning for Coders: 2018 edition](http://www.fast.ai/2018/05/07/part2-launch/)
 * A lot of opportunity to do this on my current team, since we have a lot of image-related tasks
 
 ### **Math Track**:
