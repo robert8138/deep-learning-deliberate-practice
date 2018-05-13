@@ -38,7 +38,12 @@ With Matrix Calculus under your belt, basic exercise for proving the general bac
 
 * [Special Case: Jeremey Howard's one-layer derivation with RELU activation](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/backward_propogation.md#jeremy-howards-proof-for-gradient-of-w-and-b)
 * [Michael Nielsen's Detailed Explanation on Backprop](http://neuralnetworksanddeeplearning.com/chap2.html)
-* My own derivation of 4 fundamental equations for backprop is written [here](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/pictures/backprop_math_by_hand.png)
+	* [Basic Notation](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/backward_propogation.md#basic-notation)
+	* [Setting up backprop via upstream gradient & local gradient](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/backward_propogation.md#setting-up-backprop-via-upstream-gradient--local-gradient)
+	* [Four Fundamental Equations of Backprop](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/backward_propogation.md#four-fundamental-equations-of-backprop)
+	* [Proof of the Four Equations](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/backward_propogation.md#proofs-for-four-fundamental-equations-of-backprop)
+	* [Backprop Algorithm](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/backward_propogation.md#the-backprop-algorithm)
+	* [How Backprop was discovered](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/backward_propogation.md#how-backprop-was-discovered)
 
 ### Intuition on Backprop & Why Backprop Makes Training Hard
 
@@ -145,21 +150,54 @@ This is, of course, just a warm-up exercise (because it's only one-layer and it 
 
 ### Michael Nielsen's Detailed Explanation on Backprop
 
-Unlike Colah's post, this long posts goes into detail explaining the math, notation, derivation of how backprop works in the context of Neural Networks. It's a really good read. To summarize, it:
+Unlike Colah's post, this long posts goes into detail explaining the math, notation, derivation of how backprop works in the context of Neural Networks. It's a really good read. Here are some highlights from the post.
 
-* First introduced the notation (and explain why they are set up that way)
+#### Basic Notation
 
-* Lay out the four fundamental equations for backprop:
-	* An equation for the error in the output layer: `δL`
-	* An equation for the error `δl` in terms of the error in the next layer, `δl+1`
-	* An equation for the rate of change of the cost with respect to any bias in the network (`dCost/db`)
-	* An equation for the rate of change of the cost with respect to any weight in the network (`dCost/dw`)
+Michael set up the notation in the following fashion:
 
-* It also goes into proving 2 of the 4 fundamental equations (I derived this myself, see [here](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/pictures/backprop_math_by_hand.png))
-* It then lays out the backprop algorithm with SGD with mini-batch
-* It shows Python code snippets for backprop
-* It explains why it's much faster than forward propogation
-* It then talks about a bit of the history of how backprop was discovered (Answer: a lot of hardwork in using forward pass reasoning and simplifying the math)
+![Notation](pictures/michael_nielsen_nn_notation.png)
+
+#### Setting up Backprop via Upstream Gradient & Local Gradient
+
+Michael's approach to the four fundamental equations for backprop is to set up very specific **upstream gradient** and **local gradient**. Obviously, the nature of backprop is that you can use any upstream gradient you like, but Michael's choice made the math a lot easier later.
+
+![Upstream and Local Gradient](pictures/upstream_and_local_gradient.png)
+
+It's important to note that in nowhere of this chain rule we use `∂C/∂a`, we are looking at how changes in `w` and `b` affects `Cost (C)` through changes in `z`.
+
+#### Four Fundamental Equations of Backprop
+
+With the upstream gradient set to `∂C/∂z` and local gradient set to `∂z/∂w` and `∂z/∂b`, we can now work backward from the last layer and write down how we would update the weights and bias parameters from last layer to the first.
+
+![Four equations for backprop](pictures/four_equations_for_backprop.png)
+
+* An equation for the error in the output layer: `δL`
+* An equation for the error `δl` in terms of the error in the next layer, `δl+1`
+* An equation for the rate of change of the cost with respect to any bias in the network (`dCost/db`)
+* An equation for the rate of change of the cost with respect to any weight in the network (`dCost/dw`)
+
+#### Proofs for Four Fundamental Equations of Backprop
+
+I walked through the details of the proof for each of the equation. The important thing to keep in mind is the dimension of these derivatives. Use the Justin Johnson's notes and Jeremey Howard's notes to verify the dimensions, and do things element wise to derive the derivatives. The trick is the following:
+
+* Carefully determine the dimensions of the derivatives (scalar? column vector? row vector? matrix? tensor?)
+* Derive the element-wise derivatives
+* Putting things back together in matrix form
+
+My derivation is avaiable below:
+
+![Backprop by Hand](pictures/backprop_math_by_hand.png)
+
+#### The Backprop Algorithm
+
+After deriving all the math, we can now zoom back out and write down the backprop algorithm (in SGD form).
+
+![Backprop Algorithm](pictures/backprop_algo.png)
+
+#### How Backprop was discovered
+
+What about the other mystery - how backpropagation could have been discovered in the first place? In fact, if you follow the approach I just sketched you will discover a proof of backpropagation. Unfortunately, the proof is quite a bit longer and more complicated than the one I described earlier in this chapter. So how was that short (but more mysterious) proof discovered? What you find when you write out all the details of the long proof is that, after the fact, there are several obvious simplifications staring you in the face. You make those simplifications, get a shorter proof, and write that out. And then several more obvious simplifications jump out at you. So you repeat again. The result after a few iterations is the proof
 
 ## Intuition on Backprop & Why Backprop Makes Training Hard
 
@@ -167,6 +205,11 @@ Unlike Colah's post, this long posts goes into detail explaining the math, notat
 
 A Medium post from Andre Karpathy explaining why every practitioners should learn about how backprop works. Essentially, his arguments is that even when doing DL in practice, if the activations are saturated, the gradient can become very close to 0 (vanishing gradient problem), causing the weight updates to be super slow, and in terms make the cost function to go down very slowly.
 
+* For sigmoid of tanh, the gradient can be saturated because of the `z(1-z)` term in the local gradient
+* For RELU, if `wTx < 0`, then the gradient will be 0, and all downstream weights will not update
+
 ### Why Training Neural Network Is Hard
+
+Michael explains in his post, that it turns out that the gradient in deep neural networks is **unstable**, tending to either explode or vanish in earlier layers. This instability is a fundamental problem for gradient-based learning in deep neural networks. He shows the effect of multiply W repeatedly together would cause trouble, see his posts for more details.
 
 

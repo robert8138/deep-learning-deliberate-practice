@@ -68,8 +68,8 @@
 	* Went through Michael Nielsen's [detailed treatment on backprop](http://neuralnetworksanddeeplearning.com/chap2.html) again, derived 4 fundamental equations of backprop along the way
 	* My ugly derivation is written down [here](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/pictures/backprop_math_by_hand.png). This refreshes my Matrix Calculus quite a bit
 	* Went through [Why are deep neural networks hard to train?](http://neuralnetworksanddeeplearning.com/chap5.html) and [Yes, you should understand backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b) again, with the backprop derivatives in context
-	* Scribed notes for Neural Network Formulation - basic structure, terminology, loss function
-	* Scribe notes for Backprop - Revisit Gradient calculation for DL
+	* Scribed notes for [Neural Network Formulation](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/neural_network_architecture_basics.md) - basic structure, terminology, loss function
+	* Scribed notes for [Backprop](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/backward_propogation.md) - Revisit Gradient calculation for DL
 
 # Upcoming
 
