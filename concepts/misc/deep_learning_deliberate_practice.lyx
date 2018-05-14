@@ -1,0 +1,147 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left[\begin{array}{c}
+a_{1}^{[l]}\\
+a_{2}^{[l]}\\
+a_{3}^{[l]}\\
+\vdots\\
+a_{N^{[l]}}^{[l]}
+\end{array}\right] & =\sigma\left(\left[\begin{array}{cccc}
+w_{11}^{[l]} & w_{12}^{[l]} & \dots & w_{1N^{[l-1]}}^{[l]}\\
+w_{21}^{[l]} & w_{22}^{[l]} & \dots & w_{2N^{[l-1]}}^{[l]}\\
+w_{31}^{[l]} & w_{32}^{[l]} & \dots & w_{3N^{[l-1]}}^{[l]}\\
+\vdots & \vdots & \dots & \vdots\\
+w_{N^{[l]}1}^{[l]} & w_{N^{[l]}2}^{[l]} & \dots & w_{N^{[l]}N^{[l-1]}}^{[l]}
+\end{array}\right]\left[\begin{array}{c}
+a_{1}^{[l-1]}\\
+a_{2}^{[l-1]}\\
+a_{3}^{[l-1]}\\
+\vdots\\
+a_{N^{[l-1]}}^{[l-1]}
+\end{array}\right]+\left[\begin{array}{c}
+b_{1}^{[l]}\\
+b_{2}^{[l]}\\
+b_{3}^{[l]}\\
+\vdots\\
+b_{N^{[l]}}^{[l]}
+\end{array}\right]\right)=\sigma\left(\left[\begin{array}{c}
+z_{1}^{[l]}\\
+z_{2}^{[l]}\\
+z_{3}^{[l]}\\
+\vdots\\
+z_{N^{[l]}}^{[l]}
+\end{array}\right]\right)\\
+\\
+\mathbf{a}^{[l]}= & \sigma\left(\mathbf{W}^{[l]T}\mathbf{a}^{[l-1]}+\mathbf{b}^{[l]}\right)=\sigma\left(\mathbf{z}^{[l]}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+z_{j}^{[l]}\rightarrow z_{j}^{[l]}+\Delta z_{j}^{[l]}\Rightarrow C\rightarrow C+\frac{\partial C}{\partial z_{j}^{[l]}}\Delta z_{j}^{[l]}\\
+w_{jk}^{[l]}\rightarrow w_{jk}^{[l]}+\Delta w_{jk}^{[l]}\Rightarrow z_{j}^{[l]}\rightarrow z_{j}^{[l]}+\frac{\partial z_{j}^{[l]}}{\partial w_{jk}^{[l]}}\Delta w_{jk}^{[l]}\\
+z_{j}^{[l]}\rightarrow z_{j}^{[l]}+\Delta z_{j}^{[l]}\Rightarrow C\rightarrow C+\frac{\partial C}{\partial z_{j}^{[l]}}\Delta z_{j}^{[l]}\\
+z_{j}^{[l]}\rightarrow z_{j}^{[l]}+\left\{ \frac{\partial z_{j}^{[l]}}{\partial w_{jk}^{[l]}}\Delta w_{jk}^{[l]}\right\} \Rightarrow C\rightarrow C+\frac{\partial C}{\partial z_{j}^{[l]}}\frac{\partial z_{j}^{[l]}}{\partial w_{jk}^{[l]}}\Delta w_{jk}^{[l]}\\
+w_{jk}^{[l]}\rightarrow w_{jk}^{[l]}+\Delta w_{jk}^{[l]}\Rightarrow z_{j}^{[l]}\rightarrow z_{j}^{[l]}+\left\{ \frac{\partial z_{j}^{[l]}}{\partial w_{jk}^{[l]}}\Delta w_{jk}^{[l]}\right\} \Rightarrow C\rightarrow C+\frac{\partial C}{\partial z_{j}^{[l]}}\frac{\partial z_{j}^{[l]}}{\partial w_{jk}^{[l]}}\Delta w_{jk}^{[l]}\\
+\frac{\partial C}{\partial w_{jk}^{[l]}}=\frac{\partial C}{\partial z_{j}^{[l]}}\frac{\partial z_{j}^{[l]}}{\partial w_{jk}^{[l]}}\\
+\frac{\partial C}{\partial b_{j}^{[l]}}=\frac{\partial C}{\partial z_{j}^{[l]}}\frac{\partial z_{j}^{[l]}}{\partial b_{j}^{[l]}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+Cost(\mathbf{z}(\mathbf{W},\mathbf{b}))\\
+\frac{\partial Cost}{\partial\mathbf{z}}\frac{\partial\mathbf{z}}{\partial\mathbf{W}}\\
+\frac{\partial Cost}{\partial\mathbf{z}}\frac{\partial\mathbf{z}}{\partial\mathbf{b}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
