@@ -81,6 +81,8 @@ The key thing to remember is that with this formulation, gradient can flow a lot
 
 ![uninterrupted gradient](pictures/uninterrupted_gradient.png)
 
+* [Colah's Explanation on LSTM](http://colah.github.io/posts/2015-08-Understanding-LSTMs/): is yet another great explaantion on LSTM.
+
 ## Other Ways to Make RNN more powerful (Bidirectioanal RNN, Deep RNN)
 
 There are other ways to make RNNs even more powerful, the two notable ones are:

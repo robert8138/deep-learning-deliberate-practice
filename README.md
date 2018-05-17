@@ -68,6 +68,8 @@ A few words on why I choose to focus on Keras (for now): Rachel Thomas summarize
 
 * [Colab](http://colah.github.io/): His intuitive explanation of DL topics are very well regarded, and something that I plan to revisit from time to time.
 
+* [Distill.pub](https://distill.pub/): The web is a powerful medium to share new ways of thinking. Over the last few years we’ve seen many imaginative examples of such work. But traditional academic publishing remains focused on the PDF, which prevents this sort of communication.
+
 #### Machine Learning in General
 
 * **Practical Machine Learning Advice**
