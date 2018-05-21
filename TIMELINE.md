@@ -71,13 +71,18 @@
 	* Scribed notes for [Neural Network Formulation](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/neural_network_architecture_basics.md) - basic structure, terminology, loss function
 	* Scribed notes for [Backprop](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/backward_propogation.md) - Revisit Gradient calculation for DL
 
-# Upcoming
-
 * **[Week of 5/14]: Google CapitalG's Machine Learning Training**
-	* Machine Learning Training - advanced track in Google Cloud Campus
+	* [Google CapitalG Machine Learning Training](https://www.cnbc.com/2018/05/19/alphabet-capitalg-machine-learning-bootcamp-for-portfolio-companies.html)
+	* [Facebook Machine Open House](https://fb-mlopenhouse.splashthat.com/?gz=c5581790016cf0e56230f7584d387938&pp=1&guest-access-hash=Mjk5OTEyNnwxNjg3NzgyNjZ8MTUyNjQyMzY0MDtlMGQ4MGU4YzA0ZTY1ZTAwMzg1NGRmOTkwODA5YWE4ZTI2OTU0NWJmZWQ5Mjk4NTEwMjU2ZDRiY2E5ZDg2MDEw)
 	* [Facebook's Field Guide to Machine Learning](https://research.fb.com/the-facebook-field-guide-to-machine-learning-video-series/)
 
-* **[Week of 5/21]: Revisiting Convolutional Nueral Network (CS 20 materials + Work related projects)**
+* **[Week of 5/21]: Review Week 3, summarize word embeddings, Recommender System in [/concepts directory](https://github.com/robert8138/deep-learning-deliberate-practice/tree/master/concepts)**
+	* Scribe `word_embeddings.md`
+	* Scribe `recommender_system.md`, read [YouTube Recommendation System](https://www.researchgate.net/profile/Sujoy_Gupta2/publication/221140967_The_YouTube_video_recommendation_system/links/53e834410cf21cc29fdc35d2/The-YouTube-video-recommendation-system.pdf) and [YouTube Recommender System with Deep Learning](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45530.pdf)
+
+# Upcoming
+
+* **[Week of 5/28]: Revisiting Convolutional Nueral Network (CS 20 materials + Work related projects)**
 	* [Intro to ConvNet](https://docs.google.com/presentation/d/15E7NlyMkG8dAMa70i2OluprBDoz3UPyAk5ZpOiCkEqw/edit#slide=id.g1c60f09bdb_0_0)
 	* ConvNet in Tensorflow: [Slides](https://docs.google.com/presentation/d/17VTArfQVtapBqfYecyvp3Kp9HKy8Pw2WI12acYME2nI/edit#slide=id.g1c60f09bdb_0_0), [Course Notes](https://docs.google.com/document/d/1ph43FB5fZ_iarPTjIXhdtDvHJOpk4ncI2vDyxnOWcqM/edit)
 	* CS 231N Assignments: [Assignment 1](http://cs231n.github.io/assignments2017/assignment1/), [Assignment 2](http://cs231n.github.io/assignments2017/assignment2/), [Assignment 3](http://cs231n.github.io/assignments2017/assignment3/)
