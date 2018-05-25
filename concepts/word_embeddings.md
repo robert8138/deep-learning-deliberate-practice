@@ -142,11 +142,12 @@ There are typically two ways to evaluate word embeddings in NLP: **Intrinsic** v
 
 #### Dimension Reduction Techniques
 
-olah's [blog post on dimension reduction techniques (no math)](http://colah.github.io/posts/2014-10-Visualizing-MNIST/).
+Chris Olah's [blog post on dimension reduction techniques](http://colah.github.io/posts/2014-10-Visualizing-MNIST/) is a nice introduction to visualizing embeddings using dimension reduction techniques, things he briefly covered are:
 
-* Multi-dimensional Scaling
-* 
-* t-SNE 
+* Principal Component Analysis (PCA): will find the best possible "angle" for us. This really means to find the principal components that explains the most variance of the data, and view them that way.
+* Multi-dimensional Scaling: This techniques make sure that the distance of two objects in high dimensional space is roughly the same as the distance in a low dimensional space. It's an optimization problem.
+* Force-Directed Graph: This is trying to model the lower dimensional data in a graph, and visualize them.
+* t-distributed Stochastic Neighbor Embeddings: tries to optimize for is preserving the topology of the data. For every point, it constructs a notion of which other points are its ‘neighbors,’ trying to make all points have the same number of neighbors. 
 
 #### How to use t-SNE effectively
 
@@ -156,19 +157,19 @@ A popular method for exploring high-dimensional data is something called **t-SNE
 
 Before diving in: if you haven’t encountered t-SNE before, here’s what you need to know about the math behind it. The goal is to take a set of points in a high-dimensional space and find a faithful representation of those points in a lower-dimensional space, typically the 2D plane. The algorithm is non-linear and adapts to the underlying data, performing different transformations on different regions.
 
-* Those hyperparameters really matter
+* **Those hyperparameters really matter**
 	* Perpelexity: (loosely) says how to balance attention between local and global aspects of your data. The parameter is, in a sense, a guess about the number of close neighbors each point has. The perplexity value has a complex effect on the resulting pictures.
 	* Number of Steps: If you see a t-SNE plot with strange “pinched” shapes, chances are the process was stopped too early, and you should run it for a larger number of steps.
 
-* Cluster sizes in a t-SNE plot mean nothing
+* **Cluster sizes in a t-SNE plot mean nothing**
 	* t-SNE algorithm adapts its notion of “distance” to regional density variations in the data set. As a result, it naturally expands dense clusters, and contracts sparse ones, evening out cluster sizes.
 	* The bottom line, however, is that you cannot see relative sizes of clusters in a t-SNE plot.
 
-* Distances between clusters might not mean anything
+* **Distances between clusters might not mean anything**
 	* The post gave a very good example that when perplexity is too low, t-SNE might not be able to capture the global structure. For example, if a cluster is 5 times away from the other clusters, for lower perplexity values the clusters look equidistant. When the perplexity is 100, we see the global geometry fine.
 	* We can't always set perplexity to be a fixed high number, because we can lose local structure. Furthermore, perplexity really also depends on how many points you have per cluster.
 
-* Random noise doesn’t always look random
+* **Random noise doesn’t always look random**
 	* When perplexity is too low, you can force local structure or clumps that are not random at all, so you are seeing patterns in what is really just random data
 
 There’s a reason that t-SNE has become so popular: it’s incredibly flexible, and can often find structure where other dimensionality-reduction algorithms cannot. Unfortunately, that very flexibility makes it tricky to interpret. Out of sight from the user, the algorithm makes all sorts of adjustments that tidy up its visualizations. Don’t let the hidden “magic” scare you away from the whole technique, though. The good news is that by studying how t-SNE behaves in simple cases, it’s possible to develop an intuition for what’s going on.
