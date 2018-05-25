@@ -82,6 +82,8 @@ A few words on why I choose to focus on Keras (for now): Rachel Thomas summarize
 
 * [Dimensions of Machine Learning Models](https://www.slideshare.net/SharathRao6/lessons-from-integrating-machine-learning-models-into-data-products): Less relevant to Deep Learning specifically, but this is still by far the best piece that I can find in categorizing different ML models (contextual data dimension v.s. latency requirement dimension). [Video](https://www.youtube.com/watch?v=wG5EyHYrJGE&t=891s) from DataEngConf2017 is also available.
 
+* [Facebook's Machine Learning Field Guide](https://research.fb.com/the-facebook-field-guide-to-machine-learning-video-series/): A very nice introduction to ML in the industry. I thought this is a pretty accurate description of things and considerations that I run into at work.
+
 
 ## To Keep Learning
 
