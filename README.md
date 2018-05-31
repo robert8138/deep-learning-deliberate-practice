@@ -84,6 +84,8 @@ A few words on why I choose to focus on Keras (for now): Rachel Thomas summarize
 
 * [Facebook's Machine Learning Field Guide](https://research.fb.com/the-facebook-field-guide-to-machine-learning-video-series/): A very nice introduction to ML in the industry. I thought this is a pretty accurate description of things and considerations that I run into at work.
 
+* [What does a Machine Learning Engineer Do?](https://medium.com/@tomaszdudek/but-what-is-this-machine-learning-engineer-actually-doing-18464d5c699)
+
 
 ## To Keep Learning
 
