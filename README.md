@@ -22,7 +22,7 @@ Interestingly, 2017 was the first year in my professional career where the major
 
 ## Motivation for Learning DL
 
-In early 2018, I have decided to transition to the Select team to focus on applied Machine Learning. Specifically, there is general buy-ins from the team, my future manager, and my immediate teammates that Machine Learning will be critical to scale the program in 2018. Among of the many areas that we can tackle on Select, one of which is to better leverage Airbnb's collection of Home images. 
+In early 2018, I have decided to transition to the Select team to focus on applied Machine Learning. Specifically, there is general buy-ins from the team, my future manager, and my immediate teammates that Machine Learning will be critical to scale the program in 2018. Among of the many areas that we can tackle on Select, one of which is to better leverage Airbnb's collection of Home images, and to do work like [categorizing Airbnb photos](https://medium.com/airbnb-engineering/categorizing-listing-photos-at-airbnb-f9483f3ab7e3) (not my work, though I am a consumer of this model). 
 
 As a result, I foresee that the class of problems that I will be dealing with, fall closely under the realm of Deep Learning, and this is the best opportunity for me to achieve deliberate practice on an increasingly important skill that will allow us to unlock enormous business values in the future.
 

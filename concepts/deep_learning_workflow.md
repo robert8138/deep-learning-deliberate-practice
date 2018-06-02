@@ -200,9 +200,10 @@ When comparing the models, it's important to compare them on a common metric (RM
 
 The generalization ability of a ML task is governed by the Bias-Variance Tradeoff. In the deep learning era, it is a common practice to try to build a high capacity model that overfits, so we avoid having a bias problem. Typically, we will first try to overfit the model, to prove that at least patterns in the training task can be learned, then we try to generalize later. Here are a few ways to increase model capacity for DL:
 
-* Add More layers
-* Make the layers bigger and wider
-* Train for more epochs
+* Fit a bigger network
+* Use better optimization routine
+* Train the model longer
+* Make the model more complex by trying different architectures
 
 ### Regularize Your Model
 
