@@ -80,9 +80,14 @@
 	* Scribe `word_embeddings.md`
 	* Scribe `recommender_system.md`, read [YouTube Recommendation System](https://www.researchgate.net/profile/Sujoy_Gupta2/publication/221140967_The_YouTube_video_recommendation_system/links/53e834410cf21cc29fdc35d2/The-YouTube-video-recommendation-system.pdf) and [YouTube Recommender System with Deep Learning](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45530.pdf)
 
+* **[Week of 5/28]: Scribe deep_learning_history.md & deep_learning_workflow.md**
+	* Scribed `deep_learning_history.md`
+	* Scribed `deep_learning_workflow.md`
+	* Started Scribing `structure_ml_projects.md` (scribed up until Chapter 1-32 from Andrew Ng's ML Yearning book)
+
 # Upcoming
 
-* **[Week of 5/28]: Revisiting Convolutional Nueral Network (CS 20 materials + Work related projects)**
-	* [Intro to ConvNet](https://docs.google.com/presentation/d/15E7NlyMkG8dAMa70i2OluprBDoz3UPyAk5ZpOiCkEqw/edit#slide=id.g1c60f09bdb_0_0)
-	* ConvNet in Tensorflow: [Slides](https://docs.google.com/presentation/d/17VTArfQVtapBqfYecyvp3Kp9HKy8Pw2WI12acYME2nI/edit#slide=id.g1c60f09bdb_0_0), [Course Notes](https://docs.google.com/document/d/1ph43FB5fZ_iarPTjIXhdtDvHJOpk4ncI2vDyxnOWcqM/edit)
-	* CS 231N Assignments: [Assignment 1](http://cs231n.github.io/assignments2017/assignment1/), [Assignment 2](http://cs231n.github.io/assignments2017/assignment2/), [Assignment 3](http://cs231n.github.io/assignments2017/assignment3/)
+* **[Week of ?]**: Continue to scribe structure_ml_projects.md
+* **[Week of ?]**: Hands on Exercise
+	* Start Applying What I learned on a concrete work related project
+
