@@ -85,6 +85,12 @@
 	* Scribed `deep_learning_workflow.md`
 	* Started Scribing `structure_ml_projects.md` (scribed up until Chapter 1-32 from Andrew Ng's ML Yearning book)
 
+* **[Week of 6/4]: Break**
+
+* **[Week of 6/12]: Apply DL on the Job**
+	* Set up an simple end-to-end transfer learning pipeline for predicting photo quality issues using Keras ResNet50 model and Airbnb's thumbnail data
+	* Finished draft for A Beginner's Guide to Data Engineering - The Series Finale
+
 # Upcoming
 
 * **[Week of ?]**: Continue to scribe structure_ml_projects.md
