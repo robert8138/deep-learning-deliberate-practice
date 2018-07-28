@@ -60,6 +60,7 @@ A few words on why I choose to focus on Keras (for now): Rachel Thomas summarize
 
 * [Fast.ai](http://www.fast.ai/)
 	* [What you need (Hardware, Software) for Deep Learning](http://www.fast.ai/2017/11/16/what-you-need/): This is a great introduction on the kind of hardware and software you need to do DL. In my opinion, it's probably a lot easier to just use a docker environment and launch a GPU on AWS (for hardware) and use a framework that has user friendly APIs so you can learn the major concepts (for software).
+	* [How to learn deep learning (when you are not a computer science Ph.D)](https://vimeo.com/214233053)
 	* [Fast.ai: An Introduction to Deep Learning for Tabular Data](http://www.fast.ai/2018/04/29/categorical-embeddings/)
 
 * [Andrej Karpathy's blog](http://karpathy.github.io/)
@@ -83,6 +84,10 @@ A few words on why I choose to focus on Keras (for now): Rachel Thomas summarize
 * [Dimensions of Machine Learning Models](https://www.slideshare.net/SharathRao6/lessons-from-integrating-machine-learning-models-into-data-products): Less relevant to Deep Learning specifically, but this is still by far the best piece that I can find in categorizing different ML models (contextual data dimension v.s. latency requirement dimension). [Video](https://www.youtube.com/watch?v=wG5EyHYrJGE&t=891s) from DataEngConf2017 is also available.
 
 * [Facebook's Machine Learning Field Guide](https://research.fb.com/the-facebook-field-guide-to-machine-learning-video-series/): A very nice introduction to ML in the industry. I thought this is a pretty accurate description of things and considerations that I run into at work.
+
+* [What is Hardcore Data Science – In Practice?](https://www.oreilly.com/ideas/what-is-hardcore-data-science-in-practice): The title is a bit misleading, but the content is pretty good. In particular, it talks about several high level mental model / picture how one would do modeling work that is a part of a ML system. The author does a good job explaining and highlights his approach in creating micro-services to containerize model as an API endpoint. This reminds of ML Infra at Airbnb. 
+
+* [What do machine learning practitioners actually do?](http://www.fast.ai/2018/07/12/auto-ml-1/): It's a 3-part blog post series where Rachel argued that architecture search in DL is actually a very niche / small component of a typical machine learning workflow. In explaining how she favors transfer learning over finding new architecture for each problem, she explains the workflow of real life ML projects. It really aligns with what I do in practice. [Part II](http://www.fast.ai/2018/07/16/auto-ml2/) and [Part III](http://www.fast.ai/2018/07/23/auto-ml-3/) are more about AutoML, interested readers can read this as well.
 
 * [What does a Machine Learning Engineer Do?](https://medium.com/@tomaszdudek/but-what-is-this-machine-learning-engineer-actually-doing-18464d5c699)
 
