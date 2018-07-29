@@ -26,7 +26,15 @@ _Notes from this section are adpated from Andrew Ng's DL specialization course 3
 		* [Addressing Variance Problems](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/work_in_progress/structure_ml_project.md#addressing-variance-problems)
 	* [Yet Another Tool to Diagnoise Bias v.s. Variance: Learning Curve](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/work_in_progress/structure_ml_project.md#yet-another-tool-to-diagnoise-bias-vs-variance-learning-curve)
 
+* [Comparing to Human-level Performance](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/work_in_progress/structure_ml_project.md#compare-to-human-level-performance)
 
+* [Errors Caused Beyond By Bias or Variance - Data Distribution Mismatch](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/work_in_progress/structure_ml_project.md#errors-caused-beyond-by-bias-or-variance---data-distribution-mismatch)
+	* [The Trade-off Of Adding Data With New Distribution](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/work_in_progress/structure_ml_project.md#the-trade-off-of-adding-data-with-new-distribution)
+	* [Identifying Bias, Variance, and Data Mismatch Errors](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/work_in_progress/structure_ml_project.md#identifying-bias-variance-and-data-mismatch-errors)
+	* [Addressing Data Mistmach](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/work_in_progress/structure_ml_project.md#addressing-data-mismatch)
+
+* [Debugging Inference Algorithm](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/work_in_progress/structure_ml_project.md#debugging-inference-algorithm)
+	* [Optimization Verification Test](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/work_in_progress/structure_ml_project.md#optimization-verification-test)
 
 ## Motivation
 
@@ -74,7 +82,9 @@ There is a chance that your team will build something that works well on the dev
 * You haven't overfit to the dev set, but the test set is harder than the dev set. So your algorithm might be doing as well as could be expected, and no further significant improvement is possible.
 * You haven't overfit to the dev set, and test set is not necessarily harder, just different. So what works well on the dev set just does not work well on the test set. In this case, a lot of your work to improve dev set performance might be wasted effort.
 
-Working on machine learning applications is hard enough. Having mismatched dev and test sets introduces additional uncertainty about whether improving on the dev set distribution also improves test set performance. Having mismatched dev and test sets makes it harder to figure out what is and isn’t working, and thus makes it harder to prioritize what to work on. Avoid this!
+Wisdome from Andrew:
+
+> Working on machine learning applications is hard enough. Having mismatched dev and test sets introduces additional uncertainty about whether improving on the dev set distribution also improves test set performance. Having mismatched dev and test sets makes it harder to figure out what is and isn’t working, and thus makes it harder to prioritize what to work on. Avoid this!
 
 ### Training Data Distribution Need Not To Be The Same as Val/Test Set Distribution
 
@@ -83,7 +93,7 @@ The purpose of the dev and test sets are to direct your team toward the most imp
 > Choose dev and test sets to reflect data you expect to get in the future
 and want to do well on. 
 
-ANdrew uses the analogy of Bulls-eye & Arrows. The location of the Bullseye is the distribution where our dev/test should reflect the reality. The performance metric that we are trying to optimize is our arrow that allows to see how close we are. If we have the wrong distribution for val/test set that doesn't reality, it's like we put the bulls-eye in the wrong position, and optimizing and shooting an arrow to that bulls-eye will not achieve our goal.
+Andrew uses the analogy of Bulls-eye & Arrows. The location of the Bullseye is the distribution where our dev/test should reflect the reality. The performance metric that we are trying to optimize is our arrow that allows to see how close we are. If we have the wrong distribution for val/test set that doesn't reality, it's like we put the bulls-eye in the wrong position, and optimizing and shooting an arrow to that bulls-eye will not achieve our goal.
 
 In other words, your test set should not simply be 30% of the available data, especially if you expect your future data (e.g. mobile phone images) to be different in nature from your training set (e.g. website images). This is a pretty important takeaways, especially transfer learning has become quite common place in the deep learning world.
 
@@ -97,6 +107,10 @@ The dev set should be large enough to detect differences between algorithms that
 
 How about the size of the test set? It should be large enough to give high confidence in the overall performance of your system. One popular heuristic had been to use 30% of your data for your test set. This works well when you have a modest number of examples—say 100 to 10,000 examples. But in the era of big data where we now have machine learning problems with sometimes more than a billion examples, the fraction of data allocated to dev/test sets has been shrinking, even as the absolute number of examples in the dev/test sets has been growing. There is no need to have excessively large dev/test sets beyond what is needed to evaluate the performance of your algorithms.
 
+Wisdome from Andrew:
+
+> The dev set should be large enough to detect differences between algorithms that you are trying out. If you need to detect a 0.1% change between two candidate algorithms, you should have at least 1000 (100/0.1) examples. For test set, it should be large enough to give high confidence in the overall performance of your system, and you really don't need more beyond that.
+
 ## Evaluation Metrics
 
 During development, your team will try a lot of ideas about algorithm architecture, model parameters, choice of features, etc. Having a **single-number evaluation metric** for **optimization**​ such as accuracy allows you to sort all your models according to their performance on this metric, and quickly decide what is working best.
@@ -105,7 +119,11 @@ The important thing to consider here is whether your single evaluation metric ha
 
 If you have other important metrics that you would like to take into consideration, one way to take this into account is to make these secondary metrics as **satisficing metric** — your classifier just has to be “good enough” on this metric (e.g. latency can be a good satisficing metric).
 
-Having a single-number evaluation metric speeds up your ability to make a decision when you are selecting among a large number of classifiers. It gives a clear preference ranking among all of them, and therefore a clear direction for progress.
+Wisdome from Andrew:
+
+> Having a single-number evaluation metric speeds up your ability to make a decision when you are selecting among a large number of classifiers. It gives a clear preference ranking among all of them, and therefore a clear direction for progress. If you really care about evaluating model on a set of dimensional cuts (e.g. geography, race), taking an average or weighted average is one of the most common ways to combine multiple metrics into one.
+
+> If you are trading off N different criteria, you might consider setting N-1 of the criteria as “satisficing” metrics. I.e., you simply require that they meet a certain value. Then define the final one as the “optimizing” metric, and try to optimize accuracy given those N-1 constraints.
 
 ### Dev set/Metric Combo
 
@@ -117,10 +135,10 @@ There are a few reasons why, despite working very hard to optimize dev set using
 
 * **You have overfit to the dev set**: The process of repeatedly evaluating ideas on the dev set causes your algorithm to gradually “overfit” to the dev set. When you are done developing, you will evaluate your system on the test set. If you find that your dev set performance is much better than your test set performance, it is a sign that you have overfit to the dev set. In this case, get a fresh dev set.
 
-* **The actual distribution you need to do well on is different from the dev/test sets**: Suppose your initial dev/test set had mainly pictures of adult cats. You ship your cat app, and find that users are uploading a lot more kitten images than expected. So, the dev/test set distribution is not representative of the actual distribution you need to do well on. In this case, update your dev/test sets to be more representative.
-
 * **The metric is measuring something other than what the project needs to optimize**: Suppose that for your cat application, your metric is classification accuracy. This metric currently ranks classifier A as superior to classifier B. But suppose you try out both algorithms, and find classifier A is allowing occasional pornographic images to slip through. Even though classifier A is more accurate, the bad impression left by the occasional
 pornographic image means its performance is unacceptable. Here, the metric is failing to identify the fact that Algorithm B is in fact better than Algorithm A, because you cannot afford to show porn pictures. One way to combat this is to heavily penalize when porn pictures are surfaced.
+
+* **The actual distribution you need to do well on is different from the dev/test sets**: Suppose your initial dev/test set had mainly pictures of adult cats. You ship your cat app, and find that users are uploading a lot more kitten images than expected. So, the dev/test set distribution is not representative of the actual distribution you need to do well on. In this case, update your dev/test sets to be more representative.
 
 > It is quite common to change dev/test sets or evaluation metrics during a project. Having an initial dev/test set and metric helps you iterate quickly. If you ever find that the dev/test sets or metric are no longer pointing your team in the right direction, it’s not a big deal! Just change them and make sure your team knows about the new direction.
 
@@ -134,7 +152,7 @@ In detail, here’s what you can do:
 1. Gather a sample of 100 dev set examples that your system misclassified. i.e., examples that your system made an error on.
 2. Look at these examples manually, and count what fraction of them belong to the issue class that you are trying to fix.
 
-If you have a few ideas what's causing low performance, you can efficiently evaluate all of these ideas in parallel. Andrew usually create a spreadsheet and fill it out while looking through 100 misclassified dev set images. Andrew also jot down comments that might help me remember specific examples. To illustrate this process, let’s look at a spreadsheet you might produce with a small dev set of four examples:
+If you have a few ideas what's causing low performance, you can efficiently evaluate all of these ideas in parallel. Andrew usually create a spreadsheet and fill it out while looking through 100 misclassified dev set images. Andrew also jot down comments that might help him remember specific examples. To illustrate this process, let’s look at a spreadsheet you might produce with a small dev set of four examples:
 
 ![Error Analysis Table](pictures/error_analysis_table.png)
 
@@ -144,7 +162,9 @@ Error analysis does not produce a rigid mathematical formula that tells you what
 
 Wisdome from Andrew:
 
-> Error analysis can often help you figure out how promising different directions are. I’ve seen many engineers reluctant to carry out error analysis. It often feels more exciting to just jump in and implement some idea, rather than question if the idea is worth the time investment. This is a common mistake: It might result in your team spending a month only to realize afterward that it resulted in little benefit.
+> Error analysis refers to the process of examining dev set examples that your algorithm misclassified, so that you can understand the underlying causes of the errors. It can often help you figure out how promising different directions are. The most helpful error categories will be ones that you have an idea for improving, but you also have to take into account how much progress you expect to make on different categories and the amount of work needed to tackle each one.
+
+> Andrew has seen seen many engineers reluctant to carry out error analysis. It often feels more exciting to just jump in and implement some idea, rather than question if the idea is worth the time investment. This is a common mistake: It might result in your team spending a month only to realize afterward that it resulted in little benefit.
 
 ### Cleaning Up Mislabeled Dev and Test Set Examples
 
@@ -156,11 +176,15 @@ This is actually a very common scenario when you have scarce labels, or that lab
 
 Should you correct the labels in your dev set? Remember that the goal of the dev set is to help you quickly evaluate algorithms so that you can tell if Algorithm A or B is better. If the fraction of the dev set that is mislabeled impedes your ability to make these judgments, then it is worth spending time to fix the mislabeled dev set labels.
 
-Whatever process you apply to fixing dev set labels, remember to apply it to the test set labels too so that your dev and test sets continue to be drawn from the same distribution. Fixing your dev and test sets together would prevent the problem we discussed earlier, where your team optimizes for dev set performance only to realize later that they are being judged on a different criterion based on a different test set.
+It is not uncommon to start off tolerating some mislabeled dev/test set examples, only later to change your mind as your system improves so that the fraction of mislabeled examples grows relative to the total set of errors.
+
+If you do decide to improve the label quality, consider double-checking both the labels of examples that your system misclassified as well as labels of examples it correctly classified. It is possible that both the original label and your learning algorithm were wrong on an example. If you fix only the labels of examples that your system had misclassified, you might introduce bias into your evaluation. If you have 1,000 dev set examples, and if your classifier has 98.0% accuracy, it is easier to examine the 20 examples it misclassified than to examine all 980 examples classified correctly. Because it is easier in practice to check only the misclassified examples, bias does creep into some dev sets. 
+
+This bias is acceptable if you are interested only in developing a product or application, but it would be a problem if you plan to use the result in an academic research paper or need a completely unbiased measure of test set accuracy.
 
 Wisdome from Andrew:
 
-> If you decide to improve the label quality, consider double-checking both the labels of examples that your system misclassified as well as labels of examples it correctly classified. It is possible that both the original label and your learning algorithm were wrong on an example. If you fix only the labels of examples that your system had misclassified, you might introduce bias into your evaluation. If you have 1,000 dev set examples, and if your classifier has 98.0% accuracy, it is easier to examine the 20 examples it misclassified than to examine all 980 examples classified correctly. 
+> Whatever process you apply to fixing dev set labels, remember to apply it to the test set labels too so that your dev and test sets continue to be drawn from the same distribution. Fixing your dev and test sets together would prevent the problem we discussed earlier, where your team optimizes for dev set performance only to realize later that they are being judged on a different criterion based on a different test set.
 
 ### Break Dev Set to Eyeball Dev Set & Blackbox Dev Set
 
@@ -168,17 +192,21 @@ Suppose you have a large dev set of 5,000 examples in which you have a 20% error
 
 In this case, Andrew suggests to explicitly split the dev set into two subsets, one of which you look at (called **eyeball-dev set**), and one of which you don’t (called **blackbox-dev set**). When using eyeball-dev set for error analysis, you are more likely to overfit the portion that you are manually looking at. By setting aside blackbox-dev set, we can understand the extent in which we are overfitting on the manually analyzed examples.
 
-How large should the eyeball-dev set be? General rule of thumb is to have 100 random misclassified samples, anything smaller is typically too small, and anything > 1000 might be too time consuming. A good back of the envelope calculation is to take 100 / misclassification rate to be the size of the eyeball-dev set. For example, if the misclassification rate is 5%, then we need 2000 examples in eyeball-dev set. The more accurate the model, the more eyeball-dev set we will need.
+How large should the eyeball-dev set be? General rule of thumb is to have 100 random misclassified samples, anything smaller is typically too small, and anything > 1000 might be too time consuming. A good back of the envelope calculation is to take 100 / `misclassification rate on dev set` to be the size of the eyeball-dev set. For example, if the misclassification rate is 5%, then we need about 2000 examples in eyeball-dev set (in order to examine 100 error examples). The more accurate the model, the more eyeball-dev set we will need.
+
+If you only have an Eyeball dev set, you can perform error analyses, model selection and hyperparameter tuning all on that set. The downside of having only an Eyeball dev set is that the risk of overfitting the dev set is greater. If you are working on a task that even humans cannot do well, then the exercise of examining an Eyeball dev set will not be as helpful because it is harder to figure out why the algorithm didn’t classify an example correctly.
 
 Wisdom from Andrew:
 
-> Between the Eyeball and Blackbox dev sets, I consider the Eyeball dev set more important (assuming that you are working on a problem that humans can solve well and that examining the examples helps you gain insight). If you only have an Eyeball dev set, you can perform error analyses, model selection and hyperparameter tuning all on that set. The downside of having only an Eyeball dev set is that the risk of overfitting the dev set is greater.
+> Why do we explicitly separate the dev set into Eyeball and Blackbox dev sets? Since you will gain intuition about the examples in the Eyeball dev set, you will start to overfit the Eyeball dev set faster. If you see the performance on the Eyeball dev set improving much more rapidly than the performance on the Blackbox dev set, you have overfit the Eyeball dev set. In this case, you might need to discard it and find a new Eyeball dev set by moving more examples from the Blackbox dev set into the Eyeball dev set or by acquiring new labeled data.
+
+> Between the Eyeball and Blackbox dev sets, I consider the Eyeball dev set more important (assuming that you are working on a problem that humans can solve well and that examining the examples helps you gain insight). Your Eyeball dev set should be large enough to give you a sense of your algorithm’s major error categories. As such, Andrew rarely seen anyone manually analyze more than 1,000 errors - 100 errors seems to be the sweet spot.
 
 ## Bias and Variance
 
 There are two major sources of error in machine learning: bias and variance. Understanding them will help you decide whether adding data, as well as other tactics to improve performance, are a good use of time. 
 
-The field of statistics has more formal definitions of bias and variance. Roughly, the bias is the error rate of your algorithm on your training set when you have a very large training set (i.e. how complex your functional form will fit on the training data). The variance is how much worse you do on the test set compared to the training set (for me, I like to think of it as how robust the model is to variance introduce by sampling / and being able to see the whole reality distribution, Caltech's ML course really explains well). See chapter 21 for scenario where there is bias and/or variance problems.
+The field of statistics has more formal definitions of bias and variance. Roughly, the bias is the error rate of your algorithm on your training set when you have a very large training set (i.e. how complex your functional form will fit on the training data). The variance is how much worse you do on the test set compared to the training set (for me, I like to think of it as how robust the model is to variance introduce by sampling / and being able to see the whole reality distribution, Caltech's ML course really explains well). See Andrew's ML Yearning chapter 21 for scenario where there is bias and/or variance problems.
 
 Some changes to a learning algorithm can address the first component of error-bias​ and improve its performance on the training set. Some changes address the second component—variance and help it generalize better from the training set to the dev/test sets. To select the most promising changes, it is incredibly useful to understand which of these two components of error is more pressing to address.
 
@@ -194,6 +222,10 @@ The “avoidable bias” reflects how much worse your algorithm performs on the 
 
 How do we know what the optimal error rate is? For tasks that humans are reasonably good at, such as recognizing pictures or transcribing audio clips, you can ask a human to provide labels then measure the accuracy of the human labels relative to your training set. This would give an estimate of the optimal error rate. If you are working on a problem that even humans have a hard time solving (e.g., predicting what movie to recommend, or what ad to show to a user) it can be hard to estimate the optimal error rate.
 
+Wisdom from Andrew:
+
+> In statistics, the optimal error rate is also called Bayes error rate​, or Bayes rate. If we can accurately estimate the Bayes error, using it as a baseline would help us to understand how to decompose error into unavoidable bias + avoidable bias + variance. This will guide us to diagnoise whether our learning procedure is sufferring from bias v.s. variance problem.
+
 ### Addressing Bias and Variance
 
 Here is the simplest formula for addressing bias and variance issues:
@@ -201,12 +233,12 @@ Here is the simplest formula for addressing bias and variance issues:
 * If you have high avoidable bias, increase the size of your model (for example, increase the size of your neural network by adding layers/neurons).
 * If you have high variance, add data to your training set.
 
-If you are able to increase the neural network size and increase training data without limit, it is possible to do very well on many learning problems. This is one of the reasons why DL works so well - many techniques allowed us to trained very deep and wide networks, and there's enough data (at least from companies like Google) for us to dramatically reduce bias and variance of learning tasks. In practice, increasing the size of your model will eventually cause you to run into computational problems because training very large models is slow. You might also exhaust your ability to acquire more training data. 
+If you are able to increase the neural network size and increase training data without limit, it is possible to do very well on many learning problems. This is one of the reasons why DL works so well - many techniques allowed us to trained high capacity models that are very deep and wide networks that reduces bias, and in the modern era there's enough data (at least at companies like Google) for us to dramatically reduce variance. In practice, increasing the size of your model will eventually cause you to run into computational problems because training very large models is slow. You might also exhaust your ability to acquire more training data. 
 
 Wisdom from Andrew:
 
 > Different model architectures—for example, different neural network architectures will have different amounts of bias/variance for your problem. A lot of recent deep learning research has developed many innovative model architectures. So if you are using neural networks, the academic literature can be a great source of inspiration. There are also many great open-source implementations on github. But the results of trying new architectures are
-less predictable than the simple formula of increasing the model size and adding data. If you increase model size, you will run into the risk of overfitting. In such cases, add regularization accordingly.
+less predictable than the simple formula of increasing the model size and adding data. This is also Rachel Thomas' point from [here](http://www.fast.ai/2018/07/23/auto-ml-3/).
 
 #### Addressing Bias Problems
 
@@ -216,7 +248,11 @@ less predictable than the simple formula of increasing the model size and adding
 
 * **Reduce or eliminate regularization**: This will reduce bias, but increase variance.
 
-* **Performing Error Analysis on Training Set**: Just like how we would do this analysis on dev set, analyzing wrong predictions on the training set can also help us understand why the model is not performing well.
+* **Performing Error Analysis on Training Set**: Your algorithm must perform well on the training set before you can expect it to perform well on the dev/test sets. Just like how we would do this analysis on eye-ball dev set, analyzing errors on the training set can also help us understand why the model is not performing well.
+
+One method that is not helpful:
+
+* **Add more training data**​: This technique helps with variance problems, but it usually has no significant effect on bias.
 
 #### Addressing Variance Problems
 
@@ -230,11 +266,19 @@ less predictable than the simple formula of increasing the model size and adding
 
 * **Decrease the model size ​(such as number of neurons/layers)**: Use with caution. This technique could decrease variance, while possibly increasing bias. However, Andrew doesn't recommend this technique for addressing variance. Adding regularization usually gives better classification performance. The advantage of reducing the model size is reducing your computational cost and thus speeding up how quickly you can train models. If speeding up model training is useful, then by all means consider decreasing the model size. But if your goal is to reduce variance, and you are not concerned about the computational cost, consider adding regularization instead.
 
+Here are two additional tactics, repeated from the previous chapter on addressing bias:
+
+* **Modify input features based on insights from error analysis​**: Say your error analysis inspires you to create additional features that help the algorithm to eliminate a particular category of errors. These new features could help with both bias and variance. In theory, adding more features could increase the variance; but if you find this to be the case, then use regularization, which will usually eliminate the increase in variance.
+
+Wisdom from Andrew:
+
+> Andrew prefers that the practitioners to add meaningful features (e.g. via error analysis) and err on the side of adding more useful features + regularization rather than trying to prematurely reduce model capacity. Pictorially, having a model that is more flexible that can be modified/simplified is preferred to a model that is too rigid and simple. 
+
 ### Yet Another Tool to Diagnoise Bias v.s. Variance: Learning Curve
 
-We’ve seen some ways to estimate how much error can be attributed to avoidable bias vs.variance. We did so by estimating the optimal error rate and computing the algorithm’s training set and dev set errors. Let’s discuss a technique that is even more informative: plotting a learning curve.
+We’ve seen some ways to estimate how much error can be attributed to `unavoidable bias + avoidable bias + variance`. We did so by estimating the optimal error rate and computing the algorithm’s training set and dev set errors. Let’s discuss a technique that is even more informative: plotting a learning curve.
 
-Previously, we were measuring training and dev set error only at the rightmost point of this plot, which corresponds to using all the available training data. Plotting the full learning curve gives us a more comprehensive picture of the algorithms’ performance on different training set sizes.
+Previously, we were measuring training and dev set error only at the rightmost point of the lerning curve plot, which corresponds to using all the available training data. Plotting the whole learning curve gives us a more comprehensive picture of the algorithms’ performance on different training set sizes. In particular, examining both the dev error curve and the training error curve on the same plot allows us to more confidently extrapolate the dev error curve (the one that we are going after relative to the desired error).
 
 ![Learning Curve Scenarios](pictures/learning_curve_scenarios.png)
 
@@ -254,12 +298,131 @@ Wisdom from Andrew:
 
 > I would not bother with either of these techniques (sampling with replacement or fix distribution of classes) unless you have already tried plotting learning curves and concluded that the curves are too noisy to see the underlying trends. If your training set is large—say over 10,000 examples—and your class distribution is not very skewed, you probably won’t need these techniques. When you have a lot of data, you don't have to space the training sample size in linear scale. A log scale can make trends clearer.
 
+## Compare to Human-level Performance
+
+Many machine learning systems aim to automate things that humans do well. Examples include image recognition, speech recognition, and email spam classification. Furthermore, there are several reasons building an ML system is easier if you are trying to do a task that people can do well:
+
+* **Ease of obtaining data from human labelers**:​ For example, since people recognize cat images well, it is straightforward for people to provide high accuracy labels for your learning algorithm.
+
+* **Error analysis can draw on human intuition**:  Suppose a speech recognition algorithm is doing worse than human-level recognition. Say it incorrectly transcribes an audio clip as “This recipe calls for a pear of apples,” mistaking “pair” for “pear.” You can draw on human intuition and try to understand what information a person uses to get the correct transcription, and use this knowledge to modify the learning algorithm.
+
+* **Use human-level performance to estimate the optimal error rate or desired error rate**: ”​ Suppose your algorithm achieves 10% error on a task, but a person achieves 2% error. Then we know that the optimal error rate is 2% or lower and the avoidable bias is at least 8%. Thus, you should try bias-reducing techniques.
+
+However, there are some tasks that even humans aren’t good at. For example, picking a book to recommend to you; or picking an ad to show a user on a website; or predicting the stock market. Computers already surpass the performance of most people on these tasks. With these applications, we run into the following problems:
+
+* **It is harder to obtain labels**:​ For example, it’s hard for human labelers to annotate a database of users with the “optimal” book recommendation. If you operate a website or app that sells books, you can obtain data by showing books to users and seeing what they buy. If you do not operate such a site, you need to find more creative ways to get data.
+
+* **Human intuition is harder to count on**: For example, pretty much no one can predict the stock market. So if our stock prediction algorithm does no better than random guessing, it is hard to figure out how to improve it.
+
+* **It is hard to know what the optimal error rate and reasonable desired error rate is**: ​Suppose you already have a book recommendation system that is doing quite well. How do you know how much more it can improve without a human baseline?
+
+Wisdom from Andrew:
+
+> Andre also made some comments about that it is typically more challenging to improve the model when it already surpasses human-level performance. His insight is that so long as there are dev set examples where humans are right and your algorithm is wrong, then many of the techniques described earlier will apply. This is true even if, averaged over the entire dev/test set, your performance is already surpassing human-level performance.
 
 
+## Errors Caused Beyond By Bias or Variance - Data Distribution Mismatch
 
+Most of the academic literature on machine learning assumes that the training set, dev set and test set all come from the same distribution. In the early days of machine learning, data was scarce. We usually only had one dataset drawn from some probability distribution. So we would randomly split that data into train/dev/test sets, and the assumption that all the data was coming from the same source was usually satisfied.
 
+But in the era of big data, we now have access to huge training sets, such as cat internet images. Even if the training set comes from a different distribution than the dev/test set, we still want to use it for learning since it can provide a lot of information. As it becomes increasingly common for the training distribution to differs from the dev/test distribution, it is important to understand that different training and dev/test distributions offer some special challenges. For example: How to decide whether to use all your data, include inconsistent data (in terms of distribution), and how would we split the data for train/dev/test? Should we weight the data differently?
 
+### The Trade-off Of Adding Data With New Distribution
 
+Suppose your cat detector’s training set includes 10,000 user-uploaded images. This data comes from the same distribution as a separate dev/test set, and represents the distribution you care about doing well on. You also have an additional 20,000 images downloaded from the internet. Should you provide all 20,000 + 10,000 = 30,000 images to your learning algorithm as its training set, or discard the 20,000 internet images for fear of it biasing your learning algorithm?
+
+When using earlier generations of learning algorithms (such as hand-designed computer vision features, followed by a simple linear classifier) there was a real risk that merging both types of data would cause you to perform worse. Thus, some engineers will warn you against including the 20,000 internet images.
+
+But in the modern era of powerful, flexible learning algorithms—such as large neural networks—this risk has greatly diminished. If you can afford to build a neural network with a large enough number of hidden units/layers, you can safely add the 20,000 images to your training set. Adding the images is more likely to increase your performance.
+
+Adding additional data that come from different distribution has the following effects on your learning algorithm:
+
+* It gives your neural network more examples of the task you are learning (e.g. what cats do/do not look like). This is helpful, since examples from different distribution share some similarities (e.g. cat properties are similar across internet v.s mobile images). Your neural network can apply some of the knowledge acquired from different sources of data. The rule of thumb here is to think if there is a function `f(x)` that reliably maps from the input `x` to the target output `y`, even without knowing the origin of `x`. If the origin is absolutely needed, adding new data could hurt the performance.
+
+* It forces the neural network to expend some of its capacity to learn about properties that are specific to internet images (such as higher resolution, different distributions of how the images are framed, etc.) If these properties differ greatly from mobile app images, it will “use up” some of the representational capacity of the neural network. Thus there is less capacity for recognizing data drawn from the distribution of mobile app images,
+which is what you really care about. Theoretically, this could hurt your algorithms’ performance. Andrew's Analogy draw inspiration from Sherlock Holmes, who says that your brain is like an attic; it only has a finite amount of space. He says that “for every addition of knowledge, you forget something that you knew before. It is of the highest importance, therefore, not to have useless facts elbowing out the useful ones.”
+
+Fortunately, if you have the computational capacity needed to build a big enough neural network — i.e., a big enough attic — then this is not a serious concern. You have enough capacity to learn from both internet and from mobile app images, without the two types of data competing for capacity. Your algorithm’s “brain” is big enough that you don’t have to worry about running out of attic space.
+
+Furthermore, if you do decide to include both data sources into your model training, you could potentially weight the example errors differently in the loss function. For example, if the internet:mobile ratio is 40:1, and you ultimately care about performing classification well on the mobile image, you might add a 1/40 weight for every error you made on the internet image.
+
+Wisdom from Andrew:
+
+> When thinking about whether to include data from different distribution, think about the trade-offs mentioned above. Would the new dataset gives you additional upside to generalize (adding Detriot housing data to NYC data)? or would it take up the representational capacity to learn irrelevant things that end up hurting your performance overall (e.g. adding historical scanned documents for cat classification). The best way to resolve this trade-off is to build a big enough neural network.
+
+### Identifying Bias, Variance, and Data Mismatch Errors
+
+Suppose you are applying ML in a setting where the training and the dev/test distributions are different. Say, the training set contains Internet images + Mobile images, and the dev/test sets contain only Mobile images. However, the algorithm is not working well: It has a much higher dev/test set error than you would like. Here are some possibilities of what might be wrong:
+
+* It does not do well on the training set. This is the problem of high (avoidable) bias on the training set distribution.
+
+* It does well on the training set, but does not generalize well to previously unseen data drawn from the same distribution as the training set. This is high variance
+
+* It generalizes well to new data drawn from the same distribution as the training set, but not to data drawn from the dev/test set distribution. We call this problem **data mismatch**​, since it is because the training set data is a poor match for the dev/test set data.
+
+To diagnoise whether we suffer from unavoidable bias, variance, or data mismatch problem, Andrew introduced the concept of a `training-dev set`. Rather than giving the algorithm all the available training data, you can split it into two subsets: The actual training set which the algorithm will train on, and a separate set, which we will call the “Training dev” set. You now have four subsets of data:
+
+* **Training set**: This is the data that the algorithm will learn from (e.g., Internet images + Mobile images). This does not have to be drawn from the same distribution as what we really care about (the dev/test set distribution).
+
+* **Training-dev set**: This data is drawn from the same distribution as the training set (e.g., Internet images + Mobile images). This is usually smaller than the training set; it only needs to be large enough to evaluate and track the progress of our learning algorithm.
+
+* **Dev set**: This is drawn from the same distribution as the test set, and it reflects the distribution of data that we ultimately care about doing well on. (E.g., mobile images.). You can further split this into eyeball dev set & blackblox dev set when it comes to error analysis.
+
+* **Test set**: This is drawn from the same distribution as the dev set. (E.g., mobile images.)
+
+Armed with these four separate datasets, you can now evaluate if the model is sufferring from bias, variance, or data mismatch problems. See the picture below:
+
+![Data Mismatch Matrix](pictures/data_mismatch_matrix.png)
+
+The gap between (optimal bayes error, training error) tells us the extend that the model has avoidable bias. The gap between (training error, training-dev error) tells us how well the trained model generalize to patterns in one distribution. This is similar to gap between training and dev when they come from the same distribution. The gap(training-dev error, dev set error) tells us the extent in which training & dev set mismatched in distribution.
+
+Wisdom from Andrew:
+
+> By understanding which types of error the algorithm suffers from the most, you will be better positioned to decide whether to focus on reducing bias, reducing variance, or reducing data mismatch. The 3x2 matrix really provides a useful framework for us to identify the problems in an era where training distribution often differs from dev/test distributions.
+
+### Addressing Data Mismatch
+
+Suppose you have developed a speech recognition system that does very well on the training set and on the training dev set. However, it does poorly on your dev set: You have a data mismatch problem. What can you do?
+
+Andrew recommends that you: (i) Try to understand what properties of the data differ between the training and the dev set distributions. (ii) Try to find more training data that better matches the dev set examples that your algorithm has trouble with.
+
+* **Understand what properties of the data differ between the training and the dev set distributions**: For example, suppose you carry out an error analysis on the speech recognition dev set: You manually go through 100 examples, and try to understand where the algorithm is making mistakes. You find that your system does poorly because most of the audio clips in the dev set are taken within a car, whereas most of the training examples were recorded against a quiet background. The engine and road noise dramatically worsen the performance of your speech system. In this case, you might try to acquire more training data comprising audio clips that were taken in a car. The purpose of the error analysis is to understand the significant differences between the training and the dev set, which is what leads to the data mismatch. 
+
+* **Try to find more training data that better matches the dev set examples that your algorithm has trouble with**: You can either look up in the internet for additional data sources that resembles the dev/test distribution, or you can use data synthesis to generate data that simulates the distribution you will do inference on. Andrew mentioned tricks such as adding car noise to audio with clean background, or use cars from video games, etc. He warns that when synthesizing data, put some thought into whether you’re really synthesizing a representative set of examples. Try to avoid giving the synthesized data properties that makes it possible for a learning algorithm to distinguish synthesized from non-synthesized examples.
+
+Wisdom from Andrew:
+
+> To Address data mismatch, try to understand how the distribution differs, and try to make your training data more similar to the dev/test distribution. You can use data synthesis to create more training data, but this requires care and one needs to make sure the sythesis strategy is good enough to mimic the diversity of real world data. Really though, there is no agreeable standard on how to do data synthesis properly.
+
+## Debugging Inference Algorithm
+
+Suppose you are building a speech recognition system. Your system works by inputting an audio clip A, and computing some ScoreA(S) for each possible output sentence S. For example, you might try to estimate ScoreA
+(S) = P(S|A), the probability that the correct output transcription is the sentence S, given that the input audio was A. Given a way to compute ScoreA(S), you still have to find the English sentence S that maximizes it. How do you compute the “arg max”? 
+
+If the English language has 50,000 words, then there are (50,000)N possible sentences of length N—far too many to exhaustively enumerate. This is where search heuristics like `beam search` comes into play. Algorithms like this are not guaranteed to find the value of S that maximizes ScoreA(S), which means that if your final output is wrong, it could be caused by two reasons:
+
+* **Search algorithm problem​**: The approximate search algorithm (beam search) failed to find the value of S that maximizes ScoreA(S).
+
+* **Objective (scoring function) problem**: Our estimates for ScoreA(S) = P(S|A) were inaccurate. In particular, our choice of ScoreA(S) failed to recognize that “I love machinelearning” is the correct transcription.
+
+Depending on which of these was the cause of the failure, you should prioritize your efforts very differently. If #1 was the problem, you should work on improving the search algorithm. If #2 was the problem, you should work on the learning algorithm that estimates ScoreA(S).
+
+### Optimization Verification Test
+
+Facing this situation, some researchers will randomly decide to work on the search algorithm; others will randomly work on a better way to learn values for ScoreA(S). But unless you know which of these is the underlying cause of the error, your efforts could be wasted. How can you decide more systematically what to work on? The answer is the Optimization Verification Test!
+
+Let `Sout` be the output transcription (“I love robots”). Let `S*` be the correct transcription (“I love machine learning”). Given that `S*` is the right answer, we would expect `ScoreA(S*) > ScoreA(Sout)`. There are two possibilities:
+
+* **Case 1: `ScoreA(S*) > ScoreA(Sout)`**: In this case, your learning algorithm has correctly given `S*` a higher score than Sout. Nevertheless, our approximate search algorithm chose Sout rather than `S*`. This tells you that
+your approximate search algorithm is failing to choose the value of S that maximizes `ScoreA(S)`. In this case, the Optimization Verification test tells you that you have a search algorithm problem and should focus on that. For example, you could try increasing the beam width of beam search. 
+
+* **Case 2: `ScoreA(S*) ≤ ScoreA(Sout)`**: In this case, you know that the way you’re computing `ScoreA(.)` is at fault: It is failing to give a strictly higher score to the correct output `S*` than the incorrect `Sout`. The Optimization Verification test tells you that you have an objective (scoring) function problem. Thus, you should focus on improving how you learn or approximate `ScoreA(S)` for different sentences `S`.
+
+Our discussion has focused on a single example. To apply the Optimization Verification test in practice, you should examine the errors in your dev set. For example, suppose you find that 95% of the errors were due to the scoring function `ScoreA(.)`, and only 5% due to the optimization algorithm. Now you know that no matter how much you improve your optimization procedure, you would realistically eliminate only 5% of our errors. Thus, you should instead focus on improving how you estimate `ScoreA(.)`.
+
+Wisdom from Andrew:
+
+> It is a very common “design pattern” in AI to first learn an approximate scoring function `Score(.)`, then use an approximate maximization algorithm to pick the best candidate solution (it's essentially a search algorithm that compare among the candidate solutions). If you are able to spot this pattern, you will be able to use the **Optimization Verification Test** to understand your source of errors.
 
 
 
@@ -286,21 +449,6 @@ Wisdom from Andrew:
 	- Architecture: Shallow network, Deep network (standard or customized)
 	- Loss: How would you optimize the loss of your learning problems
 	- Training: What is the training process learning? parameters / input images?
-
-* **Understand Model Performance**
-	- Typically, we would track the following error rate for model performance. To see an overview, see this [coursera lecture](https://www.coursera.org/learn/machine-learning-projects/lecture/ht85t/bias-and-variance-with-mismatched-data-distributions)
-		- Human-level Performance
-		- Training set error
-		- Training-dev set error
-		- Dev set error
-		- Test set error
-	- **META POINT**: For DL, a lot of the tasks are perception related tasks rather than ML on structured data. The big difference between these ML projects is that humans are generally really good at perception-based tasks, and can get to the Bayes optimal error, whereas humans are much worse at ML on structured data (online advertising, product recommendation ... etc)
-	- For perception-based tasks, human-level performance is generally a good **proxy** to **Bayes Optimal error**. This is important because we can use this as a benchmark to understand how far our training set error is away from bayes error. The gap between **Bayes error ~ human-level performance** and **training error** gives us an idea on how much **avoidable bias** we can still improve. This corresponds to the **bias** in the bias and variance trade-off.
-	- Typically, the gap(training error, dev error) tells us the variance of the model, meaning how well the model is able to generalize to data with more variant pattern. This is the **variance** in the bias and variance trade-off.
-		- However, sometimes the training data distribution will differ from the dev set distribution, so if we see a gap in training and dev set error, two things are influx - generalization ability to a fix pattern & new patterns emerges. To combat this, we will use **training-dev set error** - this data is a subset of the training data, but will not be used for training.
-			- Gap(training error, training-dev error) tells us how well the trained model generalize to patterns in one distribution. This is similar to gap(training, dev) when they come from the same distribution
-			- Gap(training-dev error, dev set error) tells us the extent in which training & dev set distribution differs.
-		- To address data distribution mismatch, one way to do so is to make training data similar to dev/test set, another way is to analyze how training and dev set differs, and address them specifically. There is currently no agreeable standard.
 
 * **Other Topics: Transfer Learning**
 	- In DL era, it's very popular to leverage pre-trained model to fine tune adjacent problems. When should one use transfer learning from task A -> B?
