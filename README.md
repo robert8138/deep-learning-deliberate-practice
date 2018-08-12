@@ -26,6 +26,14 @@ In early 2018, I have decided to transition to the Select team to focus on appli
 
 As a result, I foresee that the class of problems that I will be dealing with, fall closely under the realm of Deep Learning, and this is the best opportunity for me to achieve deliberate practice on an increasingly important skill that will allow us to unlock enormous business values in the future.
 
+## Pursue Metrics that Matter
+
+As I was thinking about success metrics for this DL Deliberate Learning Project, Cal Newport's [blog post](http://calnewport.com/blog/2015/06/16/pursue-metrics-that-matter/) came to mind again. His thesis is this: 
+
+> When deciding to embrace a self-motivated ambition, choose a definition of success that your aunt in Peoria would understand and find impressive. This is not about succumbing to the status quo, but instead setting yourself up to receive the brutal but useful feedback needed to eventually start producing things too good to be ignored. 
+
+His Advice: Focus on **Conventional Competitive Metrics** that will keep you brutually honest (e.g. Want to get good at writing, set a goal to publish a book; want to prove you are getting better at DL, try Hacker Rank test for deeplearning.ai [AI Bootcamp](https://www.deeplearning.ai/ai-bootcamp) to see if you are accepted, etc).
+
 ## Course Planning
 
 Like any learning project, it is generally wise to take a week or two to compile the list of study materials, trial study them, and then finalize on the final curriculum. Luckily, this topic is so hot that there are already many useful obvious candidates or even reviews of these candidate courses. Here are a few:
@@ -70,26 +78,25 @@ A few words on why I choose to focus on Keras (for now): Rachel Thomas summarize
 * [Colab](http://colah.github.io/): His intuitive explanation of DL topics are very well regarded, and something that I plan to revisit from time to time.
 	* [Deep Learning & Representation]((https://colah.github.io/posts/2014-07-NLP-RNNs-Representations/))
 
-* [Distill.pub](https://distill.pub/): The web is a powerful medium to share new ways of thinking. Over the last few years we’ve seen many imaginative examples of such work. But traditional academic publishing remains focused on the PDF, which prevents this sort of communication.
+* [Distill.pub: An Interactive, Visual Journal for Machine Learning Research](https://distill.pub/): The web has been around for almost 30 years. But you wouldn’t know it if you looked at most academic journals. They’re stuck in the early 1900s. PDFs are not an exciting form. Distill is taking the web seriously. A Distill article (at least in its ideal, aspirational form) isn’t just a paper. It’s an interactive medium that lets users – “readers” is no longer sufficient – work directly with machine learning models. See Distill.pub announcement [here](https://blog.ycombinator.com/distill-an-interactive-visual-journal-for-machine-learning-research/).
 
 #### Machine Learning in General
 
-* **Practical Machine Learning Advice**
+* **Practical Machine Learning Advice From Google**
 	* [Andrew Ng's ML Yearning - WIP](http://www.mlyearning.org/): This book is all about practical advice for how to tackle challenges in ML projects. He started off this project but got sidetracked by the Coursera DL specialization course. He is coming back to it now. I cannot emphasize how good this book is, all of my notes from reading this book are scribed [here](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/work_in_progress/structure_ml_project.md#yet-another-tool-to-diagnoise-bias-vs-variance-learning-curve).
 	* [Rules of ML: Best Practice for ML Engineering](https://developers.google.com/machine-learning/rules-of-ml/): This document is intended to help those with a basic knowledge of machine learning get the benefit of best practices in machine learning from around Google. [PDF]((http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf)) is also available.
 	* [Machine Learning: The High-Interest Credit Card of Technical Debt](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf): The goal of this paper is highlight several machine learning specific risk factors and design patterns to be avoided or refactored where possible. These include boundary erosion, entanglement, hidden feedback loops, undeclared consumers, data dependencies, changes in the external world, and a variety of system-level anti-patterns.
 	* [What’s your ML Test Score? A rubric for ML production systems](https://www.eecs.tufts.edu/~dsculley/papers/ml_test_score.pdf)
+
+* **Practical Machine Learning Advice From Other Top Companies**
+	* [Dimensions of Machine Learning Models](https://www.slideshare.net/SharathRao6/lessons-from-integrating-machine-learning-models-into-data-products): Less relevant to Deep Learning specifically, but this is still by far the best piece that I can find in categorizing different ML models (contextual data dimension v.s. latency requirement dimension). [Video](https://www.youtube.com/watch?v=wG5EyHYrJGE&t=891s) from DataEngConf2017 is also available.
+	* [Facebook's Machine Learning Field Guide](https://research.fb.com/the-facebook-field-guide-to-machine-learning-video-series/): A very nice introduction to ML in the industry. I thought this is a pretty accurate description of things and considerations that I run into at work.
 	* [The Two Cultures of Machine Learning Systems](https://medium.com/opendoor-labs/the-two-cultures-of-machine-learning-systems-c648db0bb4d8): How ML Engineers and Data Scientists approach ML differently
 
-* [Dimensions of Machine Learning Models](https://www.slideshare.net/SharathRao6/lessons-from-integrating-machine-learning-models-into-data-products): Less relevant to Deep Learning specifically, but this is still by far the best piece that I can find in categorizing different ML models (contextual data dimension v.s. latency requirement dimension). [Video](https://www.youtube.com/watch?v=wG5EyHYrJGE&t=891s) from DataEngConf2017 is also available.
-
-* [Facebook's Machine Learning Field Guide](https://research.fb.com/the-facebook-field-guide-to-machine-learning-video-series/): A very nice introduction to ML in the industry. I thought this is a pretty accurate description of things and considerations that I run into at work.
-
-* [What is Hardcore Data Science – In Practice?](https://www.oreilly.com/ideas/what-is-hardcore-data-science-in-practice): The title is a bit misleading, but the content is pretty good. In particular, it talks about several high level mental model / picture how one would do modeling work that is a part of a ML system. The author does a good job explaining and highlights his approach in creating micro-services to containerize model as an API endpoint. This reminds of ML Infra at Airbnb. 
-
-* [What do machine learning practitioners actually do?](http://www.fast.ai/2018/07/12/auto-ml-1/): It's a 3-part blog post series where Rachel argued that architecture search in DL is actually a very niche / small component of a typical machine learning workflow. In explaining how she favors transfer learning over finding new architecture for each problem, she explains the workflow of real life ML projects. It really aligns with what I do in practice. [Part II](http://www.fast.ai/2018/07/16/auto-ml2/) and [Part III](http://www.fast.ai/2018/07/23/auto-ml-3/) are more about AutoML, interested readers can read this as well.
-
-* [What does a Machine Learning Engineer Do?](https://medium.com/@tomaszdudek/but-what-is-this-machine-learning-engineer-actually-doing-18464d5c699)
+* **What Does a Machine Learning Engineer Do?**
+	* [What is Hardcore Data Science – In Practice?](https://www.oreilly.com/ideas/what-is-hardcore-data-science-in-practice): The title is a bit misleading, but the content is pretty good. In particular, it talks about several high level mental model / picture how one would do modeling work that is a part of a ML system. The author does a good job explaining and highlights his approach in creating micro-services to containerize model as an API endpoint. This reminds of ML Infra at Airbnb. 
+	* [What do machine learning practitioners actually do?](http://www.fast.ai/2018/07/12/auto-ml-1/): It's a 3-part blog post series where Rachel argued that architecture search in DL is actually a very niche / small component of a typical machine learning workflow. In explaining how she favors transfer learning over finding new architecture for each problem, she explains the workflow of real life ML projects. It really aligns with what I do in practice. [Part II](http://www.fast.ai/2018/07/16/auto-ml2/) and [Part III](http://www.fast.ai/2018/07/23/auto-ml-3/) are more about AutoML, interested readers can read this as well.
+	* [What does a Machine Learning Engineer Do?](https://medium.com/@tomaszdudek/but-what-is-this-machine-learning-engineer-actually-doing-18464d5c699)
 
 
 ## To Keep Learning
@@ -97,8 +104,13 @@ A few words on why I choose to focus on Keras (for now): Rachel Thomas summarize
 ### **Research Track**: 
 
 * Try to implement basic neural network from scratch (e.g. CS 231N homeworks)
-* Read a lot of papers from [arxiv](https://arxiv.org/), then try to replicate the results
+* Read a lot of papers from [arxiv](https://arxiv.org/), then try to replicate the results. From [Andrew](https://www.quora.com/I-want-to-pursue-machine-learning-as-a-career-but-not-sure-if-I-am-qualified-How-can-I-test-myself/answer/Andrew-Ng):
+
+> To go even further, read research papers (follow ML leaders on twitter to see what papers they’re excited about). Even better, try to replicate the results in the research papers. Trying to replicating others’ results is a one of the most effective but under-appreciated ways to get good at AI. Also consider activities like online ML competitions, academic conferences, and keep reading books/blogs/papers.
+
+* [Arxiv Sanity Checker](http://www.arxiv-sanity.com/): personalized newsfeed for Arxiv, Karpathy's project, to surface interesting research paper to you based on your like history.
 * [Bay Area Deep Learning School 2016](https://www.youtube.com/playlist?list=PLrAXtmErZgOfMuxkACrYnD2fTgbzk2THW): A good overview of everything at Stanford, from 2 years ago
+* [Getting started with reading Deep Learning Research papers: The Why and the How](https://towardsdatascience.com/getting-started-with-reading-deep-learning-research-papers-the-why-and-the-how-dfd1ac15dbc0)
 
 ### **Application Track**:
 
@@ -110,3 +122,4 @@ A few words on why I choose to focus on Keras (for now): Rachel Thomas summarize
 
 * [Computational Linear Algebra](http://www.fast.ai/2017/07/17/num-lin-alg/): A great course from fast.ai on computational linear algebra, heavily focused on applications of LA (e.g. SVD -> PCA, etc.)
 * [Matrix Calculus for Deep Learning](http://parrt.cs.usfca.edu/doc/matrix-calculus/index.html): Also written by Jeremy Howard, I haven't checked it out, but this just reminded me of my undergraduate Math 105: Real Analysis and Measure Theory.
+* [Learning Math for Machine Learning](https://blog.ycombinator.com/learning-math-for-machine-learning/)
