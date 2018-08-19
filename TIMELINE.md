@@ -87,13 +87,26 @@
 
 * **[Week of 6/4]: Break**
 
-* **[Week of 6/12]: Apply DL on the Job**
+* **[Week of 6/11]: Apply DL on the Job**
 	* Set up an simple end-to-end transfer learning pipeline for predicting photo quality issues using Keras ResNet50 model and Airbnb's thumbnail data
 	* Finished draft for A Beginner's Guide to Data Engineering - The Series Finale
 
+* **[Week of 6/18, 6/25, 7/2] Break: Wedding in TW**
+
+* **[Week of 7/9, 7/16] Break: 2018 H1 Reflection**
+
+* **[Week of 7/23]: Andrew Ng's Machine Learning Yearning Book**
+	* Continue to [scribe notes](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/concepts/structure_ml_project.md) from Andrew's Machine Learning Yearning
+
+* **[Week of 8/6]: Learn About NIMA**
+	* Read [NIMA Paper](https://arxiv.org/pdf/1709.05424.pdf) and learn [AVA dataset](http://refbase.cvc.uab.es/files/MMP2012a.pdf)
+
+* **[Week of 8/13]: Set up DL-hands-on mini project**
+	* Setting up AVA dataset [upload](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/codes/nima/photo_scoring_nima_upload_ava_dataset.ipynb) to data warehouse via AWS/Airflow
+	* Setting up [NIMA Retraining Pipeline](https://github.com/robert8138/deep-learning-deliberate-practice/blob/master/codes/nima/photo_scoring_nima_retraining_pipeline.ipynb)
+
 # Upcoming
 
-* **[Week of ?]**: Continue to scribe structure_ml_projects.md
 * **[Week of ?]**: Hands on Exercise
 	* Start Applying What I learned on a concrete work related project
 
